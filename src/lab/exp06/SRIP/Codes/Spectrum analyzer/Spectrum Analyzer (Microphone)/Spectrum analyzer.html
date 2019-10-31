@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Spectrum analyzer</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+<a href="../Spectrum Analyzer(inbuilt Audio)/index.html">Click here for getting the spectrogram through an input file.</a>
+<p> The below is the Spectrum analyzer through the microphone.<p><br>
+<p> For more info on how to use please refer to the Manual.md<p>
+<br>
+<!-- Creating a buffer of an audio -->
+<script src="cybuf.js"></script>
+<!-- Tranforming the given audio into the FFT to generate spectrogram -->
+<script src="fft.js"></script>
+<!-- Converting the audio into signal -->
+<script src="main.js" charset="utf-8"></script>
+<!-- Creating an UI for the controller -->
+<script type="text/javascript" src="dat.js"></script>
+<style type="text/stylesheet" src="style.css"></style>
+</head>
+<body> 
+  <div id="message"></div>
+  <div id="content" style="text-align: center">
+    <canvas id="canvas" width="1000" height="600"></canvas>
+  </div>
+<div class="dg ac">
+ <div class="dg main a" style="-moz-user-select: none; width: 245px;">
+ <div style="width: 6px; margin-left: -3px; height: 195px; cursor: ew-resize; position: absolute;"></div>
+  <ul style="height: auto;">
+    <li class="cr number">
+      <div>
+        <span class="property-name">ref_level</span>
+        <div class="c">
+          <select>
+            <option value="1">1e-0</option>
+            <option value="0.1">1e-1</option><option value="0.01">1e-2</option>
+            <option value="0.001">1e-3</option>
+            <option value="0.0001" selected="selected">1e-4</option>
+            <option value="0.00001">1e-5</option>
+            <option value="0.000001">1e-6</option>
+            <option value="1e-7">1e-7</option>
+            <option value="1e-8">1e-8</option>
+          </select>
+         </div>
+      </div>
+    </li>
+    <li class="cr number has-slider">
+     <div>
+       <span class="property-name">db_min</span>
+         <div class="c">
+           <div>
+             <input type="text" value="-70">
+           </div>
+           <div class="slider">
+              <div class="slider-fg" style="width: 23.0769%;"></div>
+           </div>
+         </div>
+     </div>
+    </li>
+    <li class="cr number has-slider">
+      <div>
+        <span class="property-name">db_range</span>
+        <div class="c">
+          <div>
+            <input type="text" value="70">
+          </div>
+          <div class="slider">
+            <div class="slider-fg" style="width: 69.697%;"></div>
+          </div>
+        </div>
+       </div>
+     </li>
+     <li class="cr number has-slider">
+      <div>
+        <span class="property-name">freq_min_cents</span>
+          <div class="c">
+            <div>
+              <input type="text" value="4800"></div>
+                <div class="slider">
+                   <div class="slider-fg" style="width: 48%;"></div>
+                </div>
+            </div>
+          </div>
+      </li>
+      <li class="cr number has-slider">
+       <div>
+         <span class="property-name">freq_range_cents</span>
+           <div class="c">
+            <div>
+              <input type="text" value="3600">
+            </div>
+            <div class="slider">
+             <div class="slider-fg" style="width: 36%;"></div>
+            </div>
+            </div>
+        </div>
+       </li>
+       <li class="cr number">
+        <div>
+         <span class="property-name">block_size</span>
+          <div class="c">
+           <select>
+             <option value="128">128</option>
+             <option value="256">256</option>
+             <option value="512">512</option>
+             <option value="1024" selected="selected">1024</option>
+             <option value="2048">2048</option>
+             <option value="4096">4096</option>
+           </select>
+         </div>
+        </div> 
+       </li>
+       <li class="cr number">
+         <div>
+           <span class="property-name">blocks_per_fft</span>
+             <div class="c">
+              <select>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="4">4</option>
+                <option value="8" selected="selected">8</option>
+                <option value="16">16</option>
+                <option value="32">32</option>
+                <option value="64">64</option>
+              </select>
+             </div>
+          </div>
+         </li>
+       </ul>
+       <div class="close-button" style="width: 245px;">Close Controls</div>
+    </div>
+  </div>
+<br>
+<br>
+//Creation of the Spectrogram in rgb
+<div id="waterfall"></div>
+<script src="Spectrogram.js"></script>
+<script>
+// calling the function which is inside spectrogram.js
+(function(window, document, undefined) {
+  function gotStream(stream) {
+    if (typeof AudioContext !== "undefined") {
+      context = new AudioContext();
+    } else if (typeof webkitAudioContext !== "undefined") {
+      context = new webkitAudioContext();
+    } else if (typeof mozAudioContext !== "undefined") {
+      context = new mozAudioContext();
+    }
+   //Creating the Streaming source to perform the spectrogram
+    streamSource = context.createMediaStreamSource(stream);
+   //Stream souce and context is passed as an ajax to the function inside the spectrogram.js
+    var waterfall = Waterfall({
+      stream: streamSource,
+      context: context
+    });
+  // Creating the window for the waterfall i.e Spectrogram
+    window.waterfall = waterfall;
+  //Creating event listener for the tonetest amd tonetest stop
+    document.getElementById('tonetest').addEventListener("click", function(){
+      waterfall.sequence([[14000,200], [0,200], [14500,200], [0,200], [15000,200]]);
+    });
+    document.getElementById('tonetest_stop').addEventListener("click", function(){
+      waterfall.stop();
+    });
+  }
+ //Handling error
+  function handleError(err) {
+    console.log("An error occurred: " + err);
+  }
+  navigator.getMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+  navigator.getMedia({ audio: true }, gotStream, handleError);
+}(window, document));
+</script>
+
+<button id="tonetest">tonetest</button>
+<button id="tonetest_stop">tonetest stop</button>
+
+
+</body>
+</html>
