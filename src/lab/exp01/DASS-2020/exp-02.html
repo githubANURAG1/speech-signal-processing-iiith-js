@@ -3,18 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>Experiment</title>
-    <script src='https://unpkg.com/wavesurfer.js'></script>
+      <script src='https://unpkg.com/wavesurfer.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
-      <link rel="stylesheet" type="text/css" href="exp-01.css">
+    <script src="exp1-01.js"></script>
   </head>
   <body>
-    <input type="hidden" id='partnum' value='1' />
-
+      <input type="hidden" id='partnum' value='2' />
     <table width=900><tr>
-    <td><h2>Part-1: Pre-segmented examples</h2></td>
-    <td width=200 align=right><a href='exp-02.html'><b>Part-2 &gt;&gt;</b></a></td>
+    <td><h2>Part-2: Segmentation with feedback </h2></td>
+    <td width=200 align=right><a href='exp-01.html'><b>&lt;&lt;Part-1</b></a> || <a href='exp-03-new.html'><b>Part-3 &gt;&gt;</b></a></td>
     </tr></table>
-    <font size=-1> <a href=readme.html>README</a></font><br><br>
     
     <form method=post name=myform id=myform>
     <select name=exnum id=exnum onchange="LoadExperiment(this);">
@@ -50,7 +48,9 @@
         
     </table>
         <ol>
+            <font size=-1>
             <li>Verify the subword unit boundaries given in the table by zooming and listening to selected portions of the waveform.</li><li>Note that clicking on the symbol within the first column of the table automatically zooms to fit the presegmented label.</li><li>Repeat the experiment by choosing word and phoneme as the subword unit.</li>
+            </font>
         </ol>
           
         <table border="1">
@@ -73,5 +73,7 @@
         </table>
 
     </div>
+
+    
   </body>
 </html>

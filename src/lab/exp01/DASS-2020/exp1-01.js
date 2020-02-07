@@ -6,7 +6,9 @@ var wavesurfer = WaveSurfer.create({
                 height: 500,
                 backgroundColor: 'grey',
             });
-
+function clearcontent(element){
+    element.value = '';
+}
 
 function playButton(){
     wavesurfer.playPause();
@@ -159,6 +161,16 @@ function reset_table() {
     }
 }
 
+function verify_ans(elem,ref){
+    var enter_val = elem.value;;
+    var err = enter_val - ref;
+    
+    if(Math.abs(err) > 480){
+        window.alert('Your marking is errorneous by ' + err + ' samples.')
+        elem.value = '';
+    }
+}
+
 
 function addplaybacks(subword){
     console.log(content1syl);
@@ -166,7 +178,8 @@ function addplaybacks(subword){
     var new_table = document.createElement('tbody');
     reset_table();
     var itr;
-    
+    var partnum = document.getElementById('partnum').value;
+
     if(subword == 'syll'){
         var field = document.getElementById("lang").value;
         if(field == 1){
@@ -178,13 +191,36 @@ function addplaybacks(subword){
                     tr.appendChild(td = document.createElement("td"));
                     
                     if(i == 0){
-                        var begin = 0.000066375*parseFloat(fields[1]);
-                        var end = 0.000066375*parseFloat(fields[2]);
-                        td.innerHTML = '<button type="button" style="width:120px;" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                        
+                        if(partnum == 1){
+                            var begin = 0.000066375*parseFloat(fields[1]);
+                            var end = 0.000066375*parseFloat(fields[2]);
+                            td.innerHTML = '<button type="button" style="width:120px;" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                        }
+                        
+                        if(partnum == 2){
+                            td.innerHTML = fields[0];
+                        }
                     }
                     
                     else{
-                        td.innerHTML = fields[i];
+                        if(partnum == 1){
+                            td.innerHTML = fields[i];
+                        }
+                        
+                        else{
+                            if(i == 1){
+                                var result_html = "<input size=10 type=text name=ubeg"+itr+" onchange=verify_ans(this,"+fields[1]+") />";
+                                td.innerHTML = result_html;
+                            }
+                                
+                            if(i == 2){
+                                var result_html = "<input size=10 type=text name=uend"+itr+" onchange=verify_ans(this,"+fields[2]+") />";
+                                td.innerHTML = result_html;
+                            }
+                            
+                        }
+                        
                     }
                 }
             }

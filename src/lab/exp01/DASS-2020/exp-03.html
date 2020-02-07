@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Experiment</title>
+      <script type="text/javascript">
+          function reset(){
+              document.getElementById('input-area').value='';
+          };
+      </script>
+  </head>
+  <body>
+      
+    <table width=900><tr>
+    <td><h2>Part-3: Segmentation without feedback</h2></td>
+    <td width=200 align=right><a href='exp-02.html'><b>&lt;&lt;Part-2</b></a></td>
+    </tr></table>
+      
+    <font size="-1">
+        <ol>
+            <li>Choose your language and construct a sentence using the IT3 transliteration format given below.</li>
+            <li>Verify the corresponding text in the native script of the language.</li>
+        </ol>
+      </font>
+
+
+    <form name="box" style="margin: 0">
+
+        <table>
+        <tbody><tr><td>
+              <span style="vertical-align:top"> 
+              <span style="font-size:12pt"><b>Language:</b></span>
+              </span>
+
+                <select name="Languages" onchange="" tabindex="2">
+                  <option value="hindi">Hindi</option>
+                  <option value="telugu">Telugu</option>
+                  <option value="malayali">Malayalam</option>
+                  <option value="bengali">Bengali</option>
+                  <option value="tamil">Tamil</option>
+                  <option value="assamese">Assamese</option>
+                  <option value="kannada">Kannada</option>
+                  <option value="marathi">Marathi</option>
+                  <option value="sanskrit">Sanskrit</option>
+                  <option value="oriya">Oriya</option>
+                </select>
+            
+            <input type="button" value="Clear" name="B4" onclick="reset();" tabindex="3">
+  <input type="submit" name="done" value="Done" onclick="document.box.uttflag.value=1;">
+  <input type="hidden" name="uttflag" value="0">
+  </td>
+  <td> </td>
+  </tr>
+  <tr><td><b>Input in IT3 format</b></td><td><b>Output in unicode UTF-8</b></td></tr>
+   <tr valign="top">
+    <td>
+    <textarea rows="2" cols="60" id='input-area' name="ip" tabindex="1" onkeyup="" onmouseup="" class="form" style="border:1px solid #00006C; "></textarea>
+    </td>
+    <td>
+    <textarea rows="2" cols="40" name="op" readonly="true" class="form" style="border:1px solid #00006C; font-family:RaghuOriya"> </textarea>
+    </td>
+  </tr>
+   <tr valign="top">
+    <td>
+    <textarea rows="15" cols="46" name="refip" id="refipid" readonly="true" onkeyup="updatepos(this,document.box.refop)" onmouseup="updatePosition(this,document.box.refop)" class="form" style="background-color:#dddddd; border:1px solid #888888;font-size:11pt;" wrap="on">a aa i ii u uu rx rx~ e ei ai o oo au an: ah:
+
+ka kha ga gha ng~a
+cha chha ja jha nj~a
+t:a t:ha d:a d:ha nd~a
+ta tha da dha na
+pa pha ba bha ma
+ya ra la va
+sa sha shha ha l:a
+
+ka kaa ki kii ku kuu krx krx~ ke kei kai ko koo kau kan: kah:</textarea>
+    </td>
+    <td>
+    <textarea rows="14" cols="40" name="refop" id="refopid" readonly="true" class="form" style="background-color:#dddddd; border:1px solid #00006C; font-family:RaghuOriya"> </textarea>
+    </td>
+  </tr>
+</tbody></table>
+</form>
+
+    
+  </body>
+</html>
