@@ -5,9 +5,23 @@ var wavesurfer = WaveSurfer.create({
                 barGap: 1,
                 height: 500,
                 backgroundColor: 'grey',
+                normalize : 'true',
             });
 function clearcontent(element){
     element.value = '';
+}
+
+wavesurfer.on('ready', function () {
+  var timeline = Object.create(WaveSurfer.Timeline);
+
+  timeline.init({
+    wavesurfer: wavesurfer,
+    container: '#waveform-timeline'
+  });
+});
+
+function zoom(elem){
+    wavesurfer.zoom(elem.value);
 }
 
 function playButton(){
@@ -195,7 +209,7 @@ function addplaybacks(subword){
                         if(partnum == 1){
                             var begin = 0.000066375*parseFloat(fields[1]);
                             var end = 0.000066375*parseFloat(fields[2]);
-                            td.innerHTML = '<button type="button" style="width:120px;" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                            td.innerHTML = '<button type="button" style="width:120px;" onclick="wavesurfer.play('+begin+','+end+')" class="btn btn-info">'+fields[0]+'</button>';
                         }
                         
                         if(partnum == 2){
@@ -235,13 +249,34 @@ function addplaybacks(subword){
                     tr.appendChild(td = document.createElement("td"));
                     
                     if(i == 0){
-                        var begin = 0.000066375*parseFloat(fields[1]);
-                        var end = 0.000066375*parseFloat(fields[2]);
-                        td.innerHTML = '<button type="button" style="width:120px;" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                       if(partnum == 1){
+                            var begin = 0.000066375*parseFloat(fields[1]);
+                            var end = 0.000066375*parseFloat(fields[2]);
+                            td.innerHTML = '<button type="button" style="width:120px;" onclick="wavesurfer.play('+begin+','+end+')" class="btn btn-info">'+fields[0]+'</button>';
+                        }
+                        
+                        if(partnum == 2){
+                            td.innerHTML = fields[0];
+                        }
                     }
                     
                     else{
-                        td.innerHTML = fields[i];
+                        if(partnum == 1){
+                            td.innerHTML = fields[i];
+                        }
+                        
+                        else{
+                            if(i == 1){
+                                var result_html = "<input size=10 type=text name=ubeg"+itr+" onchange=verify_ans(this,"+fields[1]+") />";
+                                td.innerHTML = result_html;
+                            }
+                                
+                            if(i == 2){
+                                var result_html = "<input size=10 type=text name=uend"+itr+" onchange=verify_ans(this,"+fields[2]+") />";
+                                td.innerHTML = result_html;
+                            }
+                            
+                        }
                     }
                 }
                 
@@ -257,13 +292,34 @@ function addplaybacks(subword){
                     tr.appendChild(td = document.createElement("td"));
                     
                     if(i == 0){
-                        var begin = 0.000066375*parseFloat(fields[1]);
-                        var end = 0.000066375*parseFloat(fields[2]);
-                        td.innerHTML = '<button type="button" style="width:120px;" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                       if(partnum == 1){
+                            var begin = 0.000066375*parseFloat(fields[1]);
+                            var end = 0.000066375*parseFloat(fields[2]);
+                            td.innerHTML = '<button type="button" style="width:120px;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                        }
+                        
+                        if(partnum == 2){
+                            td.innerHTML = fields[0];
+                        }
                     }
                     
                     else{
-                        td.innerHTML = fields[i];
+                        if(partnum == 1){
+                            td.innerHTML = fields[i];
+                        }
+                        
+                        else{
+                            if(i == 1){
+                                var result_html = "<input size=10 type=text name=ubeg"+itr+" onchange=verify_ans(this,"+fields[1]+") />";
+                                td.innerHTML = result_html;
+                            }
+                                
+                            if(i == 2){
+                                var result_html = "<input size=10 type=text name=uend"+itr+" onchange=verify_ans(this,"+fields[2]+") />";
+                                td.innerHTML = result_html;
+                            }
+                            
+                        }
                     }
                 }
             }
@@ -278,13 +334,34 @@ function addplaybacks(subword){
                     tr.appendChild(td = document.createElement("td"));
                     
                     if(i == 0){
-                        var begin = 0.000066375*parseFloat(fields[1]);
-                        var end = 0.000066375*parseFloat(fields[2]);
-                        td.innerHTML = '<button type="button" style="width:120px;" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                       if(partnum == 1){
+                            var begin = 0.000066375*parseFloat(fields[1]);
+                            var end = 0.000066375*parseFloat(fields[2]);
+                            td.innerHTML = '<button type="button" style="width:120px;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                        }
+                        
+                        if(partnum == 2){
+                            td.innerHTML = fields[0];
+                        }
                     }
                     
                     else{
-                        td.innerHTML = fields[i];
+                        if(partnum == 1){
+                            td.innerHTML = fields[i];
+                        }
+                        
+                        else{
+                            if(i == 1){
+                                var result_html = "<input size=10 type=text name=ubeg"+itr+" onchange=verify_ans(this,"+fields[1]+") />";
+                                td.innerHTML = result_html;
+                            }
+                                
+                            if(i == 2){
+                                var result_html = "<input size=10 type=text name=uend"+itr+" onchange=verify_ans(this,"+fields[2]+") />";
+                                td.innerHTML = result_html;
+                            }
+                            
+                        }
                     }
                 }
             }
@@ -303,13 +380,34 @@ function addplaybacks(subword){
                     tr.appendChild(td = document.createElement("td"));
                     
                     if(i == 0){
-                        var begin = 0.000066375*parseFloat(fields[1]);
-                        var end = 0.000066375*parseFloat(fields[2]);
-                        td.innerHTML = '<button type="button" style="width:120px;" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                       if(partnum == 1){
+                            var begin = 0.000066375*parseFloat(fields[1]);
+                            var end = 0.000066375*parseFloat(fields[2]);
+                            td.innerHTML = '<button type="button" style="width:120px;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                        }
+                        
+                        if(partnum == 2){
+                            td.innerHTML = fields[0];
+                        }
                     }
                     
                     else{
-                        td.innerHTML = fields[i];
+                        if(partnum == 1){
+                            td.innerHTML = fields[i];
+                        }
+                        
+                        else{
+                            if(i == 1){
+                                var result_html = "<input size=10 type=text name=ubeg"+itr+" onchange=verify_ans(this,"+fields[1]+") />";
+                                td.innerHTML = result_html;
+                            }
+                                
+                            if(i == 2){
+                                var result_html = "<input size=10 type=text name=uend"+itr+" onchange=verify_ans(this,"+fields[2]+") />";
+                                td.innerHTML = result_html;
+                            }
+                            
+                        }
                     }
                 }
             }
@@ -325,13 +423,34 @@ function addplaybacks(subword){
                     tr.appendChild(td = document.createElement("td"));
                     
                     if(i == 0){
-                        var begin = 0.000066375*parseFloat(fields[1]);
-                        var end = 0.000066375*parseFloat(fields[2]);
-                        td.innerHTML = '<button type="button" style="width:120px;" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                       if(partnum == 1){
+                            var begin = 0.000066375*parseFloat(fields[1]);
+                            var end = 0.000066375*parseFloat(fields[2]);
+                            td.innerHTML = '<button type="button" style="width:120px;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                        }
+                        
+                        if(partnum == 2){
+                            td.innerHTML = fields[0];
+                        }
                     }
                     
                     else{
-                        td.innerHTML = fields[i];
+                        if(partnum == 1){
+                            td.innerHTML = fields[i];
+                        }
+                        
+                        else{
+                            if(i == 1){
+                                var result_html = "<input size=10 type=text name=ubeg"+itr+" onchange=verify_ans(this,"+fields[1]+") />";
+                                td.innerHTML = result_html;
+                            }
+                                
+                            if(i == 2){
+                                var result_html = "<input size=10 type=text name=uend"+itr+" onchange=verify_ans(this,"+fields[2]+") />";
+                                td.innerHTML = result_html;
+                            }
+                            
+                        }
                     }
                 }
                 
@@ -348,13 +467,34 @@ function addplaybacks(subword){
                     tr.appendChild(td = document.createElement("td"));
                     
                     if(i == 0){
-                        var begin = 0.000066375*parseFloat(fields[1]);
-                        var end = 0.000066375*parseFloat(fields[2]);
-                        td.innerHTML = '<button type="button" style="width:120px;" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                       if(partnum == 1){
+                            var begin = 0.000066375*parseFloat(fields[1]);
+                            var end = 0.000066375*parseFloat(fields[2]);
+                            td.innerHTML = '<button type="button" style="width:120px;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                        }
+                        
+                        if(partnum == 2){
+                            td.innerHTML = fields[0];
+                        }
                     }
                     
                     else{
-                        td.innerHTML = fields[i];
+                        if(partnum == 1){
+                            td.innerHTML = fields[i];
+                        }
+                        
+                        else{
+                            if(i == 1){
+                                var result_html = "<input size=10 type=text name=ubeg"+itr+" onchange=verify_ans(this,"+fields[1]+") />";
+                                td.innerHTML = result_html;
+                            }
+                                
+                            if(i == 2){
+                                var result_html = "<input size=10 type=text name=uend"+itr+" onchange=verify_ans(this,"+fields[2]+") />";
+                                td.innerHTML = result_html;
+                            }
+                            
+                        }
                     }
                 }
                 
@@ -370,13 +510,34 @@ function addplaybacks(subword){
                     tr.appendChild(td = document.createElement("td"));
                     
                     if(i == 0){
-                        var begin = 0.000066375*parseFloat(fields[1]);
-                        var end = 0.000066375*parseFloat(fields[2]);
-                        td.innerHTML = '<button type="button" style="width:120px;" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                       if(partnum == 1){
+                            var begin = 0.000066375*parseFloat(fields[1]);
+                            var end = 0.000066375*parseFloat(fields[2]);
+                            td.innerHTML = '<button type="button" style="width:120px;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                        }
+                        
+                        if(partnum == 2){
+                            td.innerHTML = fields[0];
+                        }
                     }
                     
                     else{
-                        td.innerHTML = fields[i];
+                        if(partnum == 1){
+                            td.innerHTML = fields[i];
+                        }
+                        
+                        else{
+                            if(i == 1){
+                                var result_html = "<input size=10 type=text name=ubeg"+itr+" onchange=verify_ans(this,"+fields[1]+") />";
+                                td.innerHTML = result_html;
+                            }
+                                
+                            if(i == 2){
+                                var result_html = "<input size=10 type=text name=uend"+itr+" onchange=verify_ans(this,"+fields[2]+") />";
+                                td.innerHTML = result_html;
+                            }
+                            
+                        }
                     }
                 }
                 
@@ -396,13 +557,34 @@ function addplaybacks(subword){
                     tr.appendChild(td = document.createElement("td"));
                     
                     if(i == 0){
-                        var begin = 0.000066375*parseFloat(fields[1]);
-                        var end = 0.000066375*parseFloat(fields[2]);
-                        td.innerHTML = '<button type="button" style="width:120px;" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                       if(partnum == 1){
+                            var begin = 0.000066375*parseFloat(fields[1]);
+                            var end = 0.000066375*parseFloat(fields[2]);
+                            td.innerHTML = '<button type="button" style="width:120px;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                        }
+                        
+                        if(partnum == 2){
+                            td.innerHTML = fields[0];
+                        }
                     }
                     
                     else{
-                        td.innerHTML = fields[i];
+                        if(partnum == 1){
+                            td.innerHTML = fields[i];
+                        }
+                        
+                        else{
+                            if(i == 1){
+                                var result_html = "<input size=10 type=text name=ubeg"+itr+" onchange=verify_ans(this,"+fields[1]+") />";
+                                td.innerHTML = result_html;
+                            }
+                                
+                            if(i == 2){
+                                var result_html = "<input size=10 type=text name=uend"+itr+" onchange=verify_ans(this,"+fields[2]+") />";
+                                td.innerHTML = result_html;
+                            }
+                            
+                        }
                     }
                 }
                 
@@ -419,13 +601,34 @@ function addplaybacks(subword){
                     tr.appendChild(td = document.createElement("td"));
                     
                     if(i == 0){
-                        var begin = 0.000066375*parseFloat(fields[1]);
-                        var end = 0.000066375*parseFloat(fields[2]);
-                        td.innerHTML = '<button type="button" style="width:120px;" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                       if(partnum == 1){
+                            var begin = 0.000066375*parseFloat(fields[1]);
+                            var end = 0.000066375*parseFloat(fields[2]);
+                            td.innerHTML = '<button type="button" style="width:120px;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                        }
+                        
+                        if(partnum == 2){
+                            td.innerHTML = fields[0];
+                        }
                     }
                     
                     else{
-                        td.innerHTML = fields[i];
+                        if(partnum == 1){
+                            td.innerHTML = fields[i];
+                        }
+                        
+                        else{
+                            if(i == 1){
+                                var result_html = "<input size=10 type=text name=ubeg"+itr+" onchange=verify_ans(this,"+fields[1]+") />";
+                                td.innerHTML = result_html;
+                            }
+                                
+                            if(i == 2){
+                                var result_html = "<input size=10 type=text name=uend"+itr+" onchange=verify_ans(this,"+fields[2]+") />";
+                                td.innerHTML = result_html;
+                            }
+                            
+                        }
                     }
                 }
                 
@@ -442,13 +645,34 @@ function addplaybacks(subword){
                     tr.appendChild(td = document.createElement("td"));
                     
                     if(i == 0){
-                        var begin = 0.000066375*parseFloat(fields[1]);
-                        var end = 0.000066375*parseFloat(fields[2]);
-                        td.innerHTML = '<button type="button" style="width:120px;" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                       if(partnum == 1){
+                            var begin = 0.000066375*parseFloat(fields[1]);
+                            var end = 0.000066375*parseFloat(fields[2]);
+                            td.innerHTML = '<button type="button" style="width:120px;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                        }
+                        
+                        if(partnum == 2){
+                            td.innerHTML = fields[0];
+                        }
                     }
                     
                     else{
-                        td.innerHTML = fields[i];
+                        if(partnum == 1){
+                            td.innerHTML = fields[i];
+                        }
+                        
+                        else{
+                            if(i == 1){
+                                var result_html = "<input size=10 type=text name=ubeg"+itr+" onchange=verify_ans(this,"+fields[1]+") />";
+                                td.innerHTML = result_html;
+                            }
+                                
+                            if(i == 2){
+                                var result_html = "<input size=10 type=text name=uend"+itr+" onchange=verify_ans(this,"+fields[2]+") />";
+                                td.innerHTML = result_html;
+                            }
+                            
+                        }
                     }
                 }
                 
@@ -465,13 +689,34 @@ function addplaybacks(subword){
                     tr.appendChild(td = document.createElement("td"));
                     
                     if(i == 0){
-                        var begin = 0.000066375*parseFloat(fields[1]);
-                        var end = 0.000066375*parseFloat(fields[2]);
-                        td.innerHTML = '<button type="button" style="width:120px;" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                       if(partnum == 1){
+                            var begin = 0.000066375*parseFloat(fields[1]);
+                            var end = 0.000066375*parseFloat(fields[2]);
+                            td.innerHTML = '<button type="button" style="width:120px;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                        }
+                        
+                        if(partnum == 2){
+                            td.innerHTML = fields[0];
+                        }
                     }
                     
                     else{
-                        td.innerHTML = fields[i];
+                        if(partnum == 1){
+                            td.innerHTML = fields[i];
+                        }
+                        
+                        else{
+                            if(i == 1){
+                                var result_html = "<input size=10 type=text name=ubeg"+itr+" onchange=verify_ans(this,"+fields[1]+") />";
+                                td.innerHTML = result_html;
+                            }
+                                
+                            if(i == 2){
+                                var result_html = "<input size=10 type=text name=uend"+itr+" onchange=verify_ans(this,"+fields[2]+") />";
+                                td.innerHTML = result_html;
+                            }
+                            
+                        }
                     }
                 }
                 

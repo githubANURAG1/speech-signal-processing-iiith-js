@@ -77,19 +77,23 @@ function Verify(){
         return;
     }
     
-    var input = document.getElementById('utteng').value;
-    var phnseq = utt2phn(input);
-    var rsylseq = phn2syl(phnseq);
-    //document.getElementById('refsyl').value = rsylseq;
-    var table = document.getElementById('second-table');
-    table.appendChild(tr = document.createElement("tr"));
-    tr.appendChild(td = document.createElement("td"));
-    td.innerHTML = 'Ref Syllables';
-    tr.appendChild(td = document.createElement("td"));
-    td.innerHTML = rsylseq;
-    document.getElementById('third-page').style.visibility = 'visible';
-    rsylseq = rsylseq.trim();
-    generate_table(rsylseq.replace(/\s+/g,' ',));
+    if(document.getElementById("Ref-syll") == null){
+        var input = document.getElementById('utteng').value;
+        var phnseq = utt2phn(input);
+        var rsylseq = phn2syl(phnseq);
+        //document.getElementById('refsyl').value = rsylseq;
+        var table = document.getElementById('second-table');
+        table.appendChild(tr = document.createElement("tr"));
+        tr.appendChild(td = document.createElement("td"));
+        td.innerHTML = 'Ref Syllables';
+        tr.appendChild(td = document.createElement("td"));
+        td.innerHTML = rsylseq;
+        td.setAttribute("id","Ref-syll");
+        document.getElementById('third-page').style.visibility = 'visible';
+        rsylseq = rsylseq.trim();
+        generate_table(rsylseq.replace(/\s+/g,' ',));
+    }
+    
 }
 
 function phn2syl(phnseq){
