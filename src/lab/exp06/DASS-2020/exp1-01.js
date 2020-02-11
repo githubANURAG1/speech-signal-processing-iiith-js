@@ -6,6 +6,14 @@ var wavesurfer = WaveSurfer.create({
                 height: 500,
                 backgroundColor: 'grey',
                 normalize : 'true',
+     plugins: [
+        WaveSurfer.spectrogram.create({
+            wavesurfer: wavesurfer,
+            container: "#wave-spectrogram",
+            labels: true
+        })
+    ]
+
             });
 function clearcontent(element){
     element.value = '';
