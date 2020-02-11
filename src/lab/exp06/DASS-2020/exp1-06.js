@@ -9,10 +9,12 @@ var wavesurfer = WaveSurfer.create({
      plugins: [
         WaveSurfer.spectrogram.create({
             wavesurfer: wavesurfer,
-            container: "#wave-spectrogram",
+            container: "#wave-spectrogram1",
             labels: true
         })
     ]
+  
+
 
             });
 function clearcontent(element){

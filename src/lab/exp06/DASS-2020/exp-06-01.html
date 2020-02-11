@@ -67,21 +67,37 @@
         <ol style='font-size: small;'>
             <li >Verify the subword unit boundaries given in the table by zooming and listening to selected portions of the waveform.</li><li>Note that clicking on the symbol within the first column of the table automatically zooms to fit the presegmented label.</li><li>Repeat the experiment by choosing word and phoneme as the subword unit.</li>
         </ol>
-          
+          <br>
+          <p>Note:all the speech segments are sampled at 8 KHz</p>
         <table>
             <tr>
                 <td style="width: 700px;padding-top: 7%;" id='mt-2 col-md-12'>
+                    <button type="button" class="btn btn-primary position-relative" name="play" onclick="playButton();">Play/Pause</button>
+                <select name=exnum id=exnum onchange="LoadExperiment(this);">
+                <option value=0 >WB Window Size:</option>
+                <option value=1>16</option>
+                <option value=2>32</option>
+                <option value=3>64</option>
+                <option value=4>128</option>
+                <option value=5>256</option>
+                <option value=6>512</option>
+                </select>
+                <select name=exnum id=exnum onchange="LoadExperiment(this);">
+                <option value=0 >NB Window Size:</option>
+                <option value=1>256</option>
+                <option value=2>512</option>
+                <option value=2>1024</option>
+                </select>
                     <div class="vl col-md-12"><div id='waveform' class='position-relative' style="width: 600px;"></div></div>
-                
                     <div col-md-12 style="padding-left: 3%;"><div id="waveform-timeline"></div>
-                    <div col-md-12 style="padding-left: 3%;"><div id="wave-spectrogram"></div>
+                    <div col-md-12 style="padding-left: 3%;"><div id="wave-spectrogram1"></div>
+                    <!---<div col-md-12 style="padding-left: 3%;"><div id="wave-spectrogram2"></div> -->
                     </div>
                     
                     
                     <script src="exp1-06.js"></script>
                     <br>
                     <div class='mt-2 col-md-10' style="padding-left: 35%;">
-                    <button type="button" class="btn btn-primary position-relative" name="play" onclick="playButton();">Play/Pause</button>
                     </div>
                     <p class="row">
                         <div class="col-xs-1">
