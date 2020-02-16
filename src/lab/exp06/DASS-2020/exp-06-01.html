@@ -7,9 +7,9 @@
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
-    <script src='https://unpkg.com/wavesurfer.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/3.3.1/wavesurfer.min.js'></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/plugin/wavesurfer.timeline.min.js"></script>
-<script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.spectrogram.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/3.3.1/plugin/wavesurfer.spectrogram.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
       <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -36,7 +36,7 @@
     </select>
     <input type=Reset name=go value=Reset onclick="hideDiv();" class="btn btn-info btn-sm" style="position: relative;left: 2%;">
     </form>
-      <div id="SelectLoad" class="justify-content-md-center" style='visibility: hidden;position: relative;top:2%'>
+    <div id="SelectLoad" class="justify-content-md-center" style='visibility: hidden;position: relative;top:2%'>
     <div>
     <font size=-1 >Change subword unit: </font>
     <select name=swunit id ='swunit' onchange=loadSubword(this);>
@@ -45,6 +45,25 @@
     <option name=wrd value='word'>Word</option>";
       </select>
     </div>
+
+   
+    <div>
+    <font size=-1 >Change Band: </font>
+
+                <select name=nb id=nb onchange=loadSpect(this);> 
+                <option value=512 >Spectrogram Window Size: (Default=512)</option>
+                <option value=16>16</option>
+                <option value=32>32</option>
+                <option value=64>64</option>
+                <option value=128>128</option>
+                <option value=256>256</option>
+                <option value=512>512</option>
+                <option value=1024>1024</option>
+                </select> 
+    </div>
+
+
+
     <div hidden id='lang'></div>
     <div style="padding-top: 2%;">
     <table id=exptable border="1">
@@ -68,34 +87,18 @@
             <li >Verify the subword unit boundaries given in the table by zooming and listening to selected portions of the waveform.</li><li>Note that clicking on the symbol within the first column of the table automatically zooms to fit the presegmented label.</li><li>Repeat the experiment by choosing word and phoneme as the subword unit.</li>
         </ol>
           <br>
-          <p>Note:all the speech segments are sampled at 8 KHz</p>
         <table>
             <tr>
                 <td style="width: 700px;padding-top: 7%;" id='mt-2 col-md-12'>
                     <button type="button" class="btn btn-primary position-relative" name="play" onclick="playButton();">Play/Pause</button>
-                <select name=exnum id=exnum onchange="LoadExperiment(this);">
-                <option value=0 >WB Window Size:</option>
-                <option value=1>16</option>
-                <option value=2>32</option>
-                <option value=3>64</option>
-                <option value=4>128</option>
-                <option value=5>256</option>
-                <option value=6>512</option>
-                </select>
-                <select name=exnum id=exnum onchange="LoadExperiment(this);">
-                <option value=0 >NB Window Size:</option>
-                <option value=1>256</option>
-                <option value=2>512</option>
-                <option value=2>1024</option>
-                </select>
+                
                     <div class="vl col-md-12"><div id='waveform' class='position-relative' style="width: 600px;"></div></div>
                     <div col-md-12 style="padding-left: 3%;"><div id="waveform-timeline"></div>
-                    <div col-md-12 style="padding-left: 3%;"><div id="wave-spectrogram1"></div>
+                    <div col-md-12 style="padding-left: 3%;"><div id="wave-spectrogram1"></div> 
                     <!---<div col-md-12 style="padding-left: 3%;"><div id="wave-spectrogram2"></div> -->
                     </div>
-                    
-                    
                     <script src="exp1-06.js"></script>
+                    <button type="button" class="btn btn-primary position-relative" name="play" onclick="playButton();">Play/Pause</button>
                     <br>
                     <div class='mt-2 col-md-10' style="padding-left: 35%;">
                     </div>

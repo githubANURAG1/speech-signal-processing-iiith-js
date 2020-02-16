@@ -1,34 +1,26 @@
-var wavesurfer = WaveSurfer.create({
-                container: '#waveform',
-                waveColor: 'blue',
-                barHeight: 2,
-                barGap: 1,
-                height: 500,
-                backgroundColor: 'grey',
-                normalize : 'true',
-     plugins: [
-        WaveSurfer.spectrogram.create({
-            wavesurfer: wavesurfer,
-            container: "#wave-spectrogram1",
-            labels: true
-        })
-    ]
-  
+var NBVal= 512
 
+console.log(NBVal)
+var SpectrogramPlugin = window.WaveSurfer.spectrogram;
+var spect
+var wavesurfer
 
-            });
+function loadSpect(bandVal){
+	NBVal=bandVal.value;
+	expVal=document.getElementById('exnum').value
+	console.log(NBVal)
+	//wavesurfer.drawer.clearWave();
+	spect.params.fftSamples = NBVal
+	console.log(spect)
+	//wavesurfer.drawBuffer()
+	loadExpFrame(expVal)
+}
+
 function clearcontent(element){
     element.value = '';
 }
 
-wavesurfer.on('ready', function () {
-  var timeline = Object.create(WaveSurfer.Timeline);
 
-  timeline.init({
-    wavesurfer: wavesurfer,
-    container: '#waveform-timeline'
-  });
-});
 
 function zoom(elem){
     wavesurfer.zoom(elem.value);
@@ -77,6 +69,32 @@ function setup() {
 }
 
 function loadExpFrame(expnum=0) {
+	wavesurfer = WaveSurfer.create({
+                container: '#waveform',
+                waveColor: 'blue',
+                barHeight: 2,
+                barGap: 1,
+                height: 500,
+                backgroundColor: 'grey',
+                normalize : 'true',
+     plugins: [
+        spect = SpectrogramPlugin.create({
+            wavesurfer: wavesurfer,
+            container: "#wave-spectrogram1",
+            fftSamples: NBVal,
+            labels: true
+        })
+    ]
+ });
+
+	wavesurfer.on('ready', function () {
+  var timeline = Object.create(WaveSurfer.Timeline);
+
+  timeline.init({
+    wavesurfer: wavesurfer,
+    container: '#waveform-timeline'
+  });
+});
     if(expnum != 0){
         document.getElementById('swunit').selectedIndex = 0;
         document.getElementById('SelectLoad').style.visibility = 'visible';
@@ -115,6 +133,7 @@ function loadExpFrame(expnum=0) {
         document.getElementById('SelectLoad').style.visibility = 'hidden';
     }
 }
+
 
 function loadSubword(subword) {
         var field = document.getElementById("lang").value;
