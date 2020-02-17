@@ -1,19 +1,52 @@
-var NBVal= 512
+var BVal= 512
 
-console.log(NBVal)
+console.log(BVal)
 var SpectrogramPlugin = window.WaveSurfer.spectrogram;
 var spect
-var wavesurfer
+var wavesurfer = WaveSurfer.create({
+                container: '#waveform',
+                waveColor: 'blue',
+                barHeight: 2,
+                barGap: 1,
+                height: 500,
+                backgroundColor: 'grey',
+                normalize : 'true',
+     plugins: [
+        SpectrogramPlugin.create({
+            wavesurfer: wavesurfer,
+            container: "#wave-spectrogram1",
+            //fftSamples: NBVal,
+            labels: true
+        })
+    ]
+ });
 
 function loadSpect(bandVal){
-	NBVal=bandVal.value;
+	BVal=bandVal.value;
 	expVal=document.getElementById('exnum').value
-	console.log(NBVal)
-	//wavesurfer.drawer.clearWave();
-	spect.params.fftSamples = NBVal
-	console.log(spect)
-	//wavesurfer.drawBuffer()
-	loadExpFrame(expVal)
+	console.log(BVal)
+	window.wavesurfer.unAll()
+	window.wavesurfer.destroy()
+window.wavesurfer = WaveSurfer.create({
+                container: '#waveform',
+                waveColor: 'blue',
+                barHeight: 2,
+                barGap: 1,
+                height: 500,
+                backgroundColor: 'grey',
+                normalize : 'true',
+     plugins: [
+        SpectrogramPlugin.create({
+            wavesurfer: wavesurfer,
+            container: "#wave-spectrogram1",
+            fftSamples: parseInt(BVal),
+            labels: true
+        })
+    ]
+ });
+	console.log(window.wavesurfer)
+
+loadExpFrame(expVal)
 }
 
 function clearcontent(element){
@@ -69,25 +102,7 @@ function setup() {
 }
 
 function loadExpFrame(expnum=0) {
-	wavesurfer = WaveSurfer.create({
-                container: '#waveform',
-                waveColor: 'blue',
-                barHeight: 2,
-                barGap: 1,
-                height: 500,
-                backgroundColor: 'grey',
-                normalize : 'true',
-     plugins: [
-        spect = SpectrogramPlugin.create({
-            wavesurfer: wavesurfer,
-            container: "#wave-spectrogram1",
-            fftSamples: NBVal,
-            labels: true
-        })
-    ]
- });
-
-	wavesurfer.on('ready', function () {
+	window.wavesurfer.on('ready', function () {
   var timeline = Object.create(WaveSurfer.Timeline);
 
   timeline.init({
@@ -95,6 +110,7 @@ function loadExpFrame(expnum=0) {
     container: '#waveform-timeline'
   });
 });
+
     if(expnum != 0){
         document.getElementById('swunit').selectedIndex = 0;
         document.getElementById('SelectLoad').style.visibility = 'visible';
