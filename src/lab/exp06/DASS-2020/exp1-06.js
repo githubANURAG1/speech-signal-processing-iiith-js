@@ -5,17 +5,17 @@ var SpectrogramPlugin = window.WaveSurfer.spectrogram;
 var spect
 var wavesurfer = WaveSurfer.create({
                 container: '#waveform',
-                waveColor: 'blue',
+                waveColor: '#176696',
                 barHeight: 2,
                 barGap: 1,
                 height: 500,
-                backgroundColor: 'grey',
+                backgroundColor: 'lightgrey',
                 normalize : 'true',
      plugins: [
         SpectrogramPlugin.create({
             wavesurfer: wavesurfer,
             container: "#wave-spectrogram1",
-            //fftSamples: NBVal,
+            fftSamples: parseInt(BVal),
             labels: true
         })
     ]
@@ -29,11 +29,11 @@ function loadSpect(bandVal){
 	window.wavesurfer.destroy()
 window.wavesurfer = WaveSurfer.create({
                 container: '#waveform',
-                waveColor: 'blue',
+                waveColor: '#176696',
                 barHeight: 2,
                 barGap: 1,
                 height: 500,
-                backgroundColor: 'grey',
+                backgroundColor: 'lightgrey',
                 normalize : 'true',
      plugins: [
         SpectrogramPlugin.create({
@@ -254,7 +254,7 @@ function addplaybacks(subword){
                         if(partnum == 1){
                             var begin = 0.000066375*parseFloat(fields[1]);
                             var end = 0.000066375*parseFloat(fields[2]);
-                            td.innerHTML = '<button type="button" style="width:120px;" onclick="wavesurfer.play('+begin+','+end+')" class="btn btn-info">'+fields[0]+'</button>';
+                            td.innerHTML = '<button type="button" style="width:120px; background-color:#176696; border-color:#176696;" onclick="wavesurfer.play('+begin+','+end+')" class="btn btn-info">'+fields[0]+'</button>';
                         }
                         
                         if(partnum == 2){
@@ -297,7 +297,7 @@ function addplaybacks(subword){
                        if(partnum == 1){
                             var begin = 0.000066375*parseFloat(fields[1]);
                             var end = 0.000066375*parseFloat(fields[2]);
-                            td.innerHTML = '<button type="button" style="width:120px;" onclick="wavesurfer.play('+begin+','+end+')" class="btn btn-info">'+fields[0]+'</button>';
+                            td.innerHTML = '<button type="button" style="width:120px; background-color:#176696; border-color:#176696;" onclick="wavesurfer.play('+begin+','+end+')" class="btn btn-info">'+fields[0]+'</button>';
                         }
                         
                         if(partnum == 2){
@@ -340,7 +340,7 @@ function addplaybacks(subword){
                        if(partnum == 1){
                             var begin = 0.000066375*parseFloat(fields[1]);
                             var end = 0.000066375*parseFloat(fields[2]);
-                            td.innerHTML = '<button type="button" style="width:120px;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                            td.innerHTML = '<button type="button" style="width:120px; background-color:#176696; border-color:#176696;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
                         }
                         
                         if(partnum == 2){
@@ -382,7 +382,7 @@ function addplaybacks(subword){
                        if(partnum == 1){
                             var begin = 0.000066375*parseFloat(fields[1]);
                             var end = 0.000066375*parseFloat(fields[2]);
-                            td.innerHTML = '<button type="button" style="width:120px;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                            td.innerHTML = '<button type="button" style="width:120px; background-color:#176696; border-color:#176696;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
                         }
                         
                         if(partnum == 2){
@@ -428,7 +428,7 @@ function addplaybacks(subword){
                        if(partnum == 1){
                             var begin = 0.000066375*parseFloat(fields[1]);
                             var end = 0.000066375*parseFloat(fields[2]);
-                            td.innerHTML = '<button type="button" style="width:120px;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                            td.innerHTML = '<button type="button" style="width:120px; background-color:#176696; border-color:#176696;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
                         }
                         
                         if(partnum == 2){
@@ -471,7 +471,7 @@ function addplaybacks(subword){
                        if(partnum == 1){
                             var begin = 0.000066375*parseFloat(fields[1]);
                             var end = 0.000066375*parseFloat(fields[2]);
-                            td.innerHTML = '<button type="button" style="width:120px;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                            td.innerHTML = '<button type="button" style="width:120px; background-color:#176696; border-color:#176696;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
                         }
                         
                         if(partnum == 2){
@@ -515,7 +515,7 @@ function addplaybacks(subword){
                        if(partnum == 1){
                             var begin = 0.000066375*parseFloat(fields[1]);
                             var end = 0.000066375*parseFloat(fields[2]);
-                            td.innerHTML = '<button type="button" style="width:120px;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                            td.innerHTML = '<button type="button" style="width:120px; background-color:#176696; border-color:#176696;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
                         }
                         
                         if(partnum == 2){
@@ -558,7 +558,7 @@ function addplaybacks(subword){
                        if(partnum == 1){
                             var begin = 0.000066375*parseFloat(fields[1]);
                             var end = 0.000066375*parseFloat(fields[2]);
-                            td.innerHTML = '<button type="button" style="width:120px;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                            td.innerHTML = '<button type="button" style="width:120px; background-color:#176696; border-color:#176696;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
                         }
                         
                         if(partnum == 2){
@@ -605,7 +605,7 @@ function addplaybacks(subword){
                        if(partnum == 1){
                             var begin = 0.000066375*parseFloat(fields[1]);
                             var end = 0.000066375*parseFloat(fields[2]);
-                            td.innerHTML = '<button type="button" style="width:120px;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                            td.innerHTML = '<button type="button" style="width:120px; background-color:#176696; border-color:#176696;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
                         }
                         
                         if(partnum == 2){
@@ -649,7 +649,7 @@ function addplaybacks(subword){
                        if(partnum == 1){
                             var begin = 0.000066375*parseFloat(fields[1]);
                             var end = 0.000066375*parseFloat(fields[2]);
-                            td.innerHTML = '<button type="button" style="width:120px;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                            td.innerHTML = '<button type="button" style="width:120px; background-color:#176696; border-color:#176696;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
                         }
                         
                         if(partnum == 2){
@@ -693,7 +693,7 @@ function addplaybacks(subword){
                        if(partnum == 1){
                             var begin = 0.000066375*parseFloat(fields[1]);
                             var end = 0.000066375*parseFloat(fields[2]);
-                            td.innerHTML = '<button type="button" style="width:120px;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                            td.innerHTML = '<button type="button" style="width:120px; background-color:#176696; border-color:#176696;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
                         }
                         
                         if(partnum == 2){
@@ -737,7 +737,7 @@ function addplaybacks(subword){
                        if(partnum == 1){
                             var begin = 0.000066375*parseFloat(fields[1]);
                             var end = 0.000066375*parseFloat(fields[2]);
-                            td.innerHTML = '<button type="button" style="width:120px;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
+                            td.innerHTML = '<button type="button" style="width:120px; background-color:#176696; border-color:#176696;" class="btn btn-info" onclick="wavesurfer.play('+begin+','+end+')">'+fields[0]+'</button>';
                         }
                         
                         if(partnum == 2){
