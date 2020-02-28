@@ -15,15 +15,23 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
       <link rel="stylesheet" type="text/css" href="exp-01.css">
   </head>
-  <body class="row d-flex justify-content-center" style="padding-top: 5%; ">
+  <body class="row d-flex justify-content-center">
     <input type="hidden" id='partnum' value='1' />
 
-    <table width=900><tr>
+    <div class="container-fluid ml-5 mt-5">
+        <div class="row">
+            <div class="col-sm"><h4>Part-1: Pre-segmented examples</h4></div>
+            <div class="col-sm"></div>
+            <div class="col-sm"><a href='exp-02.html'><b>Part-2 &gt;&gt;</b></a></div>
+        </div>
+    <!--<table width=900><tr>
     <td><h2>Part-1: Pre-segmented examples</h2></td>
     <td width=200 align=right><a href='exp-02.html'><b>Part-2 &gt;&gt;</b></a></td>
-    </tr></table>
-    <div>
+    </tr></table>-->
+    <div class="row ml-2">
     <font size=-1> <a href=readme.html>README</a></font><br><br>
+    </div>
+    <div class="row ml-3">
     <form method=post name=myform id=myform>
     <select name=exnum id=exnum onchange="LoadExperiment(this);">
     <option value=0 >Select an utterance</option>
@@ -32,10 +40,12 @@
     <option value=3>Ex-3: Kannada</option>
     <option value=4>Ex-4: Tamil</option>
     </select>
-    <input type=Reset name=go value=Reset onclick="hideDiv();" class="btn btn-info btn-sm" style="position: relative;left: 2%;">
+    <input type=Reset name=go value=Reset onclick="hideDiv();" class="btn btn-info btn-sm ml-2">
     </form>
+        </div>
       <div id="SelectLoad" class="justify-content-md-center" style='visibility: hidden;position: relative;top:2%'>
     <div>
+    <div class="row ml-3">
     <font size=-1 >Change subword unit: </font>
     <select name=swunit id ='swunit' onchange=loadSubword(this);>
     <option name=syl value='syll'>Syllable</option>
@@ -43,9 +53,10 @@
     <option name=wrd value='word'>Word</option>";
       </select>
     </div>
+    </div>
     <div hidden id='lang'></div>
     <div style="padding-top: 2%;">
-    <table id=exptable border="1">
+    <table id=exptable class="table table-striped" style="width: 60%">
         <tr>
             <th>Utterance</th>
             <td id='utterance'></td>
@@ -58,21 +69,21 @@
             <th>Subword units</th>
             <td id='subword'></td>
         </tr>
-        
+
     </table>
     </div>
           <br>
         <ol style='font-size: small;'>
             <li >Verify the subword unit boundaries given in the table by zooming and listening to selected portions of the waveform.</li><li>Note that clicking on the symbol within the first column of the table automatically zooms to fit the presegmented label.</li><li>Repeat the experiment by choosing word and phoneme as the subword unit.</li>
         </ol>
-          
+
         <table>
             <tr>
                 <td style="width: 700px;padding-top: 7%;" id='mt-2 col-md-12'>
-                    <div class="vl col-md-12"><div id='waveform' class='position-relative' style="width: 600px;"></div></div>
-                
+                    <div class="vl"><div id='waveform' class='position-relative' style="width: 600px;"></div></div>
+
                     <div col-md-12 style="padding-left: 3%;"><div id="waveform-timeline"></div></div>
-                    
+
                     <script src="exp1-01.js"></script>
                     <br>
                     <div class='mt-2 col-md-10' style="padding-left: 35%;">
@@ -80,9 +91,9 @@
                     </div>
                     <p class="row">
                         <div class="col-xs-1">
-                          <i class="glyphicon glyphicon-zoom-in"></i>
+                          <i class="glyphicon glyphicon-search"></i>
                         </div>
-                    
+
                         <div class="col-xs-10" style="padding-left: 3%;">
                             <input id="slider" type="range" min="1" max="10000" value="1" style="width: 86%" onchange="zoom(this);"/>
                         </div>
@@ -92,12 +103,14 @@
                         </div>
                 </td>
                 <td style="width: 150px;padding: 0%;">
-                    <table id="Subword" border="1">
+                    <table id="Subword" border="1" class="table">
+                        <thead class="thead-dark">
                         <tr>
                             <th>SYM</th>
                             <th>BEG</th>
                             <th>END</th>
                         </tr>
+                        </thead>
                     </table>
                 </td>
             </tr>
