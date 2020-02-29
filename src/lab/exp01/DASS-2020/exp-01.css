@@ -1,5 +1,5 @@
 .vl {
-  border-left: 4px solid grey;
+    display: flex;
 }
 
 .btn-info{
