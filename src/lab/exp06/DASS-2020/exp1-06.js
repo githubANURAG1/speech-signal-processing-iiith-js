@@ -9,7 +9,7 @@ var wavesurfer = WaveSurfer.create({
                 barHeight: 2,
                 barGap: 1,
                 height: 500,
-                backgroundColor: 'lightgrey',
+                backgroundColor: '#f5f5f5',
                 normalize : 'true',
      plugins: [
         SpectrogramPlugin.create({
@@ -33,7 +33,7 @@ window.wavesurfer = WaveSurfer.create({
                 barHeight: 2,
                 barGap: 1,
                 height: 500,
-                backgroundColor: 'lightgrey',
+                backgroundColor: '#f5f5f5',
                 normalize : 'true',
      plugins: [
         SpectrogramPlugin.create({
