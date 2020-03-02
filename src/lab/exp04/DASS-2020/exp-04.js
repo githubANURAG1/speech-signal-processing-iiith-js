@@ -1,4 +1,4 @@
-var BVal= 512
+var BVal= 16000
 
 console.log(BVal)
 var SpectrogramPlugin = window.WaveSurfer.spectrogram;
@@ -15,10 +15,11 @@ var wavesurfer = WaveSurfer.create({
         SpectrogramPlugin.create({
             wavesurfer: wavesurfer,
             container: "#wave-spectrogram1",
-            fftSamples: parseInt(BVal),
+            sampleRate: parseInt(BVal),
             labels: true
         })
     ]
+
  });
 
 function loadSpect(bandVal){
@@ -27,7 +28,7 @@ function loadSpect(bandVal){
 	console.log(BVal)
 	window.wavesurfer.unAll()
 	window.wavesurfer.destroy()
-window.wavesurfer = WaveSurfer.create({
+    window.wavesurfer = WaveSurfer.create({
                 container: '#waveform',
                 waveColor: '#176696',
                 barHeight: 2,
@@ -39,7 +40,7 @@ window.wavesurfer = WaveSurfer.create({
         SpectrogramPlugin.create({
             wavesurfer: wavesurfer,
             container: "#wave-spectrogram1",
-            fftSamples: parseInt(BVal),
+            sampleRate: parseInt(BVal),
             labels: true
         })
     ]
@@ -48,6 +49,7 @@ window.wavesurfer = WaveSurfer.create({
 
 loadExpFrame(expVal)
 }
+
 
 function clearcontent(element){
     element.value = '';
@@ -70,6 +72,7 @@ function LoadExperiment(item){
 function hideDiv(){
     document.getElementById('SelectLoad').style.visibility = 'hidden';
 }
+
 
 var content1,content2,content3,content4;
 var content1syl,content1phn,content1wrd;
@@ -101,17 +104,17 @@ function setup() {
     //console.log(content1phn);
 }
 
+
 function loadExpFrame(expnum=0) {
-	window.wavesurfer.on('ready', function () {
+    window.wavesurfer.on('ready', function () {
   var timeline = Object.create(WaveSurfer.Timeline);
 
   timeline.init({
     wavesurfer: wavesurfer,
     container: '#waveform-timeline',
-    sampleRate : 16000
+    sampleRate : 4000
   });
 });
-
     if(expnum != 0){
         document.getElementById('swunit').selectedIndex = 0;
         document.getElementById('SelectLoad').style.visibility = 'visible';
