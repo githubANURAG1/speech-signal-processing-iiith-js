@@ -12,7 +12,9 @@
     
      <link rel="shortcut icon" href="images/favicon.ico">
     
- 
+    <script src='https://unpkg.com/wavesurfer.js'></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/plugin/wavesurfer.timeline.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
 	<!-- Important Owl stylesheet -->
@@ -20,7 +22,6 @@
 	<link rel="stylesheet" href="vendors/owl-carousel/owl.theme.css">
 	
 	<link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.css">
-
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
 	<script type="text/javascript" src = 'tabs.js'></script>
@@ -102,11 +103,23 @@
 <p>
 <!-- PUT CONTENT HERE -->
 <p>
-<em>Note: Speech segments are sampled at 8KHz (\(F_s = 8000 Hz\)).</em> </p>
-<applet archive="media/lpSpectrumAnalysisS.jar" code="audioTransport/SVLAudioTool.class" height="700" title="Java" width="950">
+    <em>Note: Speech segments are sampled at 8KHz (\(F_s = 8000 Hz\)).</em> </p>
+    <form>
+        <select name=exnum id=exnum onchange="LoadAudio(this);">
+            <option value=0 >Select an audio file</option>
+            <option value=1>ex1.wav</option>
+            <option value=2>ex2.wav</option>
+            <option value=3>ex3.wav</option>
+            <option value=4>ex4.wav</option>
+        </select>
+        <div id='waveform' class='position-relative' style="width: 900px;"></div>                    
+    </form>
+     
+<!--<applet archive="media/lpSpectrumAnalysisS.jar" code="audioTransport/SVLAudioTool.class" height="700" title="Java" width="950">
 <param name="foo" value="bar">
         Please install the latest version of the Java plugin for your browser. <br>
-</br></param></applet>
+</br></param></applet>-->
+                            
 </p>
 </div>						</div>
 					</div>
@@ -184,7 +197,7 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
+    <script src="exp-08.js"></script>
 	<!-- Custom Theme JavaScript -->
     <script src="js/custom.js"></script>
     
