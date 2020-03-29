@@ -16,6 +16,20 @@ function playButton() {
   wavesurfer.playPause();
 }
 
+function add_nfft_spectrum() {
+  var img2 = document.createElement("img");
+  document.getElementById("nfftvalue").selectedIndex = 0;
+  console.log(document.getElementById("nfftvalue"));
+  img2.src = "/stft/" + document.getElementById("audionum").value + "/64";
+  src2 = document.getElementById("nfftspectrum");
+  if (!src2.hasChildNodes()) {
+    src2.appendChild(img2);
+  } else {
+    src2.removeChild(src2.lastChild);
+    src2.appendChild(img2);
+  }
+}
+
 function generateSpectrum() {
   var img = document.createElement("img");
   document.getElementById("windowformtype").selectedIndex = 0;
@@ -30,17 +44,7 @@ function generateSpectrum() {
     src.appendChild(img);
   }
 
-  // var img = document.createElement("img");
-  // document.getElementById("nfftvalue").selectedIndex = 0;
-  // console.log(document.getElementById("nfftvalue"));
-  // img.src = "/stft/" + document.getElementById("audionum").value + "/64";
-  // src = document.getElementById("nfftspectrum");
-  // if (!src.hasChildNodes()) {
-  //   src.appendChild(img);
-  // } else {
-  //   src.removeChild(src.lastChild);
-  //   src.appendChild(img);
-  // }
+  add_nfft_spectrum();
 }
 
 function changeSpectrum(elem) {
