@@ -17,20 +17,20 @@ function playButton() {
 }
 
 function add_nfft_spectrum() {
-  var img2 = document.createElement("img");
+  var img = document.createElement("img");
   document.getElementById("nfftvalue").selectedIndex = 0;
   console.log(document.getElementById("nfftvalue"));
-  img2.src = "/stft/" + document.getElementById("audionum").value + "/64";
-  src2 = document.getElementById("nfftspectrum");
-  if (!src2.hasChildNodes()) {
-    src2.appendChild(img2);
+  img.src = "/stft/" + document.getElementById("audionum").value + "/64";
+  src = document.getElementById("nfftspectrum");
+  if (!src.hasChildNodes()) {
+    src.appendChild(img);
   } else {
-    src2.removeChild(src2.lastChild);
-    src2.appendChild(img2);
+    src.removeChild(src.lastChild);
+    src.appendChild(img);
   }
 }
 
-function generateSpectrum() {
+function add_windowed_spectrum() {
   var img = document.createElement("img");
   document.getElementById("windowformtype").selectedIndex = 0;
   console.log(document.getElementById("windowformtype"));
@@ -43,7 +43,10 @@ function generateSpectrum() {
     src.removeChild(src.lastChild);
     src.appendChild(img);
   }
+}
 
+function generateSpectrum() {
+  add_windowed_spectrum();
   add_nfft_spectrum();
 }
 
@@ -52,6 +55,19 @@ function changeSpectrum(elem) {
   img.src =
     "/windowed/" + document.getElementById("audionum").value + "/" + elem.value;
   src = document.getElementById("windowedspecturm");
+  if (!src.hasChildNodes()) {
+    src.appendChild(img);
+  } else {
+    src.removeChild(src.lastChild);
+    src.appendChild(img);
+  }
+}
+
+function changefft(elem) {
+  var img = document.createElement("img");
+  img.src =
+    "/stft/" + document.getElementById("audionum").value + "/" + elem.value;
+  src = document.getElementById("nfftspectrum");
   if (!src.hasChildNodes()) {
     src.appendChild(img);
   } else {

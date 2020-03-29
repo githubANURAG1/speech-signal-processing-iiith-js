@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 import io
 import numpy as np
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+from os import path
+from time import sleep
 
 app = Flask(__name__)
 
@@ -46,13 +48,19 @@ def Assesment():
 
 @app.route('/windowed/<file>/<type>')
 def windowed_waveform(type, file):
-    fig = create_window_plot(type, file)
+    sleep(2)
+    if(path.exists('static/images/windowed-'+type+'-wav'+file+'.png') is False) :
+        fig = create_window_plot(type, file)
+
     return send_file('static/images/windowed-'+type+'-wav'+file+'.png', mimetype='image/gif')
 
 @app.route('/stft/<file>/<nfft>')
 def log_spectrum(file,nfft):
-    fig = create_stft(file,nfft)
-    return send_file('static/images/stft-wav'+file+'.png', mimetype='image/gif')
+    sleep(2)
+    if(path.exists('static/images/stft-wav'+file+'-nfft'+nfft+'.png') is False):
+        fig = create_stft(file,nfft)
+
+    return send_file('static/images/stft-wav'+file+'-nfft'+nfft+'.png', mimetype='image/gif')
 
 
 
@@ -65,11 +73,11 @@ def create_window_plot(window_type, file):
     plt.plot(windowed_output)
     plt.grid(color='grey', linestyle='--', linewidth=0.5)
     plt.savefig('static/images/windowed-'+window_type+'-wav'+file+'.png')
+    plt.close()
     return plt
 
 
 def create_stft(file, nfft):
-    print(nfft)
     file = str(file)
     audio, sample_rate = librosa.load('static/wav/audio'+file+'.wav')
     output = np.abs(librosa.stft(audio, n_fft=int(nfft)))
@@ -77,9 +85,23 @@ def create_stft(file, nfft):
     plt.figure(figsize=(5, 2))
     plt.plot(output)
     plt.grid(color='grey', linestyle='--', linewidth=0.5)
-    plt.savefig('static/images/stft-wav'+file+'.png')
+    plt.savefig('static/images/stft-wav'+file+'-nfft'+str(nfft)+'.png')
+    plt.close()
     return plt
 
 if __name__ == '__main__':
+    type = ['rectangular','hamming','hann','cosine']
+
+    for file in range(1,3):
+        for option in type:
+            create_window_plot(option,file)
+
+    nfft_values = [64,128,256,512,1024,2048, 4096,8192]
+
+    for file in range(1,3):
+        for nfft in nfft_values:
+            create_stft(file, nfft)
+
     app.run()
-    create_window_plot("rectangular")
+    
+
