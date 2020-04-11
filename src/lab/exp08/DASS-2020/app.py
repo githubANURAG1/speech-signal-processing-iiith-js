@@ -69,6 +69,14 @@ def lpresidual_spectrum(file, order):
     return send_file('static/images/lpresidual-wav'+file+'-order'+str(order)+'.png', mimetype='image/gif')
 
 
+@app.route('/lpspectrum/<file>/<order>')
+def lp_spectrum(file, order):
+    if(path.exists('static/images/lpspectrum-wav'+file+'-order'+str(order)+'.png') is False):
+        fig = create_lpspectrum(file, int(order))
+
+    return send_file('static/images/lpspectrum-wav'+file+'-order'+str(order)+'.png', mimetype='image/gif')
+
+
 def create_window_plot(window_type, file):
     file = str(file)
     audio, sample_rate = librosa.load('static/wav/audio'+file+'.wav')
@@ -125,6 +133,23 @@ def create_lpresidual(file, order):
     plt.close()
     return plt
 
+def create_lpspectrum(file, order):
+    file = str(file)
+    audio_path = 'static/wav/audio' + file + '.wav'
+    audio, sampling_rate = librosa.load(audio_path)
+
+    lp_result = librosa.lpc(audio, order)
+    y_result = scipy.signal.lfilter([0] + -1*lp_result[1:], [1], audio)
+
+    plt.figure()
+    plt.grid()
+    plt.magnitude_spectrum(y_result, Fs=sampling_rate, color="blue")
+    plt.title('LP Spectrum')
+    plt.grid(color='grey', linestyle='--', linewidth=0.5)
+    plt.savefig('static/images/lpspectrum-wav'+file+'-order'+str(order)+'.png')
+    plt.close()
+    return plt
+
 if __name__ == '__main__':
     type = ['rectangular','hamming','hann','cosine']
 
@@ -139,5 +164,12 @@ if __name__ == '__main__':
             create_stft(file, nfft)
 
     app.run()
+
+    orders = [1,2,4,6,8,10,12,16,20,24,30,40]
+
+    for file in range(1,3):
+        for order in orders:
+            create_lpresidual(file, order)
+            create_lpspectrum(file, order)
     
 

@@ -10,21 +10,27 @@ def create_lp_graph(file, order):
     audio, sampling_rate = librosa.load(audio_path)
 
     lp_result = librosa.lpc(audio, order)
-    ds = len(audio)
     y_result = scipy.signal.lfilter([0] + -1*lp_result[1:], [1], audio)
-    plt.title("LP Log Spectrum")
-    plt.magnitude_spectrum(y_result, Fs=1/ds, scale='dB', color='C1')
+    plt.title("LP Spectrum")
+    plt.magnitude_spectrum(y_result, Fs=sampling_rate, color='C2')
     plt.show()
-    # Xf_mag = np.abs(np.fft.fft(y_result))
-    # freqs = np.abs(np.fft.fftfreq(len(Xf_mag), d = 2/sampling_rate))
-
-    # import matplotlib.pyplot as plt
-    # plt.plot(freqs, Xf_mag)
-    # plt.yscale("log")
-    # plt.show()
 
 
+def create_lplog(file, order):
+    file = str(file)
+    audio_path = 'static/wav/audio' + file + '.wav'
+    audio, sampling_rate = librosa.load(audio_path)
 
+    lp_result = librosa.lpc(audio, order)
+    y_result = scipy.signal.lfilter([0] + -1*lp_result[1:], [1], audio)
+
+    plt.figure()
+    plt.grid()
+    plt.magnitude_spectrum(y_result, Fs=sampling_rate, color='blue')
+    plt.title('LP Spectrum')
+    plt.grid(color='grey', linestyle='--', linewidth=0.5)
+    plt.show()
+    plt.savefig('static/images/lpresidual-wav'+file+'-order'+str(order)+'.png')
 
 
 
@@ -47,6 +53,6 @@ def create_lpresidual(file,order):
     #plt.close()
     return plt
 
-plt = create_lp_graph(1,4)
+create_lplog(1,6)
 #plt.show()
 

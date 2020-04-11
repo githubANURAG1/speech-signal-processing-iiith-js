@@ -62,6 +62,22 @@ function changeorder(elem) {
     src.removeChild(src.lastChild);
     src.appendChild(img);
   }
+
+  generate_spectrum(elem);
+}
+
+function generate_spectrum(elem) {
+  var img = document.createElement("img");
+  img.src =
+    "/lpspectrum/" + document.getElementById("audionum").value + "/" + elem;
+
+  src = document.getElementById("lpspectrum");
+  if (!src.hasChildNodes()) {
+    src.appendChild(img);
+  } else {
+    src.removeChild(src.lastChild);
+    src.appendChild(img);
+  }
 }
 
 function LoadAudio(elem) {
