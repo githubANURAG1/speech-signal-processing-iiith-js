@@ -5,7 +5,7 @@ var wavesurfer = WaveSurfer.create({
   barGap: 1,
   height: 200,
   backgroundColor: "#f5f5f5",
-  normalize: "true"
+  normalize: "true",
 });
 
 function clearcontent(element) {
@@ -16,44 +16,19 @@ function playButton() {
   wavesurfer.playPause();
 }
 
-function add_nfft_spectrum() {
-  var img = document.createElement("img");
-  document.getElementById("nfftvalue").selectedIndex = 0;
-  console.log(document.getElementById("nfftvalue"));
-  img.src = "/stft/" + document.getElementById("audionum").value + "/64";
-  src = document.getElementById("nfftspectrum");
-  if (!src.hasChildNodes()) {
-    src.appendChild(img);
-  } else {
-    src.removeChild(src.lastChild);
-    src.appendChild(img);
-  }
-}
-
-function add_windowed_spectrum() {
-  var img = document.createElement("img");
-  document.getElementById("windowformtype").selectedIndex = 0;
-  console.log(document.getElementById("windowformtype"));
-  img.src =
-    "/windowed/" + document.getElementById("audionum").value + "/rectangular";
-  src = document.getElementById("windowedspecturm");
-  if (!src.hasChildNodes()) {
-    src.appendChild(img);
-  } else {
-    src.removeChild(src.lastChild);
-    src.appendChild(img);
-  }
-}
-
 function generateSpectrum() {
-  add_windowed_spectrum();
-  add_nfft_spectrum();
+  document.getElementById("windowformtype").selectedIndex = 0;
+  changeSpectrum("rectangular");
+  document.getElementById("nfftvalue").selectedIndex = 0;
+  changefft(64);
+  document.getElementById("ordervalue").selectedIndex = 0;
+  changeorder(1);
 }
 
 function changeSpectrum(elem) {
   var img = document.createElement("img");
   img.src =
-    "/windowed/" + document.getElementById("audionum").value + "/" + elem.value;
+    "/windowed/" + document.getElementById("audionum").value + "/" + elem;
   src = document.getElementById("windowedspecturm");
   if (!src.hasChildNodes()) {
     src.appendChild(img);
@@ -65,9 +40,22 @@ function changeSpectrum(elem) {
 
 function changefft(elem) {
   var img = document.createElement("img");
-  img.src =
-    "/stft/" + document.getElementById("audionum").value + "/" + elem.value;
+  img.src = "/stft/" + document.getElementById("audionum").value + "/" + elem;
   src = document.getElementById("nfftspectrum");
+  if (!src.hasChildNodes()) {
+    src.appendChild(img);
+  } else {
+    src.removeChild(src.lastChild);
+    src.appendChild(img);
+  }
+}
+
+function changeorder(elem) {
+  var img = document.createElement("img");
+  img.src =
+    "/lpresidual/" + document.getElementById("audionum").value + "/" + elem;
+
+  src = document.getElementById("lpresidual");
   if (!src.hasChildNodes()) {
     src.appendChild(img);
   } else {

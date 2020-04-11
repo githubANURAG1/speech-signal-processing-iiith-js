@@ -6,6 +6,7 @@ import io
 import numpy as np
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from os import path
+import scipy
 from time import sleep
 
 app = Flask(__name__)
@@ -48,7 +49,6 @@ def Assesment():
 
 @app.route('/windowed/<file>/<type>')
 def windowed_waveform(type, file):
-    sleep(2)
     if(path.exists('static/images/windowed-'+type+'-wav'+file+'.png') is False) :
         fig = create_window_plot(type, file)
 
@@ -56,12 +56,17 @@ def windowed_waveform(type, file):
 
 @app.route('/stft/<file>/<nfft>')
 def log_spectrum(file,nfft):
-    sleep(2)
     if(path.exists('static/images/stft-wav'+file+'-nfft'+nfft+'.png') is False):
-        fig = create_stft(file,nfft)
+        fig = create_stft(file,int(nfft))
 
     return send_file('static/images/stft-wav'+file+'-nfft'+nfft+'.png', mimetype='image/gif')
 
+@app.route('/lpresidual/<file>/<order>')
+def lpresidual_spectrum(file, order):
+    if(path.exists('static/images/lpresidual-wav'+file+'-order'+str(order)+'.png') is False):
+        fig = create_lpresidual(file,int(order))
+
+    return send_file('static/images/lpresidual-wav'+file+'-order'+str(order)+'.png', mimetype='image/gif')
 
 
 def create_window_plot(window_type, file):
@@ -69,8 +74,11 @@ def create_window_plot(window_type, file):
     audio, sample_rate = librosa.load('static/wav/audio'+file+'.wav')
     filter = librosa.filters.get_window(window_type, len(audio))
     windowed_output = audio * filter
-    plt.figure(figsize=(5, 2))
+    #plt.figure(figsize=(5, 2))
     plt.plot(windowed_output)
+    plt.title("Windowed Waveform")
+    plt.xlabel("Time")
+    plt.ylabel("Magnitude")
     plt.grid(color='grey', linestyle='--', linewidth=0.5)
     plt.savefig('static/images/windowed-'+window_type+'-wav'+file+'.png')
     plt.close()
@@ -79,13 +87,41 @@ def create_window_plot(window_type, file):
 
 def create_stft(file, nfft):
     file = str(file)
-    audio, sample_rate = librosa.load('static/wav/audio'+file+'.wav')
-    output = np.abs(librosa.stft(audio, n_fft=int(nfft)))
-    output = librosa.amplitude_to_db(output)
-    plt.figure(figsize=(5, 2))
-    plt.plot(output)
+    audio_path = 'static/wav/audio' + file + '.wav'
+    audio, sampling_rate = librosa.load(audio_path)
+    n = len(audio)
+    T = nfft / sampling_rate
+    yf = scipy.fft(audio)
+    xf = np.linspace(0.0, 1.0/(2.0 * T), n/2)
+    fig, ax = plt.subplots()
+    ax.plot(xf, 2.0/n * np.abs(yf[:n//2]))
+    plt.grid()
+    plt.title("Log Spectrum")
+    plt.yscale("log")
+    plt.xlabel("Frequency")
+    plt.ylabel("Magnitude")
     plt.grid(color='grey', linestyle='--', linewidth=0.5)
     plt.savefig('static/images/stft-wav'+file+'-nfft'+str(nfft)+'.png')
+    plt.close()
+    return plt
+
+
+def create_lpresidual(file, order):
+    file = str(file)
+    audio_path = 'static/wav/audio' + file + '.wav'
+    audio, sampling_rate = librosa.load(audio_path)
+
+    lp_result = librosa.lpc(audio, order)
+    y_result = scipy.signal.lfilter([0] + -1*lp_result[1:], [1], audio)
+
+    plt.figure()
+    plt.grid()
+    plt.plot(audio-y_result)
+    plt.xlabel("Time")
+    plt.ylabel("Magnitude")
+    plt.title('LP Residual')
+    plt.grid(color='grey', linestyle='--', linewidth=0.5)
+    plt.savefig('static/images/lpresidual-wav'+file+'-order'+str(order)+'.png')
     plt.close()
     return plt
 

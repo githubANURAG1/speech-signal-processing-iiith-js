@@ -24,18 +24,30 @@ def create_window_plot(window_type, file):
     plt.savefig('static/images/windowed-'+window_type+'-wav'+file+'.png')
     return plt
 
-def stft(file, nfft):
-    print(nfft)
+def stft(file):
     file = str(file)
     audio, sample_rate = librosa.load('static/wav/audio'+file+'.wav')
-    output = np.abs(librosa.stft(audio,n_fft = len(audio)*2))
-    output = librosa.amplitude_to_db(output)
-    plt.figure()
-    plt.plot(output)
-    plt.savefig('static/images/stft-wav'+file+'.png')
+    output = librosa.stft(audio)
+    plt.figure(figsize=(5, 2))
+    plt.magnitude_spectrum(output)
+    plt.grid(color='grey', linestyle='--', linewidth=0.5)
+    plt.savefig('static/images/stft-wav'+file+'-nfft'+str(nfft)+'.png')
+    plt.close()
     return plt
+
+def create_lp_log(file, order):
+    file = str(file)
+    audio, sample_rate = librosa.load('static/wav/audio'+file+'.wav')
+    lp = librosa.lpc(audio, order)
+    #y_hat = scipy.signal.lfilter([0] + -1*lp[1:], [1], audio)
+    plt.figure()
+    plt.plot(audio)
+    #plt.yscale("log")
+    plt.show()
 
 #plot = create_window_plot("hann", 1)
 #plot.show()
-plot = stft(1,65536)
+plot = stft(1)
+plot.show()
 
+#create_lp_log(2,8)

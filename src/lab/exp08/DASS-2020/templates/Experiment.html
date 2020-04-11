@@ -117,7 +117,7 @@
 <p>
 <!-- PUT CONTENT HERE -->
 <p>
-    <em>Note: Speech segments are sampled at 8KHz (\(F_s = 8000 Hz\)).</em> </p>
+    <em>Note: Speech segments are sampled at 22KHz (\(F_s = 22000 Hz\)).</em> </p>
     <form>
         <select name=exnum id=exnum onchange="LoadAudio(this);">
             <option value=0 >Select an audio file</option>
@@ -131,14 +131,14 @@
 			Spectrum</button>
 		<div id='waveform' class='position-relative' style="width: 900px;"></div>
 		<br>
-		<select name='windowform' id='windowformtype' onchange="changeSpectrum(this)">
+		<select name='windowform' id='windowformtype' onchange="changeSpectrum(this.value)">
 			<option value="rectangular">Rectangular</option>
 			<option value="hamming">Hamming</option>
 			<option value="hann">Hann</option>
 			<option value="cosine">Cosine</option>
 		</select>
 		<div id='windowedspecturm' class="position-relative" width="500px"></div>
-		<select name="nfft" id='nfftvalue' onchange="changefft(this);">
+		<select name="nfft" id='nfftvalue' onchange="changefft(this.value);">
 			<option value="64">64</option>
 			<option value="128">128</option>
 			<option value="256">256</option>
@@ -149,6 +149,21 @@
 			<option value="8192">8192</option>
 		</select>
 		<div id="nfftspectrum" class="position-relative" width="500px"></div>
+		<select name="order" id='ordervalue' onchange="changeorder(this.value);">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="4">4</option>
+			<option value="6">6</option>
+			<option value="8">8</option>
+			<option value="10">10</option>
+			<option value="12">12</option>
+			<option value="16">16</option>
+			<option value="20">20</option>
+			<option value="24">24</option>
+			<option value="30">30</option>
+			<option value="40">40</option>
+		</select>
+		<div id="lpresidual" class="position-relative" width="500px"></div>
                    
     </form>
      
