@@ -21,8 +21,6 @@ function generateSpectrum() {
   changeSpectrum("rectangular");
   document.getElementById("nfftvalue").selectedIndex = 0;
   changefft(64);
-  document.getElementById("ordervalue").selectedIndex = 0;
-  changeorder(1);
 }
 
 function changeSpectrum(elem) {
@@ -42,36 +40,6 @@ function changefft(elem) {
   var img = document.createElement("img");
   img.src = "/stft/" + document.getElementById("audionum").value + "/" + elem;
   src = document.getElementById("nfftspectrum");
-  if (!src.hasChildNodes()) {
-    src.appendChild(img);
-  } else {
-    src.removeChild(src.lastChild);
-    src.appendChild(img);
-  }
-}
-
-function changeorder(elem) {
-  var img = document.createElement("img");
-  img.src =
-    "/lpresidual/" + document.getElementById("audionum").value + "/" + elem;
-
-  src = document.getElementById("lpresidual");
-  if (!src.hasChildNodes()) {
-    src.appendChild(img);
-  } else {
-    src.removeChild(src.lastChild);
-    src.appendChild(img);
-  }
-
-  generate_spectrum(elem);
-}
-
-function generate_spectrum(elem) {
-  var img = document.createElement("img");
-  img.src =
-    "/lpspectrum/" + document.getElementById("audionum").value + "/" + elem;
-
-  src = document.getElementById("lpspectrum");
   if (!src.hasChildNodes()) {
     src.appendChild(img);
   } else {
