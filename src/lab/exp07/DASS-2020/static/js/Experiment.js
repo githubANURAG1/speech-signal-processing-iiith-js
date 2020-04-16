@@ -21,6 +21,32 @@ function generateSpectrum() {
   changeSpectrum("rectangular");
   document.getElementById("nfftvalue").selectedIndex = 0;
   changefft(64);
+  changeCepstrum();
+  chnageLiftered();
+}
+
+function chnageLiftered() {
+  var img = document.createElement("img");
+  img.src = "/lifteredspectrum/" + document.getElementById("audionum").value;
+  src = document.getElementById("lifteredspectrum");
+  if (!src.hasChildNodes()) {
+    src.appendChild(img);
+  } else {
+    src.removeChild(src.lastChild);
+    src.appendChild(img);
+  }
+}
+
+function changeCepstrum() {
+  var img = document.createElement("img");
+  img.src = "/cepstrum/" + document.getElementById("audionum").value;
+  src = document.getElementById("cepstrum");
+  if (!src.hasChildNodes()) {
+    src.appendChild(img);
+  } else {
+    src.removeChild(src.lastChild);
+    src.appendChild(img);
+  }
 }
 
 function changeSpectrum(elem) {

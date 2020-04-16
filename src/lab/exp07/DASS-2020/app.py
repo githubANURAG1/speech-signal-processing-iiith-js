@@ -1,6 +1,7 @@
 from flask import Flask, render_template, Response, send_file
 import librosa
 from scipy.io import wavfile
+from cepstrum import complex_cepstrum, real_cepstrum
 import matplotlib.pyplot as plt
 import io
 import numpy as np
@@ -61,6 +62,20 @@ def log_spectrum(file,nfft):
 
     return send_file('static/images/stft-wav'+file+'-nfft'+nfft+'.png', mimetype='image/gif')
 
+@app.route('/cepstrum/<file>')
+def cepstrum_spectrum(file):
+    if(path.exists('static/images/cepstrum-wav'+file+'.png') is False):
+        fig = create_cepstrum(file)
+
+    return send_file('static/images/cepstrum-wav'+file+'.png', mimetype='image/gif')
+
+
+@app.route('/lifteredspectrum/<file>')
+def liftered_spectrum(file):
+    if(path.exists('static/images/liftered-spectrum-wav'+file+'.png') is False):
+        fig = create_lifteredspectrum(file)
+
+    return send_file('static/images/liftered-spectrum-wav'+file+'.png', mimetype='image/gif')
 
 def create_window_plot(window_type, file):
     file = str(file)
@@ -98,6 +113,50 @@ def create_stft(file, nfft):
     plt.close()
     return plt
 
+def create_cepstrum(file):
+    import numpy as np
+
+    file = str(file)
+    audio_path = 'static/wav/audio'+file+'.wav'
+    fs, signal = wavfile.read(audio_path)
+    ceps = real_cepstrum(signal)
+
+    samples = signal.shape[0]
+    t = np.arange(samples)
+    plt.title("Cepstrum")
+    plt.grid()
+    plt.plot(t, ceps)
+    plt.xlabel('Quefrency (samples)')
+    plt.ylim(0.0, 0.1)
+    plt.xlim(0, int(samples*0.9))
+    plt.grid(color='grey', linestyle='--', linewidth=0.5)
+    plt.savefig('static/images/cepstrum-wav'+file+'.png')
+    plt.close()
+    return plt
+
+def create_lifteredspectrum(file):
+
+    file = str(file)
+    audio_path = 'static/wav/audio' + file + '.wav'
+    audio, sampling_rate = librosa.load(audio_path)
+    n = len(audio)
+    T = 64 / sampling_rate
+    yf = scipy.fft(audio)
+    xf = np.linspace(0.0, 1.0/(2.0 * T), n/2)
+    fig, ax = plt.subplots()
+    ax.plot(xf, 2.0/n * np.abs(yf[:n//2]))
+    plt.grid()
+    plt.title("Liftered Log Spectrum")
+    plt.yscale("log")
+    plt.xlabel("Frequency")
+    plt.ylabel("Magnitude")
+    plt.grid(color='grey', linestyle='--', linewidth=0.5)
+    plt.savefig('static/images/liftered-spectrum-wav'+file+'.png')
+    plt.close()
+    return plt
+
+
+
 if __name__ == '__main__':
     type = ['rectangular','hamming','hann','cosine']
 
@@ -110,6 +169,10 @@ if __name__ == '__main__':
     for file in range(1,3):
         for nfft in nfft_values:
             create_stft(file, nfft)
+
+    for file in range(1,3):
+        create_cepstrum(file)
+        create_lifteredspectrum(file)
 
     app.run()
 
