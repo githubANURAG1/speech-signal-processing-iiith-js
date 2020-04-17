@@ -68,7 +68,7 @@ def lpresidual_spectrum(file, order):
 
 	return send_file('static/images/lpresidual-wav'+file+'-order'+str(order)+'.png', mimetype='image/gif')
 
-
+'''
 def create_window_plot(window_type, file):
 	file = str(file)
 	audio, sample_rate = librosa.load('static/wav/audio'+file+'.wav')
@@ -79,7 +79,7 @@ def create_window_plot(window_type, file):
 	plt.title("Windowed Waveform")
 	plt.xlabel("Time")
 	plt.ylabel("Magnitude")
-	plt.grid(color='grey', linestyle='--', linewidth=0.5)
+	plt.grid(color='grey', linestyle='--', linewidtwindowh=0.5)
 	plt.savefig('static/images/windowed-'+window_type+'-wav'+file+'.png')
 	plt.close()
 	return plt
@@ -104,7 +104,7 @@ def create_stft(file, nfft):
 	plt.savefig('static/images/stft-wav'+file+'-nfft'+str(nfft)+'.png')
 	plt.close()
 	return plt
-
+'''
 
 def create_lpresidual(file, order):
 	file = str(file)
