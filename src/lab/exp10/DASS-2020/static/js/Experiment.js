@@ -19,12 +19,13 @@ function playButton() {
 function generateSpectrum() {
   document.getElementById("ordervalue").selectedIndex = 0;
   changeorder(10);
-  document.getElementById("windowformtype").selectedIndex = 0;
-  changeSpectrum("rectangular");
-  document.getElementById("nfftvalue").selectedIndex = 0;
-  changefft(64);
+  //document.getElementByIdwaveform("windowformtype").selectedIndex = 0;
+  //changeSpectrum("rectangular");
+  //document.getElementById("nfftvalue").selectedIndex = 0;
+  //changefft(64);
 }
 
+/*
 function changeSpectrum(elem) {
   var img = document.createElement("img");
   img.src =
@@ -50,6 +51,8 @@ function changefft(elem) {
   }
 }
 
+*/
+
 function changeorder(elem) {
   var img = document.createElement("img");
   img.src =
@@ -68,15 +71,21 @@ function LoadAudio(elem) {
   document.getElementById("audionum").value = elem.value;
   document.getElementById("windowformtype").selectedIndex = 0;
 
-  src = document.getElementById("windowedspecturm");
+  src = document.getElementById("lpresidual");
   if (src.hasChildNodes()) {
     src.removeChild(src.lastChild);
   }
-  if (elem.value == 1 || elem.value == 2) {
-    wavesurfer.load("/static/wav/audio" + elem.value + ".wav");
+  if (elem.value == 1) {
+    wavesurfer.load("/static/wav/audio1.wav");
     console.log(elem.value);
-  } else {
+  } else if (elem.value == 2) {
     wavesurfer.load("/static/wav/audio2.wav");
+    console.log(elem.value);
+  } else if (elem.value == 3){
+    wavesurfer.load("/static/wav/audio3.wav");
+    console.log(elem.value);
+  }else if (elem.value == 4){
+    wavesurfer.load("/static/wav/audio4.wav");
     console.log(elem.value);
   }
 }
