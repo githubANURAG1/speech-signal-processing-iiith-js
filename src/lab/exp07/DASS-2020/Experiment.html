@@ -131,30 +131,52 @@
 	<button type="button" class="btn btn-primary position-relative" name="generate"
 		onclick="generateSpectrum();">Generate
 		Spectrum</button>
-	<div id='waveform' class='position-relative' style="width: 900px;"></div>
+	<div id='waveform' class='position-relative' style="width: 900px;" align=center></div>
 	<br>
-	<select name='windowform' id='windowformtype' onchange="changeSpectrum(this.value)">
-		<option value="rectangular">Rectangular</option>
-		<option value="hamming">Hamming</option>
-		<option value="hann">Hann</option>
-		<option value="cosine">Cosine</option>
-	</select>
-    <br>
-	<!--<div id='windowedspecturm' class="position-relative" width="500px"></div>-->
-    <embed id="windowedspectrum" width=650 height=350 />
-	<select name="nfft" id='nfftvalue' onchange="changefft(this.value);">
-		<option value="64">64</option>
-		<option value="128">128</option>
-		<option value="256">256</option>
-		<option value="512">512</option>
-		<option value="1024">1024</option>
-		<option value="2048">2048</option>
-		<option value="4096">4096</option>
-		<option value="8192">8192</option>
-	</select>
-    <embed id="logspectrum" width=650 height=350 />
-	<embed id="cepstrum" width="650px" height="350" />
-	<embed id="lifteredspectrum" width="650px" width="350" />
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6" align=center>
+                <select name='windowform' id='windowformtype' onchange="changeSpectrum(this.value)">
+                    <option value="rectangular">Rectangular</option>
+                    <option value="hamming">Hamming</option>
+                    <option value="hann">Hann</option>
+                    <option value="cosine">Cosine</option>
+                </select>
+            </div>
+            <div class="col-xs-6" align=center>
+                <select name="nfft" id='nfftvalue' onchange="changefft(this.value);">
+                    <option value="64">64</option>
+                    <option value="128">128</option>
+                    <option value="256">256</option>
+                    <option value="512">512</option>
+                    <option value="1024">1024</option>
+                    <option value="2048">2048</option>
+                    <option value="4096">4096</option>
+                    <option value="8192">8192</option>
+                </select>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <!--<div id='windowedspecturm' class="position-relative" width="500px"></div>-->
+                <embed id="windowedspectrum" width=570 height=330 />
+            </div>
+            <div class="col-xs-6">
+                <embed id="logspectrum" width=570 height=330/>
+            </div>
+            <div class="col-xs-6"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <embed id="cepstrum" width=570 height=330 />
+            </div>
+           <div class="col-xs-6">
+                <embed id="lifteredspectrum" width=570 height=330 />
+            </div>
+            
+        </div>
+    </div>
     <br>
 
 </form>

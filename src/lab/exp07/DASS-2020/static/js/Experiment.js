@@ -21,67 +21,68 @@ function generateSpectrum() {
   changeSpectrum("rectangular");
   document.getElementById("nfftvalue").selectedIndex = 0;
   changefft(64);
-  changeCepstrum();
-  chnageLiftered();
+    changeCepstrum();
+  changeLiftered();
 }
 
-function chnageLiftered() {
-  var img = document.createElement("img");
-  img.src = "/lifteredspectrum/" + document.getElementById("audionum").value;
-  src = document.getElementById("lifteredspectrum");
-  if (!src.hasChildNodes()) {
-    src.appendChild(img);
-  } else {
-    src.removeChild(src.lastChild);
-    src.appendChild(img);
-  }
+function changeLiftered() {
+    
+     var source = document.getElementById("lifteredspectrum");
+    var clone = source.cloneNode(true);
+    clone.setAttribute('src','/graphs/liftered/LifteredLog-wav'+document.getElementById("audionum").value+'.html')
+    source.parentNode.replaceChild(clone,source);
 }
 
 function changeCepstrum() {
-  var img = document.createElement("img");
-  img.src = "/cepstrum/" + document.getElementById("audionum").value;
-  src = document.getElementById("cepstrum");
-  if (!src.hasChildNodes()) {
-    src.appendChild(img);
-  } else {
-    src.removeChild(src.lastChild);
-    src.appendChild(img);
-  }
+    
+    var source = document.getElementById("cepstrum");
+    var clone = source.cloneNode(true);
+    clone.setAttribute('src','/graphs/cepstrum/cepstrum-wav'+document.getElementById("audionum").value+'.html')
+    source.parentNode.replaceChild(clone,source);
 }
 
 function changeSpectrum(elem) {
-  var img = document.createElement("img");
-  img.src =
-    "/windowed/" + document.getElementById("audionum").value + "/" + elem;
-  src = document.getElementById("windowedspecturm");
-  if (!src.hasChildNodes()) {
-    src.appendChild(img);
-  } else {
-    src.removeChild(src.lastChild);
-    src.appendChild(img);
-  }
+
+    var source = document.getElementById("windowedspectrum");
+    var clone = source.cloneNode(true);
+    clone.setAttribute('src','/graphs/windowed/line-'+document.getElementById("audionum").value+'-'+elem+'.html')
+    source.parentNode.replaceChild(clone,source);
+    
 }
 
 function changefft(elem) {
-  var img = document.createElement("img");
-  img.src = "/stft/" + document.getElementById("audionum").value + "/" + elem;
-  src = document.getElementById("nfftspectrum");
-  if (!src.hasChildNodes()) {
-    src.appendChild(img);
-  } else {
-    src.removeChild(src.lastChild);
-    src.appendChild(img);
-  }
+    
+    var source = document.getElementById("logspectrum");
+    var clone = source.cloneNode(true);
+    clone.setAttribute('src','/graphs/logspectrum/stft-wav'+document.getElementById("audionum").value+'-nfft'+elem+'.html')
+    source.parentNode.replaceChild(clone,source);
+
 }
 
 function LoadAudio(elem) {
   document.getElementById("audionum").value = elem.value;
   document.getElementById("windowformtype").selectedIndex = 0;
 
-  src = document.getElementById("windowedspecturm");
-  if (src.hasChildNodes()) {
-    src.removeChild(src.lastChild);
-  }
+    var source = document.getElementById("windowedspectrum");
+    var clone = source.cloneNode(true);
+    clone.setAttribute('src','')
+    source.parentNode.replaceChild(clone,source);
+    
+    var source = document.getElementById("logspectrum");
+    var clone = source.cloneNode(true);
+    clone.setAttribute('src','')
+    source.parentNode.replaceChild(clone,source);
+    
+    var source = document.getElementById("cepstrum");
+    var clone = source.cloneNode(true);
+    clone.setAttribute('src','')
+    source.parentNode.replaceChild(clone,source);
+    
+    var source = document.getElementById("lifteredspectrum");
+    var clone = source.cloneNode(true);
+    clone.setAttribute('src','')
+    source.parentNode.replaceChild(clone,source);
+    
   if (elem.value == 1 || elem.value == 2) {
     wavesurfer.load("/static/wav/audio" + elem.value + ".wav");
     console.log(elem.value);
