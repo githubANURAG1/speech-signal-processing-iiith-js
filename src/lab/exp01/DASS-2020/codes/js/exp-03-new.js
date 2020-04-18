@@ -1,7 +1,8 @@
+// This is the js file for part 3 of te experiment 
+//This function handles the value submitted by user and provides the rror handling
 function onSubmit(){
     
     var output = document.getElementById('op').value;
-    //console.log(document.getElementById('op').value);
     if(output == ''){
         window.alert('Please enter a string !');
         return;
@@ -12,6 +13,7 @@ function onSubmit(){
     document.getElementById('second-page').style.visibility = "visible";
 }
 
+// This functions displays second part of the experiment and keeps it hidden untill user proceeds.
 function displaySecond(output){
     var input,phnseq;
     input = document.getElementById('ip').value;
@@ -23,6 +25,7 @@ function displaySecond(output){
     document.getElementById('phn').value = phnseq;
 }
 
+// THis function converts utterance to phenome
 function utt2phn(utt){
     var tmp;
     utt = utt.trim();
@@ -52,6 +55,7 @@ function utt2phn(utt){
     return tmp;
 }
 
+// This function generates table for the experiment 3
 function generate_table(sym){
     units = sym.split(" ");
     table = document.getElementById('sbwrds');
@@ -70,6 +74,7 @@ function generate_table(sym){
     }
 }
 
+// This function verfies the answer and provides error handling.
 function Verify(){
     console.log("i");
     if(document.getElementById('usyl').value == ''){
@@ -96,6 +101,7 @@ function Verify(){
     
 }
 
+// This function converts phenomen to Syllabul
 function phn2syl(phnseq){
     var tmp;
     tmp = phnseq.replace(/([^ ]) ([aiueo])/g,'$1$2');
@@ -118,6 +124,7 @@ function phn2syl(phnseq){
     return tmp;   
 }
 
+// These are used for live translation into different languages.
 vListArr = new Array("a","aa","i","ii","u","uu","rx","rx~","lx","lx~","e","ei","ai","o","oo","au")
 //a : A=new Array("aa","ai","au","a!","a"),
 myhash = { 
