@@ -26,68 +26,61 @@ function generateSpectrum() {
 }
 
 function changeSpectrum(elem) {
-  var img = document.createElement("img");
-  img.src =
-    "/windowed/" + document.getElementById("audionum").value + "/" + elem;
-  src = document.getElementById("windowedspecturm");
-  if (!src.hasChildNodes()) {
-    src.appendChild(img);
-  } else {
-    src.removeChild(src.lastChild);
-    src.appendChild(img);
-  }
+    
+    var source = document.getElementById("windowedspectrums");
+    var clone = source.cloneNode(true);
+    clone.setAttribute('src','/graphs/window/line-'+document.getElementById("audionum").value+'-'+elem+'.html')
+    source.parentNode.replaceChild(clone,source);
 }
 
 function changefft(elem) {
-  var img = document.createElement("img");
-  img.src = "/stft/" + document.getElementById("audionum").value + "/" + elem;
-  src = document.getElementById("nfftspectrum");
-  if (!src.hasChildNodes()) {
-    src.appendChild(img);
-  } else {
-    src.removeChild(src.lastChild);
-    src.appendChild(img);
-  }
+    var source = document.getElementById("nfftspectrum");
+    var clone = source.cloneNode(true);
+    clone.setAttribute('src','/graphs/logspectrum/stft-wav'+document.getElementById("audionum").value+'-nfft'+elem+'.html')
+    source.parentNode.replaceChild(clone,source);
 }
 
 function changeorder(elem) {
-  var img = document.createElement("img");
-  img.src =
-    "/lpresidual/" + document.getElementById("audionum").value + "/" + elem;
-
-  src = document.getElementById("lpresidual");
-  if (!src.hasChildNodes()) {
-    src.appendChild(img);
-  } else {
-    src.removeChild(src.lastChild);
-    src.appendChild(img);
-  }
+    
+    var source = document.getElementById("lpresidual");
+    var clone = source.cloneNode(true);
+    clone.setAttribute('src','/graphs/lpresidual/lpresidual-wav'+document.getElementById("audionum").value+'-order'+elem+'.html')
+    source.parentNode.replaceChild(clone,source);
 
   generate_spectrum(elem);
 }
 
 function generate_spectrum(elem) {
-  var img = document.createElement("img");
-  img.src =
-    "/lpspectrum/" + document.getElementById("audionum").value + "/" + elem;
-
-  src = document.getElementById("lpspectrum");
-  if (!src.hasChildNodes()) {
-    src.appendChild(img);
-  } else {
-    src.removeChild(src.lastChild);
-    src.appendChild(img);
-  }
+    var source = document.getElementById("lpspectrum");
+    var clone = source.cloneNode(true);
+    clone.setAttribute('src','/graphs/lpspectrum/lpspectrum-wav'+document.getElementById("audionum").value+'-order'+elem+'.html')
+    source.parentNode.replaceChild(clone,source);
 }
 
 function LoadAudio(elem) {
   document.getElementById("audionum").value = elem.value;
   document.getElementById("windowformtype").selectedIndex = 0;
 
-  src = document.getElementById("windowedspecturm");
-  if (src.hasChildNodes()) {
-    src.removeChild(src.lastChild);
-  }
+  var source = document.getElementById("windowedspectrums");
+    var clone = source.cloneNode(true);
+    clone.setAttribute('src','')
+    source.parentNode.replaceChild(clone,source);
+    
+    var source = document.getElementById("nfftspectrum");
+    var clone = source.cloneNode(true);
+    clone.setAttribute('src','')
+    source.parentNode.replaceChild(clone,source);
+    
+    var source = document.getElementById("lpresidual");
+    var clone = source.cloneNode(true);
+    clone.setAttribute('src','')
+    source.parentNode.replaceChild(clone,source);
+    
+    var source = document.getElementById("lpspectrum");
+    var clone = source.cloneNode(true);
+    clone.setAttribute('src','')
+    source.parentNode.replaceChild(clone,source);
+    
   if (elem.value == 1 || elem.value == 2) {
     wavesurfer.load("/static/wav/audio" + elem.value + ".wav");
     console.log(elem.value);
