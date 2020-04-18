@@ -12,7 +12,7 @@
     
      <link rel="shortcut icon" href="images/favicon.ico">
     
- 
+    <script src='https://unpkg.com/wavesurfer.js'></script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
 	<!-- Important Owl stylesheet -->
@@ -109,8 +109,53 @@
             <option value=3>ex3.wav</option>
             <option value=4>ex4.wav</option>
         </select>
-        <div id='waveform' class='position-relative' style="width: 900px;"></div>                    
-    </form>
+        <div id="audionums" hidden value='0'></div>
+        <script src="/static/js/exp-10.js"></script>
+        <button type="button" class="btn btn-primary position-relative" name="play" onclick="playButton();">Play/Pause</button>
+        <button type="button" class="btn btn-primary position-relative" name="generate" onclick="generateSpectrum();">Generate Spectrum</button>
+        <div id='waveform' class='position-relative' style="width: 900px;" align=center></div>
+        <div></div>
+        
+        <!--The main continer containing the parts of the graphs and the respective controls-->
+        <div class="container" id="main-container" style="visibility: hidden;">
+            <br>
+												<div class="row">
+														
+														LP Order : <select name='lp' id='lporder'
+															onchange="loadExcitation(this.value)">
+															<option value=1>1</option>
+															<option value=3>3</option>
+                                                            <option value=5>5</option>
+                                                            <option value=8>8</option>
+                                                            <option value=10>10</option>
+                                                            <option value=12>12</option>
+                                                            <option value=14>14</option>
+                                                            <option value=16>16</option>
+                                                            <option value=18>18</option>
+														</select>
+                                                    
+														 Graph Type : <select name='lptype' id='lptype'
+															onchange="changeLPType(this.value)">
+															<option value='lpresidual'>LP Residual</option>
+															<option value='impulse'>Impulse</option>
+														</select>
+
+
+												</div>
+												<div class="row">
+														<!--<div id='windowedspecturm' class="position-relative" width="500px"></div>-->
+														<embed id="excitationspectrum" width=730 height=330 />
+												</div>
+												<div class="row">
+														<embed id="logenergycontour" width=730 height=330/>
+												</div>
+												<div class="row">
+                                                    <embed id="pitchcontour" width=730 height=330/>
+												</div>
+											</div>
+											<br>
+        
+                            </form>
 </p>
 </div>						</div>
 					</div>
@@ -188,7 +233,7 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
+    <script src="exp-10.js"></script>
 	<!-- Custom Theme JavaScript -->
     <script src="js/custom.js"></script>
     

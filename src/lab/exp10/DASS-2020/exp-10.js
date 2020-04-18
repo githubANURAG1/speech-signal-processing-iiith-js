@@ -12,16 +12,46 @@ var wavesurfer = WaveSurfer.create({
     element.value = "";
   }
   
-  wavesurfer.on("ready", function() {
-    var timeline = Object.create(WaveSurfer.Timeline);
-  
-    timeline.init({
-      wavesurfer: wavesurfer,
-      container: "#waveform-timeline"
-    });
-  });
+// The function handling the play and pause button event
+
+function playButton() {
+  wavesurfer.playPause();
+}
+
+function generateSpectrum(){
+    document.getElementById("main-container").style.visibility = 'visible';
+    loadExcitation(1);
+    loadLogEnergy();
+    loadPitchContour();
+}
+
+function loadExcitation(elem){
+    var source = document.getElementById("excitationspectrum");
+    var clone = source.cloneNode(true);
+    clone.setAttribute("src","/graphs/lpresidual/lpresidual-wav" +document.getElementById("audionums").value +"-order"+elem+'.html');
+    source.parentNode.replaceChild(clone, source);
+    
+}
+
+function loadLogEnergy(){
+    var source = document.getElementById("logenergycontour");
+    var clone = source.cloneNode(true);
+    clone.setAttribute("src","/graphs/logenergy/audio" +document.getElementById("audionums").value +"log_energy.html");
+    source.parentNode.replaceChild(clone, source);
+}
+
+function loadPitchContour() {
+    var source = document.getElementById("pitchcontour");
+    var clone = source.cloneNode(true);
+    clone.setAttribute("src","/graphs/pitch/audio" +document.getElementById("audionums").value +"pitch.html");
+    source.parentNode.replaceChild(clone, source);
+}
   
   function LoadAudio(elem) {
+      
+    document.getElementById("main-container").style.visibility = 'hidden';
+    document.getElementById("audionums").value = elem.value;
+      
     if (elem.value == 1) {
       wavesurfer.load("/static/wav/audio1.wav");
       console.log(elem.value);
