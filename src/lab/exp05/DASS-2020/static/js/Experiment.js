@@ -21,6 +21,7 @@ function generateSpectrum() {
   changeSpectrum("rectangular");
   document.getElementById("nfftvalue").selectedIndex = 0;
   changefft(64);
+    document.getElementById('main-container').style.visibility = 'visible';
 }
 
 function changeSpectrum(elem) {
@@ -42,7 +43,7 @@ function changefft(elem) {
 function LoadAudio(elem) {
   document.getElementById("audionum").value = elem.value;
   document.getElementById("windowformtype").selectedIndex = 0;
-    
+    document.getElementById('main-container').style.visibility = 'hidden';
     var source = document.getElementById("windowedspecturms");
     var clone = source.cloneNode(true);
     clone.setAttribute('src','')
