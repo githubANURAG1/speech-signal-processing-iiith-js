@@ -8,9 +8,12 @@ var wavesurfer = WaveSurfer.create({
   backgroundColor: "#f5f5f5",
   normalize: "true",
 });
+function clearcontent(element) {
+  element.value = "";
+}
 
 // When page is loaded load timeline
-wavesurfer.on("ready", function () {
+window.wavesurfer.on("ready", function () {
   var timeline = Object.create(WaveSurfer.Timeline);
 
   timeline.init({
@@ -18,6 +21,9 @@ wavesurfer.on("ready", function () {
     container: "#waveform-timeline",
   });
 });
+
+// This function provides zoom for the experiment
+
 
 // This function provides zoom for the experiment
 function zoom(elem) {
@@ -28,11 +34,6 @@ function zoom(elem) {
 function playButton() {
   wavesurfer.playPause();
 }
-
-
-
-
-
 
 
 
@@ -51,7 +52,7 @@ var expnum = content3+content1+content3
 val = "wav/ex"+expnum+".wav"
 console.log(val)
 document.getElementById("waveform").innerHTML=""
-wavesurfer = WaveSurfer.create({
+window.wavesurfer = WaveSurfer.create({
   container: "#waveform",
   waveColor: "#176696",
   barHeight: 2,
@@ -60,12 +61,13 @@ wavesurfer = WaveSurfer.create({
   backgroundColor: "#f5f5f5",
   normalize: "true",
 });
-wavesurfer.load(val)
-wavesurfer.on("ready", function () {
+window.wavesurfer.load(val)
+console.log(wavesurfer)
+window.wavesurfer.on("ready", function () {
   var timeline = Object.create(WaveSurfer.Timeline);
 
   timeline.init({
-    wavesurfer: wavesurfer,
+    wavesurfer: window.wavesurfer,
     container: "#waveform-timeline",
   });
 });
