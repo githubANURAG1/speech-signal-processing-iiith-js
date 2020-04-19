@@ -14,16 +14,13 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
-"""
-Voiced "ah-eh-ee-oh-oo" based on resonators at formant frequencies
-"""
-
-from __future__ import unicode_literals, print_function
 
 from audiolazy import (sHz, maverage, rint, AudioIO, ControlStream,
                        CascadeFilter, resonator, saw_table, chunks)
 from time import sleep
 import sys
+from tkinter import *
+
 
 # Script input, change this with symbols from the table below
     #vowels = "ʌ"
@@ -90,4 +87,18 @@ formants = {
     "u": [250, 595],
     }
 #call_me("ɯ",formants['ɯ'][0],formants['ɯ'][1])
+
 call_me("ɛ",610,1900)
+
+'''
+tkWindow = Tk()
+tkWindow.geometry('400x150')  
+tkWindow.title('PythonExamples.org - Tkinter Example')
+
+button = Button(tkWindow)
+button.grid(row=5, column=2)
+button.bind('<Button-1>', call_me("ɛ",610,1900))
+#button['command'] = call_me("ɛ",610,1900)
+button.pack()
+tkWindow.mainloop()
+'''

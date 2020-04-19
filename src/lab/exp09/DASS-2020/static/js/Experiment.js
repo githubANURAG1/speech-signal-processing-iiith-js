@@ -1,18 +1,6 @@
-var wavesurfer = WaveSurfer.create({
-  container: "#waveform",
-  waveColor: "#176696",
-  barHeight: 2,
-  barGap: 1,
-  height: 200,
-  backgroundColor: "#f5f5f5",
-  normalize: "true",
-});
 
-function clearcontent(element) {
-  element.value = "";
-}
 
-function playButton() {
+function myFunction() {
   wavesurfer.playPause();
 }
 

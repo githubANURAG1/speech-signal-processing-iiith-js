@@ -8,6 +8,29 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from os import path
 import scipy
 from time import sleep
+from audiolazy import (sHz, maverage, rint, AudioIO, ControlStream,
+                       CascadeFilter, resonator, saw_table, chunks)
+from time import sleep
+import sys
+from tkinter import *        
+formants ={
+    "i": [240, 2400],
+    "y": [235, 2100],
+    "e": [390, 2300],
+    "ø": [370, 1900],
+    "ɛ": [610, 1900],
+    "œ": [585, 1710],
+    "a": [850, 1610],
+    "æ": [820, 1530],
+    "ɑ": [750, 940],
+    "ɒ": [700, 760],
+    "ʌ": [600, 1170],
+    "ɔ": [500, 700],
+    "ɤ": [460, 1310],
+    "o": [360, 640],
+    "ɯ": [300, 1390],
+    "u": [250, 595],
+    }
 
 app = Flask(__name__)
 
@@ -40,99 +63,93 @@ def Feedback():
 	return render_template('Feedback.html')
 
 @app.route('/tutorial')
-def Tutorial():
+def Tutorial():   
 	return render_template('Tutorial.html')
 
 @app.route('/assessment')
 def Assesment():
 	return render_template('Assessment.html')
 
-@app.route('/windowed/<file>/<type>')
-def windowed_waveform(type, file):
-	if(path.exists('static/images/windowed-'+type+'-wav'+file+'.png') is False) :
-		fig = create_window_plot(type, file)
 
-	return send_file('static/images/windowed-'+type+'-wav'+file+'.png', mimetype='image/gif')
-
-@app.route('/stft/<file>/<nfft>')
-def log_spectrum(file,nfft):
-	if(path.exists('static/images/stft-wav'+file+'-nfft'+nfft+'.png') is False):
-		fig = create_stft(file,int(nfft))
-
-	return send_file('static/images/stft-wav'+file+'-nfft'+nfft+'.png', mimetype='image/gif')
-
-@app.route('/lpresidual/<file>/<order>')
-def lpresidual_spectrum(file, order):
-	if(path.exists('static/images/lpresidual-wav'+file+'-order'+str(order)+'.png') is False):
-		fig = create_lpresidual(file,int(order))
-
-	return send_file('static/images/lpresidual-wav'+file+'-order'+str(order)+'.png', mimetype='image/gif')
-
-'''
-def create_window_plot(window_type, file):
-	file = str(file)
-	audio, sample_rate = librosa.load('static/wav/audio'+file+'.wav')
-	filter = librosa.filters.get_window(window_type, len(audio))
-	windowed_output = audio * filter
-	#plt.figure(figsize=(5, 2))
-	plt.plot(windowed_output)
-	plt.title("Windowed Waveform")
-	plt.xlabel("Time")
-	plt.ylabel("Magnitude")
-	plt.grid(color='grey', linestyle='--', linewidtwindowh=0.5)
-	plt.savefig('static/images/windowed-'+window_type+'-wav'+file+'.png')
-	plt.close()
-	return plt
+@app.route('/add')
+def call():
 
 
-def create_stft(file, nfft):
-	file = str(file)
-	audio_path = 'static/wav/audio' + file + '.wav'
-	audio, sampling_rate = librosa.load(audio_path)
-	n = len(audio)
-	T = nfft / sampling_rate
-	yf = scipy.fft(audio)
-	xf = np.linspace(0.0, 1.0//(2.0 * T), n//2)
-	fig, ax = plt.subplots()
-	ax.plot(xf, 2.0/n * np.abs(yf[:n//2]))
-	plt.grid()
-	plt.title("Log Spectrum")
-	plt.yscale("log")
-	plt.xlabel("Frequency")
-	plt.ylabel("Magnitude")
-	plt.grid(color='grey', linestyle='--', linewidth=0.5)
-	plt.savefig('static/images/stft-wav'+file+'-nfft'+str(nfft)+'.png')
-	plt.close()
-	return plt
-'''
+	vowels=['a','e','i','y','ø','ɛ','æ','ɑ','ɒ','ʌ','ɔ','ɤ','ɯ','u']
+	
+	formants = {
+    "i": [240, 2400],
+    "y": [235, 2100],
+    "e": [390, 2300],
+    "ø": [370, 1900],
+    "ɛ": [610, 1900],
+    "œ": [585, 1710],
+    "a": [850, 1610],
+    "æ": [820, 1530],
+    "ɑ": [750, 940],
+    "ɒ": [700, 760],
+    "ʌ": [600, 1170],
+    "ɔ": [500, 700],
+    "ɤ": [460, 1310],
+    "o": [360, 640],
+    "ɯ": [300, 1390],
+    "u": [250, 595],
+    }
 
-def create_lpresidual(file, order):
-	file = str(file)
-	audio_path = 'static/wav/audio' + file + '.wav'
-	audio, sampling_rate = librosa.load(audio_path)
+	#for me in vowels:
+	root=Tk()
+	Button(root, text = 'a') #,command=call_me(vowels[0],390,2300))
+	Button(root, text = 'e') #,command=call_me(vowels[1],390,2300))
+	
+@app.route('/addnumber')
+def call_me(vowels,a,b):    
 
-	lp_result = librosa.lpc(audio, order)
-	y_result = scipy.signal.lfilter([0] + -1*lp_result[1:], [1], audio)
+	# Initialization
+    rate = 44100
+    s, Hz = sHz(rate)
+    inertia_dur = .5 * s
+    inertia_filter = maverage(rint(inertia_dur))
 
-	plt.figure()
-	plt.grid()
-	plt.plot(audio-y_result)
-	plt.xlabel("Time")
-	plt.ylabel("Magnitude")
-	plt.title('LP Residual')
-	plt.grid(color='grey', linestyle='--', linewidth=0.5)
-	plt.savefig('static/images/lpresidual-wav'+file+'-order'+str(order)+'.png')
-	plt.close()
-	return plt
+    api = sys.argv[1] if sys.argv[1:] else None # Choose API via command-line
+    chunks.size = 1 if api == "jack" else 16
+
+    with AudioIO(api=api) as player:
+        first_coeffs = formants[vowels[0]]
+
+        # These are signals to be changed during the synthesis
+        f1 = ControlStream(first_coeffs[0] * Hz)
+        f2 = ControlStream(first_coeffs[1] * Hz)
+        gain = ControlStream(0) # For fading in
+
+        # Creates the playing signal
+        filt = CascadeFilter([
+            resonator.z_exp(inertia_filter(f1).skip(inertia_dur), 400 * Hz),
+            resonator.z_exp(inertia_filter(f2).skip(inertia_dur), 2000 * Hz),
+        ])
+        sig = filt((saw_table)(100 * Hz)) * inertia_filter(gain)
+
+        th = player.play(sig)
+        for vowel in vowels:
+            #coeffs = formants[vowel]
+            print("Now playing: ", vowel,a,b)
+            f1.value = a * Hz
+            f2.value = b * Hz
+            gain.value = 1 # Fade in the first vowel, changes nothing afterwards
+            sleep(2)
+
+        # Fade out
+        gain.value = 0
+        sleep(inertia_dur / s + .2) # Divide by s because here it's already
+                                    # expecting a value in seconds, and we don't
+                                    # want ot give a value in a time-squaed unit
+                                # like s ** 2
+	
+
+
 
 if __name__ == '__main__':
-	app.run(host='127.0.0.1', threaded=True)
-	type = ['LP Residual','Impulse','Noise']
-	order_values = [1,3,5,8,10,12,14,16,18]
-	for file in range(1,5):
-		for nfft in order_values:
-			lpresidual_spectrum(file, nfft)
 
+	#add()
 	app.run()
 	
 
