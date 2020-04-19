@@ -33,10 +33,17 @@ function playButton() {
 
 
 
-var contentval;
+
 function preload() {
-  contentval = loadStrings("vowels.txt");
-  //console.log(contentval);
+  var ctr=0
+  for (let i=0; i<3; i++){
+    for (let j=0; j<3; j++){
+      var contentval=[];
+     contentval[ctr] = loadStrings("wav/"+i+j+".txt");
+     ctr++;
+  }
+}
+  return contentval;
 
 }
 
@@ -50,14 +57,16 @@ function setup() {
 var content1, content2, val, fin;
 //This function changes content of the experiment on changing the experiment number
 function loadExpFrame() {
-preload()
-console.log(contentval)
+
+
 content1 = document.getElementById("speaker").value; 
 content2 = document.getElementById("vowel").value ;
 content1 = content1.toString()
 content2 = content2.toString()
+var expnum = content1+content2
 val = "wav/"+content1+content2+".wav"
-console.log(val)
+freqs = preload(expnum)
+console.log(freqs)
 document.getElementById("waveform").innerHTML=""
 wavesurfer = WaveSurfer.create({
   container: "#waveform",
