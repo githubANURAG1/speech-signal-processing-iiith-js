@@ -18,13 +18,13 @@ def createSpectAutoCorr(audioFile):
     time_filter = [i for i in range(len(y))]
 
     output_file=('graphs/autocorr/'+audioFile+'autocorr.html')
-    p = figure(plot_width=600, plot_height=300, x_axis_label='Time', y_axis_label="Amplitude", title="Autocorrelation")
+    p = figure(plot_width=550, plot_height=300, x_axis_label='Time', y_axis_label="Amplitude", title="Autocorrelation")
     autoCorr = librosa.autocorrelate(y)
     p.line(time_filter, autoCorr)
     save(p, filename ='graphs/autocorr/'+audioFile+'autocorr.html')
     
 
-    p = figure(plot_width=600, plot_height=300, x_axis_label="Sample Number", y_axis_label="Amplitude", title="LPC")
+    p = figure(plot_width=550, plot_height=300, x_axis_label="Sample Number", y_axis_label="Amplitude", title="LPC")
     lpc= librosa.lpc(y,10)
     lpc_x = range(len(lpc))
     p.line(lpc_x, lpc)
