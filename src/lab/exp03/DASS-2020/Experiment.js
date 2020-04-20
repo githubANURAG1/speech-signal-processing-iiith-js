@@ -35,7 +35,14 @@ document.getElementById("main-container").style.visibility="visible";
 document.getElementById("autocorr").setAttribute("src", "graphs/autocorr/"+content1+content2+"autocorr.html")
 document.getElementById("lpc").setAttribute("src", "graphs/lpc/"+content1+content2+"lpc.html")
 console.log(document.getElementById("autocorr").getAttribute("src"))
-
+document.getElementById("f0a").innerHTML= ""
+document.getElementById("f1a").innerHTML= ""
+document.getElementById("f2a").innerHTML= ""
+document.getElementById("f3a").innerHTML= ""
+document.getElementById("F0").value=''
+document.getElementById("F1").value=''
+document.getElementById("F2").value=''
+document.getElementById("F3").value=''
 }
 
 function checkAns(){
