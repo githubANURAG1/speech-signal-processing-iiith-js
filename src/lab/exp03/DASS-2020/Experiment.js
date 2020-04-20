@@ -1,5 +1,5 @@
 // This js file is for page 1 and 2
-
+/*
 // This function defines the wavesurfer waveform and its related information
 var wavesurfer = WaveSurfer.create({
   container: "#waveform",
@@ -54,10 +54,10 @@ function setup() {
   noCanvas();
   //console.log(content1phn);
 }
+*/
 var content1, content2, val, fin;
 //This function changes content of the experiment on changing the experiment number
 function loadExpFrame() {
-
 
 content1 = document.getElementById("speaker").value; 
 content2 = document.getElementById("vowel").value ;
@@ -65,8 +65,8 @@ content1 = content1.toString()
 content2 = content2.toString()
 var expnum = content1+content2
 val = "wav/"+content1+content2+".wav"
-freqs = preload(expnum)
-console.log(freqs)
+//freqs = preload(expnum)
+//console.log(freqs)
 document.getElementById("waveform").innerHTML=""
 wavesurfer = WaveSurfer.create({
   container: "#waveform",
