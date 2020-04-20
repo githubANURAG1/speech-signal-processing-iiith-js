@@ -93,6 +93,8 @@ def add():
 	"u": [250, 595],
 	}    
 	vowels = request.args.get('a')
+	first = request.args.get('b')
+	second = request.args.get('c')
 	rate=44100
 	s, Hz = sHz(rate)
 	inertia_dur = .5 * s
@@ -105,8 +107,8 @@ def add():
 		first_coeffs = formants[vowels[0]]
 
 		# These are signals to be changed during the synthesis
-		f1 = ControlStream(first_coeffs[0] * Hz)
-		f2 = ControlStream(first_coeffs[1] * Hz)
+		f1 = ControlStream(int(first) * Hz)
+		f2 = ControlStream(int(second) * Hz)
 		gain = ControlStream(0) # For fading in
 
 		# Creates the playing signal
@@ -119,9 +121,16 @@ def add():
 		th = player.play(sig)
 		for vowel in vowels:
 			coeffs = formants[vowel]
+			'''
+			if(request.args.get('b')!=0):
+				coeffs[0] = request.args.get('b')
+				coeffs[1] = request.args.get('c')	
 			print("Now playing: ", vowel,coeffs[0],coeffs[1])
-			f1.value = coeffs[0] * Hz
-			f2.value = coeffs[1] * Hz
+			'''
+
+			print(request.args.get('b'))
+			f1.value = int(first) * Hz
+			f2.value = int(second) * Hz
 			gain.value = 1 # Fade in the first vowel, changes nothing afterwards
 			sleep(2)
 

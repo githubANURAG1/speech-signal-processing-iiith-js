@@ -35,6 +35,8 @@
 				url: '/addnumber',
 				data:{
                   a: $('#a').val(),
+                  b: $('#b').val(),
+				  c: $('#c').val(),
                 },
                 dataType: 'JSON',
                 type: 'GET',
@@ -124,14 +126,96 @@
 <p>
 	Vowels and their frequencies
 	<br>
+	All Vowels are :- i &nbsp , &nbsp y &nbsp, &nbsp e &nbsp &nbsp ø &nbsp,&nbsp ɛ &nbsp,&nbsp œ &nbsp, &nbspa &nbsp, &nbspæ &nbsp,&nbsp ɑ &nbsp,&nbsp ɒ &nbsp, &nbsp ʌ &nbsp, &nbsp ɔ &nbsp,&nbsp ɤ &nbsp, &nbsp o &nbsp,&nbsp ɯ &nbsp, &nbsp u
+		<table style="width:50%" align="right">
+			<b><p align="middle">    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp           Vowels and their formmant frequencies:-  ------             </p></b>
+			<tr>
+			  <th>Vowel</th>
+			  <th>F1</th>
+			  <th>F2</th>
+			</tr>
+			<tr>
+			  <td>i</td>
+			  <td>240</td>
+			  <td>2400</td>
+			</tr>
+			<tr>
+				<td>y</td>
+				<td>235</td>
+				<td>2100</td>
+			  </tr>
+			  <tr>
+				<td>e</td>
+				<td>390</td>
+				<td>2300</td>
+			  </tr>
+			  <tr>
+				<td>ø </td>
+				<td>370</td>
+				<td>1900</td>
+			  </tr>
+			  <tr>
+				<td>ɛ</td>
+				<td>610</td>
+				<td>1900</td>
+			  </tr>
+			  <tr>
+				<td>œ </td>
+				<td>585</td>
+				<td>1710</td>
+			  </tr>
+			  <tr>
+				<td>ɑ</td>
+				<td>850</td>
+				<td>1610</td>
+			  </tr>
+			  <tr>
+				<td>ɒ</td>
+				<td>700</td>
+				<td>760</td>
+			  </tr>
+			  <tr>
+				<td>ʌ</td>
+				<td>160</td>
+				<td>1170</td>
+			  </tr>
+			  <tr>
+				<td>ɔ</td>
+				<td>500</td>
+				<td>700</td>
+			  </tr>
+			  <tr>
+				<td>ɤ</td>
+				<td>460</td>
+				<td>1310</td>
+			  </tr>
+			  <tr>
+				<td>o</td>
+				<td>360</td>
+				<td>640</td>
+			  </tr>
+			  <tr>
+				<td>ɯ</td>
+				<td>300</td>
+				<td>1390</td>
+			  </tr>
+			  <tr>
+				<td>u</td>
+				<td>250</td>
+				<td>595</td>
+			  </tr>
+		  </table>
+
 	<br>
-	Vowels =[i,y,e,ø,ɛ,œ,a,æ,ɑ,ɒ,ʌ,ɔ,ɤ,o,ɯ,u]
-	<br>
+	You can change them and hear different vowels by entering your frequencies
 	<br>
 	<br>
 	Please type one of the vowel here  and click the button
 
 	<input type="text" id='a' size="5" name="a"> 
+	<input type="text" id='b' size="5" name="b"> 
+	<input type="text" id='c' size="5" name="c"> 
+
 	<button class="btn btn-primary position-relative" id="call">Click_Genarate</button>
 
 
