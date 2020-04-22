@@ -35,12 +35,12 @@ document.getElementById("main-container").style.visibility="visible";
 
     var source = document.getElementById('autocorr');
     var clone = source.cloneNode(true);
-    clone.setAttribute("src", "graphs/autocorr/"+content1+content2+"autocorr.html");
+    clone.setAttribute("src", "static/media/graphs/autocorr/"+content1+content2+"autocorr.html");
     source.parentNode.replaceChild(clone, source);
     
     var source = document.getElementById('lpc');
     var clone = source.cloneNode(true);
-    clone.setAttribute("src", "graphs/lpc/"+content1+content2+"lpc.html");
+    clone.setAttribute("src", "static/media/graphs/lpc/"+content1+content2+"lpc.html");
     source.parentNode.replaceChild(clone, source);
     
 console.log(document.getElementById("autocorr").getAttribute("src"))
