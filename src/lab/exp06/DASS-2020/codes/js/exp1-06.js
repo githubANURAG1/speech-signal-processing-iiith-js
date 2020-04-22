@@ -1,3 +1,4 @@
+//This function sets up spectrogram plugin
 var BVal= 512
 
 console.log(BVal)
@@ -20,6 +21,8 @@ var wavesurfer = WaveSurfer.create({
         })
     ]
  });
+
+//This function loads spectrogram and waveform on changing experiment number or value od band
 
 function loadSpect(bandVal){
 	BVal=bandVal.value;
@@ -49,15 +52,18 @@ window.wavesurfer = WaveSurfer.create({
 loadExpFrame(expVal)
 }
 
+//this function clears content of the element
 function clearcontent(element){
     element.value = '';
 }
 
-
+//This function loads zoom
 
 function zoom(elem){
     wavesurfer.zoom(elem.value);
 }
+
+// The function handles the play and pause button event
 
 function playButton(){
     wavesurfer.playPause();
@@ -76,6 +82,8 @@ var content1syl,content1phn,content1wrd;
 var content2syl,content2phn,content2wrd;
 var content3syl,content3phn,content3wrd;
 var content1sy4,content4phn,content4wrd;
+
+//This function preloads all the strings needed
 
 function preload(){
     content1 = loadStrings("wav/ex1.txt");
@@ -150,7 +158,7 @@ function loadExpFrame(expnum=0) {
     }
 }
 
-
+//This function loads the subword units
 function loadSubword(subword) {
         var field = document.getElementById("lang").value;
         addplaybacks(subword.value);
@@ -211,6 +219,7 @@ function loadSubword(subword) {
         }
 }
 
+//This function resets the tables
 function reset_table() {
     var table = document.getElementById("Subword");
     var rows = table.getElementsByTagName("tr");
@@ -220,6 +229,7 @@ function reset_table() {
     }
 }
 
+//This function cheack the entered answer
 function verify_ans(elem,ref){
     var enter_val = elem.value;;
     var err = enter_val - ref;
@@ -230,7 +240,7 @@ function verify_ans(elem,ref){
     }
 }
 
-
+// This function add playbacks and add buttons on the panel for playing the specific part of wav file.
 function addplaybacks(subword){
     console.log(content1syl);
     var table = document.getElementById("Subword");
