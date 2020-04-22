@@ -118,7 +118,7 @@ def add():
 		])
 		sig = filt((saw_table)(100 * Hz)) * inertia_filter(gain)
 
-		th = player.play(sig)
+		th = player.play(gain)
 		for vowel in vowels:
 			coeffs = formants[vowel]
 			'''
