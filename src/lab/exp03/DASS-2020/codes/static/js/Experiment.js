@@ -1,6 +1,6 @@
 
 var content1, content2, val, fin;
-//This function changes content of the experiment on changing the experiment number
+//This function changes content of the experiment on changing the speaker and the vowel
 function loadExpFrame() {
 
 content1 = document.getElementById("speaker").value; 
@@ -45,6 +45,9 @@ document.getElementById("F2").value=''
 document.getElementById("F3").value=''
 }
 
+
+//This function checks content entered in the frequency inputs
+
 function checkAns(){
 content1 = document.getElementById("speaker").value; 
 content2 = document.getElementById("vowel").value ;
@@ -53,7 +56,7 @@ content2 = content2.toString()
 var expnum = content1+content2
 
 var client = new XMLHttpRequest();
-client.open('GET', 'wav/'+expnum+'.txt');
+client.open('GET', 'static/media/wav/'+expnum+'.txt');
 client.onreadystatechange = function() {
   window.fin = client.responseText;
   fin = fin.split("\n")
