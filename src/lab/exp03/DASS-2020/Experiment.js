@@ -32,8 +32,16 @@ wavesurfer.on("ready", function () {
 });
 
 document.getElementById("main-container").style.visibility="visible";
-document.getElementById("autocorr").setAttribute("src", "graphs/autocorr/"+content1+content2+"autocorr.html")
-document.getElementById("lpc").setAttribute("src", "graphs/lpc/"+content1+content2+"lpc.html")
+    var source = document.getElementById('autocorr');
+    var clone = source.cloneNode(true);
+    clone.setAttribute("src", "graphs/autocorr/"+content1+content2+"autocorr.html");
+    source.parentNode.replaceChild(clone, source);
+    
+    var source = document.getElementById('lpc');
+    var clone = source.cloneNode(true);
+    clone.setAttribute("src", "graphs/lpc/"+content1+content2+"lpc.html");
+    source.parentNode.replaceChild(clone, source);
+    
 console.log(document.getElementById("autocorr").getAttribute("src"))
 document.getElementById("f0a").innerHTML= ""
 document.getElementById("f1a").innerHTML= ""
