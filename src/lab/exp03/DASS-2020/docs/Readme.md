@@ -1,4 +1,4 @@
-EXPERIMENT 7
+EXPERIMENT 3
 
 1. The whole production ready code is availabe in codes folder.
 2. Also the plot generator to generate similar files has been kept in archive folder.
