@@ -1,28 +1,4 @@
 
-var wavesurfer = WaveSurfer.create({
-  container: "#waveform",
-  waveColor: "#176696",
-  barHeight: 2,
-  barGap: 1,
-  height: 400,
-  backgroundColor: "#f5f5f5",
-  normalize: "true",
-});
-function clearcontent(element) {
-  element.value = "";
-}
-
-// When page is loaded load timeline
-window.wavesurfer.on("ready", function () {
-  var timeline = Object.create(WaveSurfer.Timeline);
-
-  timeline.init({
-    wavesurfer: wavesurfer,
-    container: "#waveform-timeline",
-  });
-});
-
-
 
 // This function provides zoom for the experiment
 function zoom(elem) {
@@ -47,7 +23,7 @@ content3 = document.getElementById("lang").value ;
 content1 = content1.toString()
 content2 = content2.toString()
 content3 = content3.toString()
-var expnum = content3+content1+content3
+var expnum = content3+content1+content2
 val = "static/media/wav/ex"+expnum+".wav"
 console.log(val)
 document.getElementById("waveform").innerHTML=""
