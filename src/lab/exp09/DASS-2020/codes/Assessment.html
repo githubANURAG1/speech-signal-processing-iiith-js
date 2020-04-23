@@ -7,13 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Welcome to Virtual Labs - A MHRD Govt of india Initiative">
     <meta name="author" content="Virtual Labs - A MHRD Govt of india Initiative">
-    <script src="https://cjrtnc.leaningtech.com/2.1/loader.js"></script>
+    
     <title>Welcome to Virtual Labs - A MHRD Govt of india Initiative</title>
     
      <link rel="shortcut icon" href="../../../images/favicon.ico">
     
-    <script>cheerpjInit();</script>
-
+ 
     <link href="../../../css/bootstrap.min.css" rel="stylesheet">
 
 	<!-- Important Owl stylesheet -->
@@ -46,8 +45,8 @@
 			                        
 			            <!-- Collect the nav links, forms, and other content for toggling -->
 			            <div class="collapse navbar-collapse menu-div" id="bs-example-navbar-collapse-1" style="border: 0px;">
-			               <!-- 
-			                <ul class="nav navbar-nav navbar-right menu-ul search-ul" style="position: relative; top: -5px;">
+			               
+			               <!--  <ul class="nav navbar-nav navbar-right menu-ul search-ul" style="position: relative; top: -5px;">
 			                	<li>
 			                		<form method="get" action="../../../search-result.html">
 			                        	<input type="text" class="search-textbox" placeholder="SEARCH FOR A LAB" name="q" id="q"/>
@@ -99,15 +98,31 @@
 						<div class="col-md-10 lab-list-col-10">
 							
 							<!--edit -->
-<h1 class="text-h2-lightblue">Expt-9: Formant Synthesis</h1><div class="content" id="experiment-article-section-4-content">
-<!-- PUT CONTENT HERE -->
+<h1 class="text-h2-lightblue">Expt-9: Formant Synthesis</h1><div class="content" id="experiment-article-section-6-content">
+<ol>
+<li>
 <p>
-<cheerpj-applet archive="media/vowelSynthesis.jar" code="vowelSynthesis.VowelSynthesisApplet.class" height="600" width="800">
-<param name="foo" value="bar"/>
-		You need to have Java plugin installed to carry out
-		any experiments
-</cheerpj-applet>
-</p>
+							Draw the output (impulse response) of a second order resonator given by
+							$$ H(z)=\frac{1}{(1 - z_1 z^{-1})(1 - z_1^{*} z^{-1})} $$
+							for the case
+							<ol>
+<ol type="a">
+<li> <p>\(z_1 = \cos(\frac{\pi}{4}) + j \sin(\frac{\pi}{4})\)</p></li>
+<li> <p>\(z_1 = 0.9(\cos(\frac{\pi}{4}) + j \sin(\frac{\pi}{4})\)</p></li>
+</ol></ol>
+
+							Assume a sampling rate of 8kHz. What is the resonance frequence. Also
+							draw the pole-zero plot in the z-plane. Which of the two is more likely
+							in a physical system such as a resonator cavity and why?	
+          			</p>
+</li>
+<li>
+<p>
+							Write a program in Octave or Scilab to synthesize a vowel given the first 
+							3 formants, corresponding bandwidths, the pitch period and sampling rate.
+						</p>
+</li>
+</ol>
 </div>						</div>
 					</div>
 			</div>
@@ -171,6 +186,7 @@
 
  		</div>
 	</footer>	
+
 
 
 </div> <!-- top div -->
