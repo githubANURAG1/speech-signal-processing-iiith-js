@@ -66,9 +66,8 @@ right: 40%;
 }
 
 .vranger {
-	float: right;
-	border: 30px ;
-	width: 800px;
+	float: left;
+
   height: 	250px;
   margin-top: 50px;
   -webkit-appearance: slider-vertical; /* WebKit */
@@ -173,13 +172,19 @@ right: 40%;
 
 		<p id="m1">Please type one of the vowel here  and click the button</p>
 	
+
+
 		<input  type="text" id='a' size="5" name="a"> 
 	
 		<button class="btn btn-primary position-relative" id="call">Click_Genarate</button>
 	<br>
 		<label for="vol" >F1 F2 Range</label>
+		<div class="vranger">
 		<input width="10" height="30" type="range" class="vranger" id="b" name="vol1" min="120" max="900">
+		</div>
+		<div class="vranger">
 		<input type="range" class="vranger" id="c" name="vol2" min="700" max="2500">
+		</div>
 		<br>
 		<br>
 	
