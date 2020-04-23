@@ -40,7 +40,7 @@
 			                    <span class="icon-bar" style="background-color: #77BB41"></span>
 			                    <span class="icon-bar" style="background-color: #77BB41"></span>
 			                </button>
-			                <a class="navbar-brand main-logo-a" href="http://vlabs.ac.in/index.html"><img src="/staticimages/logo-new.png" class="img-responsive main-logo" /></a>
+			                <a class="navbar-brand main-logo-a" href="http://vlabs.ac.in/index.html"><img src="/static/images/logo-new.png" class="img-responsive main-logo" /></a>
 			            </div>			
 			                        
 			            <!-- Collect the nav links, forms, and other content for toggling -->
@@ -110,9 +110,9 @@
 						</a><a href="/feedback" class="sidebar-a">
 							<h3 class="text-h3-darkblue" style="margin-top: 2px;">Feedback</h3>
 						</a> </div>	
-												<div class="col-md-10 lab-list-col-10">
-													
-													<!--edit -->
+						<div class="col-md-10 lab-list-col-10">
+							
+							<!--edit -->
 <h1 class="text-h2-lightblue">Expt-9: Formant Synthesis</h1><div class="content" id="experiment-article-section-3-content">
 <!-- PUT CONTENT HERE -->
 <style type="text/css">
@@ -134,7 +134,7 @@ The system used in the synthesis of vowels is an all pole filter as shown in Fig
 <p align="justify">
 The tranfer function <i>H(z)</i> of the all-pole system is given by
 <font size="-1">
-$$ H(z) = \frac{1}{1+\sum^{N}_{k=1}{{a_k z^{-k}}}}, \qquad (1) $$
+	$$ H_i(z) = \frac{1}{(1-z_iz^{-1})(1-z_i^*z^{-1})} = \frac{1}{1+a_{i_1}z^{-1}+a_{i_2}z^{-2}}, \qquad (2)$$
 </font>
 where <font size="-1">\(\{a_k\}\)</font>s denote the real coefficients of the denominator polynomial of order <font size="-1">\(N\)</font>.
 Roots of the denominator polynomial in <font size="-1">\(z^{-1}\)</font> can be either real or complex.
@@ -211,7 +211,7 @@ $$
 <li>
 <p>Substituting F<sub>2</sub>= 1180 Hz Hz, B<sub>2</sub>= 118 Hz Hz
 in Eq. (1) we get </p>
-<font size="-1">t
+<font size="-1">
 $$
 H_2(z) = \frac{1}{ 1 - 1.4213*z^{-1} + 0.9285* z^{-2}} \qquad (4)
 $$
@@ -265,23 +265,23 @@ the corresponding spectrograms for excitations with a period of half the
 pitch period, the given pitch period, and twice the pitch period, respectively. </p>
 </li>
 </ul>
-<p align="center" style="margin-bottom: 0in;"><img alt="The excitation and the response of the all-pole filter for impulse sequence excitation with a period of 3.75ms, 7.5ms and 15ms respectively." src="media/lab4.png" style="width: 529px; height: 405px;"><br>
+<p align="center" style="margin-bottom: 0in;"><img alt="The excitation and the response of the all-pole filter for impulse sequence excitation with a period of 3.75ms, 7.5ms and 15ms respectively." src="/static/media/lab4.png" style="width: 529px; height: 405px;"><br>
 </br></img></p>
 <p align="center" style="margin-bottom: 0in;"><strong>Figure 2: </strong>
 <i>The excitation and the response of the all-pole filter for impulse
 sequence excitation with a period of 3.75ms, 7.5ms and 15ms
 respectively.</i></p>
-<p align="center" style="margin-bottom: 0in;"><img alt="Figure 3: Waveform of the the synthesized vowel /a/ and its spectrogram for excitation at half the pitch period." src="media/hp_spec.png" style="width: 463px; height: 342px;"><br>
+<p align="center" style="margin-bottom: 0in;"><img alt="Figure 3: Waveform of the the synthesized vowel /a/ and its spectrogram for excitation at half the pitch period." src="/static/media/hp_spec.png" style="width: 463px; height: 342px;"><br>
 </br></img></p>
 <p align="center" style="margin-bottom: 0in;"><strong>Figure 3: </strong>
 <i>Waveform of the the synthesized vowel /a/ and its spectrogram obtained with an impulse sequence excitation of pitch period 3.75 ms.</i></p>
-<p align="center" style="margin-bottom: 0in;"><img alt="Figure 4: Waveform of the the synthesized vowel /a/ and its spectrogram for excitation at the pitch period." src="media/p_spec.png" style="width: 463px; height: 342px;"><br>
+<p align="center" style="margin-bottom: 0in;"><img alt="Figure 4: Waveform of the the synthesized vowel /a/ and its spectrogram for excitation at the pitch period." src="/static/media/p_spec.png" style="width: 463px; height: 342px;"><br>
 </br></img></p>
 <p align="center" style="margin-bottom: 0in;"><strong>Figure 4: </strong>
 <i>Waveform of the the synthesized vowel /a/ and its spectrogram obtained with an impulse sequence excitation of pitch period 7.5 ms. </i></p>
 <p align="center" style="margin-bottom: 0in;"><br>
 </br></p>
-<p align="center" style="margin-bottom: 0in;"><i><img alt="Figure 5: Waveform of the the synthesized vowel /a/ and its spectrogram for excitation at twice the pitch period." src="media/tp_spec.png" style="width: 463px; height: 342px;"><br>
+<p align="center" style="margin-bottom: 0in;"><i><img alt="Figure 5: Waveform of the the synthesized vowel /a/ and its spectrogram for excitation at twice the pitch period." src="/static/media/tp_spec.png" style="width: 463px; height: 342px;"><br>
 </br></img></i></p>
 <p align="center" style="margin-bottom: 0in;"><strong>Figure 5: </strong>
 <i>Waveform of the the synthesized vowel /a/ and its spectrogram obtained with an impulse sequence excitation of pitch period 15 ms.</i></p>
