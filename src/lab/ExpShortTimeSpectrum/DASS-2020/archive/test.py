@@ -5,7 +5,8 @@ import scipy
 import numpy as np
 from scipy.io import wavfile
 
-
+#Input file and windowtype. Ensure filepath for audio is correct.
+#Gives windowed waveform of audio
 def plot_gen(file, window_type):
 
     file = str(file)
@@ -22,7 +23,8 @@ def plot_gen(file, window_type):
 
     show(p)
 
-
+#Input file and nfft points. Ensure filepath for audio is correct.
+#Gives log spectrum of audio
 def create_stft(file, nfft):
     file = str(file)
     audio_path = 'static/wav/audio'+file+'.wav'
