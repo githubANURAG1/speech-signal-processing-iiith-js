@@ -5,6 +5,8 @@ import scipy
 import numpy as np
 from scipy.io import wavfile
 
+#Input file and lp order to generate graph. Ensure that ./graph/impulse is a folder before running script.
+# Gives Lp residual graph
 def lp_residual(file, order):
     
     file = str(file)

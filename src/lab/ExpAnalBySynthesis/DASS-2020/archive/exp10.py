@@ -7,9 +7,8 @@ import numpy as np
 from bokeh.plotting import figure, output_file, save
 
 
-# In[31]:
-
-
+#Input filename to input file. Ensure the filename path is correct and the ./graphs directory exists before executing 
+#Gives pitch contour and log energy
 def plotGraphs(audioFile):
     y, sr=librosa.load('wav/'+audioFile+'.wav')
    lp_result = librosa.lpc(y,10)
