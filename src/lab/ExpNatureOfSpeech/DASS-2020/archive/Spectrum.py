@@ -11,7 +11,8 @@ import io
 import os
 from bokeh.plotting import figure, output_file, show, save
 
-
+#Input file name. Ensure all paths are correct.
+#Gives autocorrelation and lpc spectrum of audio
 def createSpectAutoCorr(audioFile):
         
     y, sr = librosa.load("wav/"+audioFile+".wav")
