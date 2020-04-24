@@ -6,6 +6,8 @@ import numpy as np
 from scipy.io import wavfile
 from cepstrum import *
 
+#Input file and windowtype. Ensure filepath for audio is correct.
+#Gives windowed waveform of audio
 def plot_gen(file,window_type):
 
 
@@ -24,7 +26,8 @@ def plot_gen(file,window_type):
 
     show(p)
 
-
+#Input file and nfft points. Ensure filepath for audio is correct.
+#Gives log spectrum waveform of audio
 def create_stft(file, nfft):
     file = str(file)
     audio_path = 'static/wav/audio'+file+'.wav'
@@ -40,7 +43,8 @@ def create_stft(file, nfft):
     p.line(xf, 2.0/n * np.abs(yf[:n//2]), line_width=2)
 
     show(p)
-
+#Input file. Ensure filepath for audio is correct.
+#Gives liftered log spectrum waveform of audio
 def create_liftered(file):
     file = str(file)
     audio_path = 'static/wav/audio'+file+'.wav'
@@ -57,7 +61,8 @@ def create_liftered(file):
 
     show(p)
 
-
+#Input file. Ensure filepath for audio is correct.
+#Gives cepstrum waveform of audio
 def create_cepstrum(file):
     import numpy as np
 
