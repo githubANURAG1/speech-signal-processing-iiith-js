@@ -1,6 +1,0 @@
-keystore "virtual-lab" 
-grant signedBy "svl"{ 
-	// Allow java applets using the Java Sound API to access the audio I/O hardware
-        permission javax.sound.sampled.AudioPermission "record";
-};
-
