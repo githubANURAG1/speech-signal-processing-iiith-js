@@ -5,7 +5,8 @@ import scipy
 import numpy as np
 from scipy.io import wavfile
 
-
+#Input file and window type. Ensure paths are correct.
+#Gives windowed waveform
 def plot_gen(file, window_type):
 
     file = str(file)
@@ -22,7 +23,8 @@ def plot_gen(file, window_type):
 
     show(p)
 
-
+#Input file and nfft points. Ensure filepath for audio is correct.
+#Gives log spectrum of audio
 def create_stft(file, nfft):
     file = str(file)
     audio_path = 'static/wav/audio'+file+'.wav'
@@ -38,7 +40,8 @@ def create_stft(file, nfft):
     p.line(xf, 2.0/n * np.abs(yf[:n//2]), line_width=2)
 
     show(p)
-
+#Input file and order. Ensure filepath for audio is correct.
+#Gives lp residual of audio
 def lp_residual(file, order):
 
     file = str(file)
@@ -55,7 +58,8 @@ def lp_residual(file, order):
     p.line(timefilter, audio-y_result, line_width = 2)
     
     show(p)
-
+#Input file and order. Ensure filepath for audio is correct.
+#Gives lp spectrum of audio
 def lp_spectrum(file, order):
 
     file = str(file)
