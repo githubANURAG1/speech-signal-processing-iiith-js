@@ -38,14 +38,6 @@ window.wavesurfer = WaveSurfer.create({
 });
 window.wavesurfer.load(val)
 console.log(wavesurfer)
-window.wavesurfer.on("ready", function () {
-  var timeline = Object.create(WaveSurfer.Timeline);
-
-  timeline.init({
-    wavesurfer: window.wavesurfer,
-    container: "#waveform-timeline",
-  });
-});
 
 }
 
