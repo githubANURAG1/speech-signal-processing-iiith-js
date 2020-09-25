@@ -1,107 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Welcome to Virtual Labs - A MHRD Govt of india Initiative"
+      />
+    <meta
+      name="author"
+      content="Virtual Labs - A MHRD Govt of india Initiative"
+      />
 
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Welcome to Virtual Labs - A MHRD Govt of
-			india Initiative">
-		<meta name="author" content="Virtual Labs - A MHRD Govt of india Initiative">
-		<title>Welcome to Virtual Labs - A MHRD Govt of india Initiative</title>
+    <title>Welcome to Virtual Labs - A MHRD Govt of india Initiative</title>
+    <link rel="shortcut icon" href="../images/favicon.ico" />
 
-		<link rel="shortcut icon" href="static/media/images/favicon.ico">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
 
-		<!-- Important Owl stylesheet -->
-		<link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.css">
-		<link rel="stylesheet" href="../vendors/owl-carousel/owl.theme.css">
-		<link rel="stylesheet"
-			href="../vendors/font-awesome/css/font-awesome.css">
+    <!-- Important Owl stylesheet -->
+    <link
+      rel="stylesheet"
+      href="../vendors/owl-carousel/owl.carousel.css"
+      />
+    <link rel="stylesheet" href="../vendors/owl-carousel/owl.theme.css" />
+    <link
+      rel="stylesheet"
+      href="../vendors/font-awesome/css/font-awesome.css"
+      />
 
-		<!-- Custom CSS -->
-				<script type="text/javascript" src= 'static/js/Experiment.js'></script>
+    <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet" />
+<!--    <script type="text/javascript" src="tabs.js"></script>-->
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "//www.google-analytics.com/analytics.js",
+        "ga"
+      );
+      ga("create", "UA-67558473-1", "auto");
+      ga("send", "pageview");
+    </script>
+  </head>
+  <body id="page-top" class="index">
+    <div id="top">
+      <header>
+        <!-- Navigation -->
+        <nav
+          class="navbar navbar-default"
+          style="background-color: white !important;
+          margin-bottom: 0px !important;">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+              <button
+                type="button"
+                class="navbar-toggle"
+                data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span
+                  class="icon-bar"
+                  style="background-color: #77bb41;"></span>
+                <span
+                  class="icon-bar"
+                  style="background-color: #77bb41;"></span>
+                <span
+                  class="icon-bar"
+                  style="background-color: #77bb41;"></span>
+              </button>
+              <a
+                class="navbar-brand main-logo-a"
+                href="http://vlab.co.in/"><img
+                  src="../images/logo-new.png"
+                  class="img-responsive main-logo"
+                  /></a>
+            </div>
 
-		<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-67558473-1', 'auto');ga('send', 'pageview');</script>
-		    <script src='https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/3.3.1/wavesurfer.min.js'></script>
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/plugin/wavesurfer.timeline.min.js"></script>
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	  <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
-	  <link href="../css/style.css" rel="stylesheet">
-	  <link href="../css/bootstrap.min.css" rel="stylesheet">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div
+              class="collapse navbar-collapse menu-div"
+              id="bs-example-navbar-collapse-1"
+              style="border: 0px;">
+              <!-- 
+			                <ul class="nav navbar-nav navbar-right menu-ul search-ul" style="position: relative; top: -5px;">
+			                	<li>
+			                		<form method="get" action="search-result.html">
+			                        	<input type="text" class="search-textbox" placeholder="SEARCH FOR A LAB" name="q" id="q"/>
+			                        	<input type="submit" value="" class="search-button" />
+			                        </form>
+			                	</li>
+			                </ul> -->
+              <ul class="nav navbar-nav navbar-right menu-ul">
+                <li class="page-scroll menu-li">
+                  <a href="http://vlab.co.in/" class="menu-a">HOME</a>
+                </li>
+                <!--<li class="page-scroll menu-li menu-li-active">
+                  <a
+                    href="http://vlabs.ac.in/labs.html"
+                    class="menu-a menu-a-active">ALL LABS</a>
+                </li>-->
+                <li class="page-scroll menu-li">
+                  <a href="http://vlab.co.in/participating-institutes"
+                    class="menu-a">PARTNERS</a>
+                </li>
+                <li class="page-scroll menu-li">
+                  <a href="http://vlab.co.in/contact-us"
+                    class="menu-a">CONTACT</a>
+                </li>
+              </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+          </div>
+          <!-- /.container-fluid -->
+        </nav>
+      </header>
 
-	</head>
-	<body id="page-top" class="index">
-		<div id="top">
-			<header>
-				<!-- Navigation -->
-				<nav class="navbar navbar-default" style="background-color: white
-					!important;
-					margin-bottom: 0px !important;">
-					<div class="container-fluid">
-						<!-- Brand and toggle get grouped for better mobile display -->
-						<div class="navbar-header page-scroll">
-							<button type="button" class="navbar-toggle" data-toggle="collapse"
-								data-target="#bs-example-navbar-collapse-1">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar" style="background-color: #77BB41"></span>
-								<span class="icon-bar" style="background-color: #77BB41"></span>
-								<span class="icon-bar" style="background-color: #77BB41"></span>
-							</button>
-							<a class="navbar-brand main-logo-a" href="http://vlab.co.in/"><img
-									src="../images/logo-new.png" class="img-responsive main-logo" /></a>
-						</div>
+      <div id="content">
+        <div class="container-fluid">
+          <div class="row">
+            <hr
+              style="background: #ff6600 !important;
+              height: 8px;
+              margin-top: 0px;" />
+          </div>
+          <!-- row end -->
+        </div>
+        <!-- container-fluid end for slider -->
 
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse menu-div"
-							id="bs-example-navbar-collapse-1" style="border: 0px;">
+        <!-- =================================================================================================================================== -->
+        <div
+          class="container-fluid"
+          style="margin-left: 35px; margin-right: 35px;">
+          <h2
+            class="text-h2-lightblue"
+            style="margin-bottom: 20px; margin-top: 10px;">
+            <a
+              href="http://vlabs.ac.in/computer-science-and-engineering-labs.html"
+              class="sidebar-a">Computer Science & Engineering</a>
+            <i aria-hidden="true" class="fa fa-angle-right" style="font-size: 30px;padding-right: 4px;padding-left: 4px;"></i><a href="Introduction.html" class="sidebar-a">Speech Signal
+              Processing Virtual Lab</a><i aria-hidden="true" class="fa fa-angle-right" style="font-size: 30px;padding-right: 4px;padding-left: 4px;"></i><a href="Experiments.html"
+              class="sidebar-a">Experiments</a><br />
+          </h2>
 
-							<ul class="nav navbar-nav navbar-right menu-ul">
-								<li class="page-scroll menu-li">
-									<a href="http://vlab.co.in/" class="menu-a">HOME</a>
-								</li>
-								<!--<li class="page-scroll menu-li menu-li-active">
-									<a href="http://vlabs.ac.in/labs.html" class="menu-a menu-a-active">ALL
-										LABS</a>
-								</li>-->
-								<li class="page-scroll menu-li">
-									<a href="http://vlab.co.in/participating-institutes" class="menu-a">PARTNERS</a>
-								</li><li class="page-scroll menu-li">
-									<a href="http://vlab.co.in/contact-us" class="menu-a">CONTACT</a>
-								</li>
-							</ul>
-
-
-
-						</div>
-						<!-- /.navbar-collapse -->
-					</div>
-					<!-- /.container-fluid -->
-				</nav>
-			</header>
-
-			<div id="content">
-				<div class="container-fluid">
-					<div class="row">
-						<hr style="background:#ff6600 !important; height: 8px; margin-top: 0px;">
-					</div> <!-- row end -->
-				</div> <!-- container-fluid end for slider -->
-
-
-				<!-- =================================================================================================================================== -->
-				<div class="container-fluid" style="margin-left: 35px; margin-right: 35px;">
-					<h2 class="text-h2-lightblue" style="margin-bottom: 20px; margin-top:
-						10px;"><a
-							href="http://vlabs.ac.in/computer-science-and-engineering-labs.html"
-							class="sidebar-a">Computer Science & Engineering</a><i aria-hidden="true" class="fa fa-angle-right" style="font-size: 30px;padding-right: 4px;padding-left: 4px;"></i><a
-							href="../Introduction.html" class="sidebar-a">Speech Signal Processing
-							Virtual Lab</a><i aria-hidden="true" class="fa fa-angle-right" style="font-size: 30px;padding-right: 4px;padding-left: 4px;"></i><a href="../Experiments.html" class="sidebar-a">
-							 Experiments</a><br/></h2>
-
-						<div class="row">
-							<div class="col-md-2 sidebar-col-2">
-								<!--edit1-->
+          <div class="row">
+            <div class="col-md-2 sidebar-col-2">
+              <!--edit1-->
 								<a href="Objective.html" class="sidebar-a">
 									<h3 class="text-h3-darkblue" style="margin-top: 2px;">Objective</h3>
 								</a><a href="Tutorial.html" class="sidebar-a">
@@ -112,14 +170,21 @@
 									<h3 class="text-h3-darkblue" style="margin-top: 2px;">Experiment</h3>
 								</a><a href="Observations.html" class="sidebar-a">
 									<h3 class="text-h3-darkblue" style="margin-top: 2px;">Observations</h3>
+								</a><a href="Assessment.html" class="sidebar-a">
+									<h3 class="text-h3-darkblue" style="margin-top: 2px;">Assessment</h3>
 								</a><a href="References.html" class="sidebar-a">
 									<h3 class="text-h3-darkblue" style="margin-top: 2px;">References</h3>
 								</a><a href="Feedback.html" class="sidebar-a">
 									<h3 class="text-h3-darkblue" style="margin-top: 2px;color:#ff6600 !important;">Feedback</h3>
 								</a> </div>
-							<div class="col-md-10 lab-list-col-10">
-							<!--edit -->
-<h1 class="text-h1-lightblue">Expt-4: Basics of DSP</h1><!--<a href="http://feedback.vlabs.ac.in/">Feedback</a>--><div>
+
+            <div class="col-md-10 lab-list-col-10">
+              <!--edit -->
+              <h1 class="text-h1-lightblue">
+                Expt-6: Spectrographic Analysis of Speech
+              </h1>
+              <!-- <a href="http://feedback.vlabs.ac.in/">Feedback</a>-->
+              <div>
                             <p><b>Dear User</b>,</p>
 
                             <p>Thanks for using Virtual Labs. Your opinion is valuable to us. To help us improve, we'd like to ask you a few questions about your experience. It will only take 3 minutes and your answers will help us make Virtual Labs better for you and other users.
@@ -136,16 +201,14 @@
                                 <br>
                                 <b>The Virtual Labs Team</b>
                             </p>
-                        </div>						</div>
-					</div>
-			</div>
-			<!-- =================================================================================================================================== -->
-
-
-
-			
-	</div> <!-- content div -->
-		<footer id="footer">
+                        </div>
+            </div>
+          </div>
+        </div>
+        <!-- =================================================================================================================================== -->
+      </div>
+      <!-- content div -->
+<footer id="footer">
             <div class="footer-top" id="contact">
                 <div class="container">
                     <div class="row">
@@ -187,110 +250,54 @@
                 </div>
             </div>
         </footer>
+    </div>
+    <!-- top div -->
+  </body>
 
-</div> <!-- top div -->
+  <!-- jQuery -->
+ <!-- <script src="static/js/jquery.js"></script>
 
-</body>
+  <!-- Bootstrap Core JavaScript -->
+  <!--<script src="static/js/bootstrap.min.js"></script>
 
-<!-- jQuery -->
-		<script src="static/js/jquery.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <!--<script src="static/js/custom.js"></script>
 
-		<!-- Bootstrap Core JavaScript -->
-		<script src="static/js/bootstrap.min.js"></script>
+  <!-- Include js plugin -->
+  <!--<script src="static/vendors/owl-carousel/owl.carousel.js"></script>
 
-		<!-- Custom Theme JavaScript -->
-		<script src="static/js/custom.js"></script>
-		<script src="static/js/Experiment.js"></script>
-		<!-- Include js plugin -->
-		<script src="static/vendors/owl-carousel/owl.carousel.js"></script>
-
-		<script type="text/javascript">
-		$(document).ready(function() {
-		 
-		  var owl = $("#owl-demo");
-		  owl.owlCarousel({
-		      navigation: true,
-		      navigationText: [
-		                       "<img src='static/media/images/left-arrow.png'>",
-		                       "<img src='static/media/images/right-arrow.png'>"
-		                       ],
-		      /* autoPlay : 3000,
+  <script type="text/javascript">
+    $(document).ready(function () {
+      var owl = $("#owl-demo");
+      owl.owlCarousel({
+        navigation: true,
+        navigationText: [
+          "<img src='static/images/left-arrow.png'>",
+          "<img src='static/images/right-arrow.png'>",
+        ],
+        /* autoPlay : 3000,
 		      stopOnHover : true */
-		  });
-		  
-		  //owl for partner institutions
-		  var owl = $("#owl-partner-institutions");
-		  owl.owlCarousel({
-		      navigation: true,
-		      navigationText: [
-		                       "<img src='static/media/images/left-arrow.png'>",
-		                       "<img src='static/media/images/right-arrow.png'>"
-		                       ],
-		      autoPlay : 3000,
-		      stopOnHover : true,
-		      items : 8,
-		  });
-		 
-		
-	
-	 //owl for aboutus
-	  var owl = $("#owl-aboutus");
-	  owl.owlCarousel({
-	      navigation: true,
-	      singleItem:true
-	  });
-	 
-	});
-	</script>
-	</html>
-<!-- jQuery -->
-		<!--<script src="static/js/jquery.js"></script>
+      });
 
-		<!-- Bootstrap Core JavaScript -->
-	<!--	<script src="static/js/bootstrap.min.js"></script>
+      //owl for partner institutions
+      var owl = $("#owl-partner-institutions");
+      owl.owlCarousel({
+        navigation: true,
+        navigationText: [
+          "<img src='static/images/left-arrow.png'>",
+          "<img src='static/images/right-arrow.png'>",
+        ],
+        autoPlay: 3000,
+        stopOnHover: true,
+        items: 8,
+      });
 
-		<!-- Custom Theme JavaScript -->
-	<!--	<script src="static/js/custom.js"></script>
-		<script src="static/js/Experiment.js"></script>
-		<!-- Include js plugin -->
-		<!--<script src="static/vendors/owl-carousel/owl.carousel.js"></script>
-
-		<script type="text/javascript">
-		$(document).ready(function() {
-		 
-		  var owl = $("#owl-demo");
-		  owl.owlCarousel({
-		      navigation: true,
-		      navigationText: [
-		                       "<img src='static/media/images/left-arrow.png'>",
-		                       "<img src='static/media/images/right-arrow.png'>"
-		                       ],
-		      /* autoPlay : 3000,
-		      stopOnHover : true */
-		  });
-		  
-		  //owl for partner institutions
-		  var owl = $("#owl-partner-institutions");
-		  owl.owlCarousel({
-		      navigation: true,
-		      navigationText: [
-		                       "<img src='static/media/images/left-arrow.png'>",
-		                       "<img src='static/media/images/right-arrow.png'>"
-		                       ],
-		      autoPlay : 3000,
-		      stopOnHover : true,
-		      items : 8,
-		  });
-		 
-		
-	
-	 //owl for aboutus
-	  var owl = $("#owl-aboutus");
-	  owl.owlCarousel({
-	      navigation: true,
-	      singleItem:true
-	  });
-	 
-	});
-	</script>-->
-	</html>
+      //owl for aboutus
+      var owl = $("#owl-aboutus");
+      owl.owlCarousel({
+        navigation: true,
+        singleItem: true,
+      });
+    });
+  </script>-->
+</html>
