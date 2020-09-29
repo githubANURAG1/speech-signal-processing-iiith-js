@@ -37,6 +37,10 @@ padding: 2px;
 background:#f5f5f5;
 }
 
+.navbar-brand {
+height: 50px !important;
+}
+
 .container-fluid .calender  thead .title {
 font-weight: bold;
 text-align: center;
