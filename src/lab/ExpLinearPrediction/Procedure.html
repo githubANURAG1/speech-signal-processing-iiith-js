@@ -173,78 +173,76 @@
                 <ul>
                   <li>
                     <p>
-                      Select one of the provided speech utterances and click on
-                      the load button.
+                      Step1: Select one of the provided speech utterances from the given dropdown. 
+
                     </p>
                   </li>
-                  <li>
+                  <!--commented below point after converting
+                  java to javascript as this point not needed.-->
+                  <!--<li>
                     <p>
                       Select a short segment (20-50 ms) of voiced speech (say a
                       vowel), using 'Zoom to selection' button, and compute the
                       short-time and LP spectrum by clicking on the spectrum
                       button.
                     </p>
-                  </li>
+                  </li>-->
                   <li>
                     <p>
-                      The windowed signal, the log spectrum and the LP log
-                      spectrum are displayed.
+                     Step2:  Click on the spectrum button. The windowed signal, the log spectrum and the LP log spectrum are displayed.
+                    </p>
+                  </li>
+                  <li><p></p>Step3: Play the short segment (20-50 ms) of voiced speech (say a vowel), using 'Play/Pause' button, and compute the short-time
+</li>
+                  <li>
+                    <p>
+                      Step4: Increase the LP order from the default value 1, to values provided in the drop down box. Observe the LP residual and LP log spectrum.
+
                     </p>
                   </li>
                   <li>
                     <p>
-                      Increase the LP order from the default value 1, to values
-                      provided in the drop down box. Click on the spectrum
-                      button to recompute the spectra.
+                      Step5: Observe that the LP log spectrum approximates the short-time spectral envelope (i.e., the formants) better with increased LP order.
+
                     </p>
                   </li>
                   <li>
                     <p>
-                      Observe that the LP log spectrum approximates the
-                      short-time spectral envelope (i.e., the formants) better
-                      with increases LP order.
+                     Step6: As the LP order is increased to a very large value, say 40, the LP spectrum tries to approximate the short-time spectral envelope more closely thereby approximating peaks due to pitch harmonics.
+
                     </p>
                   </li>
                   <li>
                     <p>
-                      As the LP order is increased to a very large value, say
-                      40, the LP spectrum tries to approximate the short-time
-                      spectral envelope more closely thereby approximating peaks
-                      due to pitch harmonics.
+                      Step7: Study the effect of pre emphasis flag on the LP spectrum.
+
                     </p>
                   </li>
                   <li>
                     <p>
-                      Study the effect of preemphasis flag on the LP spectrum.
+                      Step8: Observe the compute the LP residual signal for different LP orders
+
                     </p>
                   </li>
                   <li>
                     <p>
-                      Compute the LP residual signal for different LP orders by
-                      clicking on the residual button.
+                     Step9: Observe the correlations in the input segment of speech. Notice it being  gradually removed in the LP residual signal as the LP order is increased.
+
                     </p>
                   </li>
                   <li>
                     <p>
-                      The correlations in the input segment of speech can be
-                      seen to be gradually removed in the LP residual signal as
-                      the LP order is increased.
+                      Step10: Observe that the LP residual signal for an LP order of 10 or above removes most of the correlations in the input signal, and the resulting signal looks like a train of impulses.
                     </p>
                   </li>
                   <li>
                     <p>
-                      The LP residual signal for an LP order of 10 or above
-                      removes most of the correlations in the input signal, and
-                      the resulting signal looks like a train of impulses.
+                      Step11: Repeat the experiment by selecting an unvoiced segment of speech, say a fricative /s/.
+
                     </p>
                   </li>
-                  <li>
-                    <p>
-                      Repeat the experiment by selecting an unvoiced segment of
-                      speech, say a fricative /s/.
-                    </p>
-                  </li>
-                  <li><p>Write a brief note on the observations.</p></li>
+                  <li><p>Step12: Write a brief note on the observations.
+</p></li>
                 </ul>
               </div>
             </div>
