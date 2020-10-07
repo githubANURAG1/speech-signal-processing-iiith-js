@@ -59,7 +59,7 @@
 			                    <li class="page-scroll menu-li " >
 			                        <a href="http://vlab.co.in/" class="menu-a" >HOME</a>
 			                    </li>
-<!--			                    <li class="page-scroll menu-li menu-li-active">
+			                    <!--<li class="page-scroll menu-li menu-li-active">
 			                        <a href="http://vlabs.ac.in/labs.html"  class="menu-a menu-a-active" >ALL LABS</a>
 			                    </li>-->
 			                    <li class="page-scroll menu-li " >
@@ -88,33 +88,126 @@
 			
 			<!-- =================================================================================================================================== -->
 			<div class="container-fluid"  style="margin-left: 35px; margin-right: 35px;">
-				<h2 class="text-h2-lightblue" style=" margin-bottom: 20px; margin-top: 10px; "><a href="https://www.vlab.co.in/broad-area-computer-science-and-engineering" class="sidebar-a" >Computer Science & Engineering</a> <i aria-hidden="true" class="fa fa-angle-right" style="font-size: 30px;padding-right: 4px;padding-left: 4px;"></i><a href="../Introduction.html" class="sidebar-a" >Speech Signal Processing Virtual Lab</a><i aria-hidden="true" class="fa fa-angle-right" style="font-size: 30px;padding-right: 4px;padding-left: 4px;"></i><a href="../Experiments.html" class="sidebar-a" >List Of Experiments</a><br/></h2>
+				<h2 class="text-h2-lightblue" style=" margin-bottom: 20px; margin-top: 10px; "><a href="https://www.vlab.co.in/broad-area-computer-science-and-engineering" class="sidebar-a" >Computer Science & Engineering</a> <i aria-hidden="true" class="fa fa-angle-right" style="font-size: 30px;padding-right: 4px;padding-left: 4px;"></i><a href="../Introduction.html" class="sidebar-a" >Speech Signal Processing Virtual Lab</a><i aria-hidden="true" class="fa fa-angle-right" style="font-size: 30px;padding-right: 4px;padding-left: 4px;"></i><a href="../Experiments.html" class="sidebar-a" > Experiments</a><br/></h2>
 					
 					<div class="row">
 						<div class="col-md-2 sidebar-col-2">
 						<!--edit1-->
-<a href="Objective.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Objective</h3></a><a href="Tutorial.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Tutorial</h3></a><a href="Procedure.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Procedure</h3></a><a href="Experiment.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Experiment</h3></a><a href="Observations.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;color:#ff6600 !important;">Observations</h3></a><a href="Assessment.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Assessment</h3></a><a href="Quizzes.html" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Quizzes </h3></a<a href="References.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">References</h3></a><a href="Feedback.html?domain=Computer Science&amp;lab=Speech Signal
+<a href="Objective.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Objective</h3></a><a href="Tutorial.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Tutorial</h3></a><a href="Procedure.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Procedure</h3></a><a href="Experiment.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Experiment</h3></a><a href="Observations.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Observations</h3></a><a href="Assessment.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;color:#ff6600 !important;">Assessment</h3></a><a href="Quizzes.html" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;color:#ff6600 !important;">Quizzes </h3></a><a href="References.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">References</h3></a><a href="Feedback.html?domain=Computer Science&amp;lab=Speech Signal
 									Processing Virtual Lab" class="sidebar-a"> <h3 class="text-h3-darkblue" style="margin-top: 2px;">Feedback</h3></a>						</div>
 						
 						<div class="col-md-10 lab-list-col-10">
-							
-							<!--edit -->
-<h1 class="text-h1-lightblue">Expt-1 : Manual speech signal-to-symbol transformation</h1><div class="content" id="experiment-article-section-5-content">
-<ul>
-<li><p>Marking boundaries at the phoneme-level is the most diffcult compared to using larger units such as syllables or words.</p></li><br>
-<li><p>It is difficult to mark, listen and perceive unambiguously shorter units of sound such phonemes, as compared to syllables or words.</p></li><br>
-<li><p>The boundaries between subword units are fuzzy due to the coarticulation effect.</p></li><br>
-<li><p>The spoken form of a speech utterance (especially spontaneous speech) may not always contain all the phonemes used in the written form. But while listening we use the higher-level language and context information to fill in these sounds and perceive the intended word or phrase.</p></li><br>
-<li><p>The above observations highlight the complexity of the task involved in speech signal-to-symbol transformation, even for human beings who are endowed with the ability to produce and comprehend natural speech. </p></li><br>
-<li><p>Choice of subword unit is one of the important issues in designing an automatic speech signal-to-symbol transformation system.
-<br><br> 
-Word seems to be a good choice, but the number of words in a language run up to several tens of thousands. Devising a pattern recognition/classification strategy for such a large number of classes is a tough task. Also, collecting a large number of examples for each of the words to be used within a statistical framework is difficult.
-<br><br>Syllables are a better option as the number of classes will be in a few hundreds. The context of a sound is inherently captured in the syllable. But the number of classes are still large, and getting enough examples for all possible syllables in a language is difficult.
-<br><br>Choice of phoneme as the subword unit makes the design of a system using statistical framework easier, due to the smaller number of classes (a few tens of classes) and the ease of collecting large number of examples for each class.
-But handling the variability of phones occuring in different contexts caused by the coarticulation effect is difficult.</br></br></br></br></br></br></p>
-</li><br>
-</br></br></br></br></br></br></ul>
-</div>						</div>
+				
+
+						<!--edit -->
+						<h1 class="text-h1-lightblue">Expt-1 : Manual speech signal-to-symbol transformation</h1>
+						<div class="content" id="experiment-article-section-7-content">
+							<p></p>
+							<!--<ol>
+								<li>
+									<p>Draw on a sheet of paper the speech waveform for the English word /mask/ as
+										uttered by an adult male speaker. Use a scale of approximately 1cm=10ms. Mark
+										clearly the beginning and ending of various phonemes in the word (/m/,/a/,/s/
+										and /k/). Also mark regions of silence using symbol [sil]. Clearly show the
+										difference in amplitude of various sounds. What changes would you make if the
+										speaker were to be a female or a child.</p>
+								</li><br>
+								<li>
+									<p>Record the speech signal for the word /mask/ and compare or verify with the
+										waveform you sketched in Assessment #1.</p>
+								</li><br>
+								<li>
+									<p>Sketch the waveforms for the following words and write down the main differences:
+										<ol style="list-style-type: lower-alpha;">
+											<li>
+												<p>/mask/</p>
+											</li>
+											<li>
+												<p>/mass/</p>
+											</li>
+											<li>
+												<p>/boss/</p>
+											</li>
+											<li>
+												<p>/mark/</p>
+											</li>
+										</ol>
+									</p>
+								</li><br>
+								<li>
+									<p>Write a small program in C or any scripting language (bash, csh, awk, perl,
+										python, etc) to convert a given text stream of word-level transcription into a
+										stream of syllables and phonemes. Assume that the input stream of word-level
+										transcription uses ITRANS code. In the output stream use space for word
+										boundaries, '-' for syllable boundaries, and '_' for phoneme boundaries.</p>
+								</li>
+								</br></br></br>
+							</ol>
+							<p style="padding-left: 90px;">Eg: Input: namaskAr aapka swaagat hai <br>      Output:
+								n-a_m-a-s_k-A-r aa-p_k-a s-w-aa_g-a-t h-ai</br></p>
+							<ol> </ol>-->
+							<h3>Quiz</h3>
+							<ol>
+								<li>
+									<p>What is transcription or speech transcription?</p>
+								</li><br>
+								<li>
+									<p>How would you transcribe speech of an unknown language?</p>
+								</li><br>
+								<li>
+									<p>How would you handle new sounds in an unknown language which are not present in
+										any of your known languages?</p>
+								</li><br>
+								<li>
+									<p>What other choices do one have for symbols other than words, syllables or
+										phonemes?</p>
+								</li><br>
+								<li>
+									<p>What symbols can one choose based on auditory perception?</p>
+								</li><br>
+								<li>
+									<p>What symbols can one choose based on production mechanism or apparatus?</p>
+								</li><br>
+								<li>
+									<p>What is a phoneme?</p>
+								</li><br>
+								<li>
+									<p>What is an allophone?</p>
+								</li><br>
+								<li>
+									<p>What is the difference between terms phonetic and phonemic?</p>
+								</li><br>
+								<li>
+									<p>What is a syllable?</p>
+								</li><br>
+								<li>
+									<p>What is transliteration?</p>
+								</li><br>
+								</br></br></br></br></br></br></br></br></br></br></br>
+							</ol>
+							<!--
+<ol style="list-style-type: upper-alpha;">
+<li>Speech transcription is simply speech signal-to-symbol transformation. The choice of symbols is left to the individual. The symbols can be words, syllables or phonemes, which are typically associated with a language.</li>
+</ol>
+<ol style="list-style-type: upper-alpha;">
+<li>If you have never heard a language before, you would try to look for sounds that are present in languages that you already know and try to write down the unknown speech using symbols from a known language.</li>
+</ol>
+<ol style="list-style-type: upper-alpha;">
+<li>This is exactly where innovation begins. One has to invent a new symbol for the sound and give a complete description of the sound in terms of the speech production apparatus, so that anybody can understand, visualize and produce that sound again.</li>
+</ol>
+<ol style="list-style-type: upper-alpha;">
+<li>The symbols for transcription can either be based on auditory perception or the production apparatus or the acoustic signal.</li>
+</ol>
+<ol style="list-style-type: upper-alpha;">
+<li>Symbols based on auditory perception is a bit difficult as it requires a human being to articulate the sounds in terms of what he feels such as soft, loud, hoarse, creaky, high pitch, low pitch, hissy, plosive, etc. A complete set of descriptors based on perception is not available for all known sounds a human can produce.</li>
+</ol>
+<ol style="list-style-type: upper-alpha;">
+<li>Alternatively, one can articulate better as to how a sound is being produced in terms of various articulatory events during the production of speech. This process can be aided by studying the articulatory movements during speech prodcution using man made devices such as X-rays, CT scans, MRI scans, etc.</li>
+</ol>
+-->
+						</div>
+					</div>
+                        </div>
 					</div>
 			</div>
 			<!-- =================================================================================================================================== -->
@@ -122,8 +215,9 @@ But handling the variability of phones occuring in different contexts caused by 
 
 
 			
-	</div> <!-- content div -->
-        <footer id="footer">
+</div> <!-- content div -->
+
+<footer id="footer">
             <div class="footer-top" id="contact">
                 <div class="container">
                     <div class="row">
@@ -165,23 +259,22 @@ But handling the variability of phones occuring in different contexts caused by 
                 </div>
             </div>
         </footer>
-
 </div> <!-- top div -->
 
 </body>
 
 
 	<!-- jQuery -->
-    <script src="../js/jquery.js"></script>
+    <!--<script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
+    <!--<script src="../js/bootstrap.min.js"></script>
 
 	<!-- Custom Theme JavaScript -->
-    <script src="../js/custom.js"></script>
+    <!--<script src="../js/custom.js"></script>
     
     <!-- Include js plugin -->
-	<script src="../vendors/owl-carousel/owl.carousel.js"></script>
+<!--	<script src="../vendors/owl-carousel/owl.carousel.js"></script>
 	
 	<script type="text/javascript">
 	$(document).ready(function() {
@@ -220,6 +313,6 @@ But handling the variability of phones occuring in different contexts caused by 
 	  });
 	 
 	});
-	</script>
+	</script>-->
 	
 </html>
