@@ -46,7 +46,7 @@
 			            <!-- Collect the nav links, forms, and other content for toggling -->
 			            <div class="collapse navbar-collapse menu-div" id="bs-example-navbar-collapse-1" style="border: 0px;">
 			               
-			                <!-- <ul class="nav navbar-nav navbar-right menu-ul search-ul" style="position: relative; top: -5px;">
+			               <!--  <ul class="nav navbar-nav navbar-right menu-ul search-ul" style="position: relative; top: -5px;">
 			                	<li>
 			                		<form method="get" action="../../search-result.html">
 			                        	<input type="text" class="search-textbox" placeholder="SEARCH FOR A LAB" name="q" id="q"/>
@@ -93,27 +93,40 @@
 					<div class="row">
 						<div class="col-md-2 sidebar-col-2">
 						<!--edit1-->
-<a href="Introduction.html?domain=Computer Science" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;color:#ff6600 !important;">Introduction</h3></a><a href="Experiments.html?domain=Computer Science" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;"> List of Experiments</h3></a><a href="Target Audience.html?domain=Computer Science" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Target Audience</h3></a><a href="Courses Aligned.html?domain=Computer Science" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Courses Aligned</h3></a><!--<a href="Pre-requisites.html?domain=Computer Science" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Pre-requisites</h3></a>--><a href="Feedback.html?domain=Computer Science" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Feedback</h3></a>						</div>
+<a href="Objective.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Objective</h3></a><a href="Tutorial.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Tutorial</h3></a><a href="Pre-requisites.html?domain=Computer Science" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;color:#ff6600 !important;">Pre-requisites</h3></a><a href="Procedure.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Procedure</h3></a><a href="Experiment.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Experiment</h3></a><a href="Observations.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Observations</h3></a><a href="Assignment.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Assignment</h3></a><a href="References.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">References</h3></a><a href="Feedback.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Feedback</h3></a>						</div>
 						
 						<div class="col-md-10 lab-list-col-10">
 							
 							<!--edit -->
 <h1 class="text-h1-lightblue">Speech Signal Processing</h1><div>
-<p>The objective of this lab is to provide hands on experience in processing speech signals for extraction of information for various applications. 
-Students will learn to process their own speech and listen to the processed speech to get a feel for effects of various signal processing operations on speech signals.</p>
+<p>
+<b>Course pre-requisites</b><br>
+<ul><li>A course on 'Basics of DSP' or 'Signal and Systems'.</li></ul>
+</br></p>
 <br>
+<p>
+<b>Software pre-requisites</b><br>
+<ul>
+<li>Operating system: GNU/Linux, MS Windows xp and above, Mac OS 10.6 and above</li>
+<li>Browser: Firefox 6+, Safari, Opera 10+</li>
+<li>Browser plugins: Oracle/Sun Java JRE and plugin Version-6</li>
+</ul>
+<a href="../documents/installJava.html">Install Java Plugin to run the Simulation</a>
+</br></p>
 <br>
-<h3><b>Important Notes: </b></h3>
-<ol>
-<!--<li><p>If some or all of the tabs in this page or the experiment page are not visible, kindly try
-				 reloading or refreshing the page</p> </li>-->
-<li><p>Some of the content uses MathJax for rendering equations. Rendering maybe slow on some systems.
-					If the equations are not visible, you may have to refresh or reload the page.</p></li>
-<!--<li><p>Internet explorer and Google chrome are not supported in the current release. SSP Lab has been
-					 checked on Firefox and Opera. If you find the website too slow or to use on unsupported browsers
-					 <a href="indexie.html"> click here </a></p></li>-->
-</ol>
-</br></br></div>						</div>
+<p>
+<b>Hardware pre-requisites (minimum)</b><br>
+<ul>
+<li>CPU: 1 GHz</li>
+<li>Memory: 1 GB</li>
+<li>Audio: Sound card with recording and playback options</li>
+<li>Audio: Speakers/headphones and microphone</li>
+</ul>
+</br></p>
+<br><br>
+<p><b>Important Note: </b> Some or all of the virtual labs may not work properly with Internet explorer and Google Chrome. 
+		Irrespective of the browser being used, in case some or all tabs are not visible, kindly try reloading/refreshing the page</p>
+</br></br></br></br></div>						</div>
 					</div>
 			</div>
 			<!-- =================================================================================================================================== -->
@@ -122,8 +135,7 @@ Students will learn to process their own speech and listen to the processed spee
 
 			
 	</div> <!-- content div -->
-
-<footer id="footer">
+		<footer id="footer">
             <div class="footer-top" id="contact">
                 <div class="container">
                     <div class="row">
@@ -165,30 +177,22 @@ Students will learn to process their own speech and listen to the processed spee
                 </div>
             </div>
         </footer>
-        
-			</div>
-
- 		</div>
-	</footer>	
-
-
-
 </div> <!-- top div -->
 
 </body>
 
 
 	<!-- jQuery -->
-<!--    <script src="../../js/jquery.js"></script>
+  <!--  <script src="../../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <!--<script src="../../js/bootstrap.min.js"></script>
+   <!-- <script src="../../js/bootstrap.min.js"></script>
 
 	<!-- Custom Theme JavaScript -->
-<!--    <script src="../../js/custom.js"></script>
+   <!-- <script src="../../js/custom.js"></script>
     
     <!-- Include js plugin -->
-	<!--<script src="../../vendors/owl-carousel/owl.carousel.js"></script>
+<!--	<script src="../../vendors/owl-carousel/owl.carousel.js"></script>
 	
 	<script type="text/javascript">
 	$(document).ready(function() {
