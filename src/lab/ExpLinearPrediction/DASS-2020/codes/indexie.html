@@ -160,7 +160,7 @@ in steady portion of the waveform. </li>
 sampling frequency with 16 bit quantization. From this recorded speech
 file collect 200 ms in steady portion of the waveform. </li>
 <li>The short voiced and unvoiced speech segments are shown in
-FigureÃ‚Â 1. </li>
+FigureÃƒâ€šÃ‚Â 1. </li>
 </ul>
 <p></p>
 <p>
@@ -231,7 +231,7 @@ the spectrum of the inverse filter is computed as follows: <br/>
 <p></p>
 <p>
 The short time spectrum, LP spectrum and inverse spectrum for a segment
-of voiced speech are shown in FigureÃ‚Â 2.
+of voiced speech are shown in FigureÃƒâ€šÃ‚Â 2.
 <a name="fig:voiced-spec"></a><a name="185"></a>
 <br/>
 <img alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/fig2.eps}}" src="media/img3.png" style="border: 0px solid ; width: 680px; height: 454px;"/><br/>
@@ -248,7 +248,7 @@ time spectrum, (c) LP spectrum and (d) inverse spectrum<br/>
 spectrum for an unvoiced segment /s/ the same procedure is followed as
 that of for voiced speech segment /a/. </li>
 <li>The short time spectrum, LP spectrum and inverse spectrum for a
-segment of unvoiced speech (/s/) are shown in FigureÃ‚Â 3. </li>
+segment of unvoiced speech (/s/) are shown in FigureÃƒâ€šÃ‚Â 3. </li>
 </ul>
 <img alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/fig3.eps}}" src="media/img5.png" style="border: 0px solid ; width: 680px; height: 454px;"/>
 <br/>
@@ -262,7 +262,7 @@ time spectrum, (c) LP spectrum and (d) inverse spectrum.<br/>
 <ul>
 <li>LP residual signal is obtained by passing the speech signal
 through inverse filter designed with LP coefficients (LPCs). The block
-diagram of the inverse filter is shown in FigureÃ‚Â 4.<br/>
+diagram of the inverse filter is shown in FigureÃƒâ€šÃ‚Â 4.<br/>
 <img alt="\resizebox*{12cm}{3cm}{\includegraphics{figures/inversefilter.eps}}" src="media/img6.png" style="border: 0px solid ; width: 543px; height: 135px;"/><br/>
 </li>
 </ul>
@@ -271,16 +271,16 @@ residual signal from </i><strong></strong><i class="sans">
 speech signal</i>
 <ul>
 <li>LP residual is computed for voiced and unvoiced speech segments
-using the following matlab commands:Ã‚Â </li>
+using the following matlab commands:Ãƒâ€šÃ‚Â </li>
 <ul style="font-style: italic;">
-<li>res=filter(ak,1,a200);Ã‚Â </li>
+<li>res=filter(ak,1,a200);Ãƒâ€šÃ‚Â </li>
 <li>figure;plot(real(res));grid; <br/>
 </li>
 </ul>
 <li>Voiced and unvoiced speech segments and their LP residual signals
-are shown in FigureÃ‚Â 5. </li>
+are shown in FigureÃƒâ€šÃ‚Â 5. </li>
 </ul>
-Ã‚Â 
+Ãƒâ€šÃ‚Â 
 <img alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/figure8.eps}}" src="media/img7.png" style="border: 0px solid ; width: 680px; height: 454px;"/><br/>
 <a name="fig:residuals"></a><a name="191"></a><strong>Figure 5:</strong>
 <i class="sans">(a) Segment of voiced speech /a/ and its (b) LP
@@ -302,7 +302,7 @@ xcorr(x(t)). Autocorrelation function for voiced and unvoiced segments
 and their LP residuals is computed. <br/>
 a200corr=xcorr(a200); </li>
 <li>The autocorrelation function for the voiced speech segment and
-its LP residual signal is shown in FigureÃ‚Â 6.</li>
+its LP residual signal is shown in FigureÃƒâ€šÃ‚Â 6.</li>
 <br/>
 <img alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/figure6.eps}}" src="media/img9.png" style="border: 0px solid ; width: 680px; height: 454px;"/><br/>
 Figure 6:<i class="sans">(a) Segment of voiced speech /a/ and
@@ -311,7 +311,7 @@ autocorrelation function, (c) LP residual for the voiced speech segment
 and its (d) autocorrelation function. </i><br/>
 <br/>
 <li>The autocorrelation function for the unvoiced speech segment and
-its LP residual signal is shown in FigureÃ‚Â 7.<br/>
+its LP residual signal is shown in FigureÃƒâ€šÃ‚Â 7.<br/>
 <img alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/figure7.eps}}" src="media/img10.png" style="border: 0px solid ; width: 680px; height: 454px;"/><br/>
  </li>
 <br/>
@@ -329,12 +329,12 @@ segment and its (d) autocorrelation function.<br/>
 <li>By integrating the LP residual we can obtain the glottal pulse
 shape, it is also known as glottal volume velocity. </li>
 <li>The integration function is implemented in matlab with a function
-<i>cumsum</i>.Ã‚Â <span style="font-style: italic;"></span></li>
+<i>cumsum</i>.Ãƒâ€šÃ‚Â <span style="font-style: italic;"></span></li>
 <ul>
 <li><span style="font-style: italic;">gp=cumsum(res);</span> </li>
 </ul>
 <li>A segment of voiced speech its LP residual and glottal pulse
-(glottal volume velocity) waveforms are shown in FigureÃ‚Â 8. </li>
+(glottal volume velocity) waveforms are shown in FigureÃƒâ€šÃ‚Â 8. </li>
 <img alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/figure5.eps}}" src="media/img11.png" style="border: 0px solid ; width: 670px; height: 457px;"/><br/>
 <strong>Figure 8:</strong> <i class="sans">(a) Segment of voiced
 speech /a/, its (b) LP residual and (c) glottal pulse waveform. </i>
@@ -351,7 +351,7 @@ orders
 <li>Compute LPCs for different LP orders (14, 10, 6, 3 and 1), and
 compute LP spectrum for each set of LPCs. </li>
 <li>A segment of voiced speech and its LP spectrum for different LP
-orders (14, 10, 6, 3 and 1) are shown in FigureÃ‚Â 9. </li>
+orders (14, 10, 6, 3 and 1) are shown in FigureÃƒâ€šÃ‚Â 9. </li>
 <img alt="\resizebox*{15cm}{20cm}{\includegraphics{figures/fig4.eps}}" src="media/img14.png" style="border: 0px solid ; width: 681px; height: 907px;"/><br/>
 <strong>Figure 9:</strong> <i class="sans">(a) Segment of voiced
 speech /a/, its LP spectrum for the LP order (b) 14, (c) 10, (d) 6, (e)
@@ -380,7 +380,7 @@ end <br/>
 figure;plot(<span class="MATH"><img alt="$\eta$" src="media/img17.png" style="border: 0px solid ; width: 15px; height: 35px;"/> </span>);grid;
 </li>
 <li>Normalized error for voiced and unvoiced segments of speech for
-different LP orders is shown in FigureÃ‚Â 10</li>
+different LP orders is shown in FigureÃƒâ€šÃ‚Â 10</li>
 </ul>
 <img &gt;="" alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/figure4.eps}}" src="media/img19.png" style="border: 0px solid ; width: 681px; height: 454px;"/><br/>
 <strong>Figure 10:</strong> <i class="sans">Normalized error for
@@ -479,7 +479,7 @@ segments for different LP orders. </i>
 envelope of the spectrum gives system information (i.e., resonances in
 terms of formant frequencies) and spectral ripples (fine variations)
 give source information (i.e., pitch harmonics). It is a real and even
-function of Ãƒï¿½Ã¢â‚¬Â°. </li>
+function of ÃƒÆ’Ã¯Â¿Â½ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°. </li>
 <li>The linear prediction (LP) analysis models the vocal tract
 system. LP spectrum observed to be an envelope of short time spectrum
 (smoothed version of short time spectrum) and the peaks in LP spectrum
@@ -519,7 +519,7 @@ pitch computation. <br/>
 </li>
 <li>The autocorrelation function of an unvoiced speech segment shows
 a major peak at the center and other peaks are not significant, since
-unvoiced speech signal appears like random signal.Ã‚Â </li>
+unvoiced speech signal appears like random signal.Ãƒâ€šÃ‚Â </li>
 <li>The autocorrelation function for the LP residual of an unvoiced
 speech segment shows a dominant peak at the center and no other peaks
 in rest of the portion. This is because, unvoiced speech itself looks
@@ -554,23 +554,23 @@ cm. This can generate four to five prominent resonances in 0-4 KHz
 range. These resonances can be captured with the LP model of order 10.
 We also should take care of radiation and windowing effects. Therefore
 with LP order 10-14 we can model the system by capturing required
-resonances.Ã‚Â  </li>
+resonances.Ãƒâ€šÃ‚Â  </li>
 <li>System with LP order more than 14 will introduce the spurious
 resonances, which leads improper representation of the vocal tract
 system.</li>
 <li>Normalized error for voiced speech signal reduces as the LP order
 is varied from 0 to 15, since the vocal tract system (speech production
 mechanism) is modeled more accurately as LP order varying from 0 to
-15.Ã‚Â </li>
+15.Ãƒâ€šÃ‚Â </li>
 <ul>
-<li>P=0, no approximation, therefore maximum errorÃ‚Â </li>
+<li>P=0, no approximation, therefore maximum errorÃƒâ€šÃ‚Â </li>
 <li>P=1, only one coefficient used for prediction, therefore error
-is slightly less compared to that of P=0Ã‚Â </li>
+is slightly less compared to that of P=0Ãƒâ€šÃ‚Â </li>
 <li>P=10, model correctly approximates the resonances of the vocal
-tract system, which leads to minimum errorÃ‚Â </li>
-<li>P ÃƒÂ¢Ã¢â‚¬Â°Ã‚Â¥ 10
+tract system, which leads to minimum errorÃƒâ€šÃ‚Â </li>
+<li>P ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°Ãƒâ€šÃ‚Â¥ 10
 also results the correct modeling of the vocal tract system, which
-leads to similar error as that of model with P=10Ã‚Â </li>
+leads to similar error as that of model with P=10Ãƒâ€šÃ‚Â </li>
 <li>For unvoiced speech signal, as the signal and residual energies
 remains reasonable same, change in error as function of LP order is
 relatively insensitive. Unvoiced speech signal itself appears like
