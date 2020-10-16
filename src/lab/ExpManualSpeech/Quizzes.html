@@ -45,10 +45,10 @@
 			                        
 			            <!-- Collect the nav links, forms, and other content for toggling -->
 			            <div class="collapse navbar-collapse menu-div" id="bs-example-navbar-collapse-1" style="border: 0px;">
-			               <!-- 
-			                <ul class="nav navbar-nav navbar-right menu-ul search-ul" style="position: relative; top: -5px;">
+			               
+			               <!--  <ul class="nav navbar-nav navbar-right menu-ul search-ul" style="position: relative; top: -5px;">
 			                	<li>
-			                		<form method="get" action="search-result.html">
+			                		<form method="get" action="../search-result.html">
 			                        	<input type="text" class="search-textbox" placeholder="SEARCH FOR A LAB" name="q" id="q"/>
 			                        	<input type="submit" value="" class="search-button" />
 			                        </form>
@@ -93,133 +93,121 @@
 					<div class="row">
 						<div class="col-md-2 sidebar-col-2">
 						<!--edit1-->
-                                <a href="Objective.html" class="sidebar-a">
-									<h3 class="text-h3-darkblue" style="margin-top: 2px;">Objective</h3>
-								</a><a href="Tutorial.html" class="sidebar-a">
-									<h3 class="text-h3-darkblue" style="margin-top: 2px;">Tutorial</h3>
-								</a><a href="Procedure.html" class="sidebar-a">
-									<h3 class="text-h3-darkblue" style="margin-top: 2px;">Procedure</h3>
-								</a><a href="Experiment.html" class="sidebar-a">
-									<h3 class="text-h3-darkblue" style="margin-top: 2px;">Experiment</h3>
-								</a><a href="Observations.html" class="sidebar-a">
-									<h3 class="text-h3-darkblue" style="margin-top: 2px;color:#ff6600 !important;">Observations</h3>
-								</a><a href="Assignment.html" class="sidebar-a">
-									<h3 class="text-h3-darkblue" style="margin-top: 2px;">Assignment</h3>
-								</a><a href="References.html" class="sidebar-a">
-									<h3 class="text-h3-darkblue" style="margin-top: 2px;">References</h3>
-								</a><a href="Feedback.html" class="sidebar-a">
-									<h3 class="text-h3-darkblue" style="margin-top: 2px;">Feedback</h3>
-								</a> </div>
+<a href="Objective.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Objective</h3></a><a href="Tutorial.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Tutorial</h3></a><a href="Procedure.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Procedure</h3></a><a href="Experiment.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Experiment</h3></a><a href="Observations.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Observations</h3></a><a href="Assignment.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Assignment</h3></a><a href="Quizzes.html" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;color:#ff6600 !important;">Quizzes </h3></a><a href="References.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">References</h3></a><a href="Feedback.html?domain=Computer Science&amp;lab=Speech Signal
+									Processing Virtual Lab" class="sidebar-a"> <h3 class="text-h3-darkblue" style="margin-top: 2px;">Feedback</h3></a>						</div>
+						
 						<div class="col-md-10 lab-list-col-10">
-							
-							<!--edit -->
-<h1 class="text-h1-lightblue">Expt-8: Linear Prediction Analysis of Speech</h1><div class="content" id="experiment-article-section-5-content">
-<!-- PUT CONTENT HERE -->
-<ul>
-<li><p>Short time spectrum gives both source and system information. The
-envelope of the spectrum gives system information (i.e., resonances in
-terms of formant frequencies) and spectral ripples (fine variations)
-give source information (i.e., pitch harmonics). It is a real and even
-function of Ď.</p> </li>
-<li><p>The linear prediction (LP) analysis models the vocal tract
-system. LP spectrum is observed to be an envelope of short time spectrum
-(smoothed version of short time spectrum) and the peaks in LP spectrum
-indicate the formant frequencies (resonances) of the vocal tract
-system. With observation it is evident that the LP spectrum is derived
-from an all-pole filter.</p> </li>
-<li><p>The inverse spectrum is observed to be reciprocal of the LP
-spectrum. Therefore, we can observe the valleys corresponding to the peaks
-in LP spectrum. It is represented by an all-zero filter.</p></li>
-<li><p>For voiced speech segment its LP residual is observed to be
-periodic. In LP residual signal, peak amplitudes refers to closure of
-vocal folds (glottal closure), where the prediction is poor therefore
-its results as maximum error. </p><br>
-</br></li>
-<li><p>The periodicity in LP residual also indicate the pitch
-information.</p></li>
-<li><p>LP residual is a result of passing the speech signal through
-inverse filter (i.e., removing the vocal tract information). This is
-also considered to be the excitation signal (source information).</p></li>
-<li><p>LP residual for unvoiced speech segment looks like random noise.
-This is because the unvoiced speech signal has no periodicity and looks like random
-noise (no relations among the samples). </p></li>
-<li><p>The basic property of the autocorrelation function (even
-symmetry) is evident in all (voiced/unvoiced speech and LP residual
-signals) the plots. </p><br>
-</br></li>
-<li><p>The samples in a voiced speech segment are highly correlated,
-therefore we will observe the peaks other than center are also
-prominent. As voiced speech is periodic, it is inherited in its
-autocorrelation function also.</p> <br>
-</br></li>
-<li><p>In LP residual, the correlation among the samples is less,
-therefore its autocorrelation function contains the peaks at pitch
-rate. Hence autocorrelation function of a LP residual is useful for
-pitch computation. </p><br>
-</br></li>
-<li><p>The autocorrelation function of an unvoiced speech segment shows
-a major peak at the center and other peaks are not significant, since
-unvoiced speech signal appears like random signal.</p></li>
-<li><p>The autocorrelation function for the LP residual of an unvoiced
-speech segment shows a dominant peak at the center and no other peaks
-in rest of the portion. This is because, unvoiced speech itself looks
-like random (no correlation among the samples) and its residual
-reflects still random.</p><br>
-</br></li>
-<li><p>Glottal pulse shape shows the change in volume of air. It is also
-referred to as glottal volume velocity. </p><br>
-</br></li>
-<li><p>From the glottal pulse waveform, it is observed that volume of
-air and its pressure will be maximum at the instant of closure.
-Following this is the opening of the vocal folds, as a result of which
-the air pressure decreases.</p></li>
-<li><p>LP order determines to some extent the accuracy with which speech
-production mechanism is modeled. </p><br>
-</br></li>
-<li><p>LP analysis uses an all-pole model to characterize the vocal tract system
-by capturing the resonances with spectrum and source information with LP
-residual (inverse filter i.e., all-zero filter).</p> <br>
-</br></li>
-<li><p>LP order determines the number of resonances that can be captured
-by
-the model. The maximum number of resonances captured by the model with
-LP order <span class="MATH">P</span> is P/2.</p> <br>
-</br></li>
-<li><p>The length of the vocal tract from glottis to lips is
-approximately 17
-cm. This can generate four to five prominent resonances in 0-4 KHz
-range. These resonances can be captured with the LP model of order 10.
-We also should take care of radiation and windowing effects. Therefore
-with LP order 10-14 we can model the system by capturing required
-resonances. </p> </li>
-<li><p>System with LP order more than 14 will introduce the spurious
-resonances, which leads improper representation of the vocal tract
-system.</p></li>
-<!--
-<li>Normalized error for voiced speech signal reduces as the LP order
-is varied from 0 to 15, since the vocal tract system (speech production
-mechanism) is modeled more accurately as LP order varying from 0 to
-15.&nbsp;</li>
-<ul>
-<li>P=0, no approximation, therefore maximum error&nbsp;</li>
-<li>P=1, only one coefficient used for prediction, therefore error
-is slightly less compared to that of P=0&nbsp;</li>
-<li>P=10, model correctly approximates the resonances of the vocal
-tract system, which leads to minimum error&nbsp;</li>
-<li>P âĽ 10
-also results the correct modeling of the vocal tract system, which
-leads to similar error as that of model with P=10&nbsp;</li>
-<li>For unvoiced speech signal, as the signal and residual energies
-remains reasonable same, change in error as function of LP order is
-relatively insensitive. Unvoiced speech signal itself appears like
-random noise, therefore the prediction will remains poor even though if
-we increase the LP order. Therefore both unvoiced speech signal and its
-LP residual appears like noise, hence the normalized error for unvoiced
-speech signal won't depend on the LP order.</li>
--->
-</ul>
+				
 
-</div>						</div>
+						<!--edit -->
+						<h1 class="text-h1-lightblue">Expt-1 : Manual speech signal-to-symbol transformation</h1>
+						<div class="content" id="experiment-article-section-7-content">
+							<p></p>
+							<!--<ol>
+								<li>
+									<p>Draw on a sheet of paper the speech waveform for the English word /mask/ as
+										uttered by an adult male speaker. Use a scale of approximately 1cm=10ms. Mark
+										clearly the beginning and ending of various phonemes in the word (/m/,/a/,/s/
+										and /k/). Also mark regions of silence using symbol [sil]. Clearly show the
+										difference in amplitude of various sounds. What changes would you make if the
+										speaker were to be a female or a child.</p>
+								</li><br>
+								<li>
+									<p>Record the speech signal for the word /mask/ and compare or verify with the
+										waveform you sketched in Assessment #1.</p>
+								</li><br>
+								<li>
+									<p>Sketch the waveforms for the following words and write down the main differences:
+										<ol style="list-style-type: lower-alpha;">
+											<li>
+												<p>/mask/</p>
+											</li>
+											<li>
+												<p>/mass/</p>
+											</li>
+											<li>
+												<p>/boss/</p>
+											</li>
+											<li>
+												<p>/mark/</p>
+											</li>
+										</ol>
+									</p>
+								</li><br>
+								<li>
+									<p>Write a small program in C or any scripting language (bash, csh, awk, perl,
+										python, etc) to convert a given text stream of word-level transcription into a
+										stream of syllables and phonemes. Assume that the input stream of word-level
+										transcription uses ITRANS code. In the output stream use space for word
+										boundaries, '-' for syllable boundaries, and '_' for phoneme boundaries.</p>
+								</li>
+								</br></br></br>
+							</ol>
+							<p style="padding-left: 90px;">Eg: Input: namaskAr aapka swaagat hai <br>      Output:
+								n-a_m-a-s_k-A-r aa-p_k-a s-w-aa_g-a-t h-ai</br></p>
+							<ol> </ol>-->
+							<h3>Quiz</h3>
+							<ol>
+								<li>
+									<p>What is transcription or speech transcription?</p>
+								</li><br>
+								<li>
+									<p>How would you transcribe speech of an unknown language?</p>
+								</li><br>
+								<li>
+									<p>How would you handle new sounds in an unknown language which are not present in
+										any of your known languages?</p>
+								</li><br>
+								<li>
+									<p>What other choices do one have for symbols other than words, syllables or
+										phonemes?</p>
+								</li><br>
+								<li>
+									<p>What symbols can one choose based on auditory perception?</p>
+								</li><br>
+								<li>
+									<p>What symbols can one choose based on production mechanism or apparatus?</p>
+								</li><br>
+								<li>
+									<p>What is a phoneme?</p>
+								</li><br>
+								<li>
+									<p>What is an allophone?</p>
+								</li><br>
+								<li>
+									<p>What is the difference between terms phonetic and phonemic?</p>
+								</li><br>
+								<li>
+									<p>What is a syllable?</p>
+								</li><br>
+								<li>
+									<p>What is transliteration?</p>
+								</li><br>
+								</br></br></br></br></br></br></br></br></br></br></br>
+							</ol>
+							<!--
+<ol style="list-style-type: upper-alpha;">
+<li>Speech transcription is simply speech signal-to-symbol transformation. The choice of symbols is left to the individual. The symbols can be words, syllables or phonemes, which are typically associated with a language.</li>
+</ol>
+<ol style="list-style-type: upper-alpha;">
+<li>If you have never heard a language before, you would try to look for sounds that are present in languages that you already know and try to write down the unknown speech using symbols from a known language.</li>
+</ol>
+<ol style="list-style-type: upper-alpha;">
+<li>This is exactly where innovation begins. One has to invent a new symbol for the sound and give a complete description of the sound in terms of the speech production apparatus, so that anybody can understand, visualize and produce that sound again.</li>
+</ol>
+<ol style="list-style-type: upper-alpha;">
+<li>The symbols for transcription can either be based on auditory perception or the production apparatus or the acoustic signal.</li>
+</ol>
+<ol style="list-style-type: upper-alpha;">
+<li>Symbols based on auditory perception is a bit difficult as it requires a human being to articulate the sounds in terms of what he feels such as soft, loud, hoarse, creaky, high pitch, low pitch, hissy, plosive, etc. A complete set of descriptors based on perception is not available for all known sounds a human can produce.</li>
+</ol>
+<ol style="list-style-type: upper-alpha;">
+<li>Alternatively, one can articulate better as to how a sound is being produced in terms of various articulatory events during the production of speech. This process can be aided by studying the articulatory movements during speech prodcution using man made devices such as X-rays, CT scans, MRI scans, etc.</li>
+</ol>
+-->
+						</div>
+					</div>
+                        </div>
 					</div>
 			</div>
 			<!-- =================================================================================================================================== -->
@@ -227,8 +215,9 @@ speech signal won't depend on the LP order.</li>
 
 
 			
-	</div> <!-- content div -->
-        <footer id="footer">
+</div> <!-- content div -->
+
+<footer id="footer">
             <div class="footer-top" id="contact">
                 <div class="container">
                     <div class="row">
@@ -270,24 +259,22 @@ speech signal won't depend on the LP order.</li>
                 </div>
             </div>
         </footer>
-	
-
 </div> <!-- top div -->
 
 </body>
 
 
 	<!-- jQuery -->
-   <!-- <script src="js/jquery.js"></script>
+    <!--<script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-   <!-- <script src="js/bootstrap.min.js"></script>
+    <!--<script src="../js/bootstrap.min.js"></script>
 
 	<!-- Custom Theme JavaScript -->
-   <!-- <script src="js/custom.js"></script>
+    <!--<script src="../js/custom.js"></script>
     
     <!-- Include js plugin -->
-	<!--<script src="vendors/owl-carousel/owl.carousel.js"></script>
+<!--	<script src="../vendors/owl-carousel/owl.carousel.js"></script>
 	
 	<script type="text/javascript">
 	$(document).ready(function() {
@@ -296,8 +283,8 @@ speech signal won't depend on the LP order.</li>
 		  owl.owlCarousel({
 		      navigation: true,
 		      navigationText: [
-		                       "<img src='static/images/left-arrow.png'>",
-		                       "<img src='static/images/right-arrow.png'>"
+		                       "<img src='../images/left-arrow.png'>",
+		                       "<img src='../images/right-arrow.png'>"
 		                       ],
 		      /* autoPlay : 3000,
 		      stopOnHover : true */
@@ -308,8 +295,8 @@ speech signal won't depend on the LP order.</li>
 		  owl.owlCarousel({
 		      navigation: true,
 		      navigationText: [
-		                       "<img src='static/images/left-arrow.png'>",
-		                       "<img src='static/images/right-arrow.png'>"
+		                       "<img src='../images/left-arrow.png'>",
+		                       "<img src='../images/right-arrow.png'>"
 		                       ],
 		      autoPlay : 3000,
 		      stopOnHover : true,

@@ -10,7 +10,7 @@
     
     <title>Welcome to Virtual Labs - A MHRD Govt of india Initiative</title>
     
-     <link rel="shortcut icon" href="../images/favicon.ico">
+     <link rel="../shortcut icon" href="images/favicon.ico">
     
  
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -45,8 +45,8 @@
 			                        
 			            <!-- Collect the nav links, forms, and other content for toggling -->
 			            <div class="collapse navbar-collapse menu-div" id="bs-example-navbar-collapse-1" style="border: 0px;">
-			               <!-- 
-			                <ul class="nav navbar-nav navbar-right menu-ul search-ul" style="position: relative; top: -5px;">
+			               
+			              <!--   <ul class="nav navbar-nav navbar-right menu-ul search-ul" style="position: relative; top: -5px;">
 			                	<li>
 			                		<form method="get" action="search-result.html">
 			                        	<input type="text" class="search-textbox" placeholder="SEARCH FOR A LAB" name="q" id="q"/>
@@ -93,132 +93,24 @@
 					<div class="row">
 						<div class="col-md-2 sidebar-col-2">
 						<!--edit1-->
-                                <a href="Objective.html" class="sidebar-a">
-									<h3 class="text-h3-darkblue" style="margin-top: 2px;">Objective</h3>
-								</a><a href="Tutorial.html" class="sidebar-a">
-									<h3 class="text-h3-darkblue" style="margin-top: 2px;">Tutorial</h3>
-								</a><a href="Procedure.html" class="sidebar-a">
-									<h3 class="text-h3-darkblue" style="margin-top: 2px;">Procedure</h3>
-								</a><a href="Experiment.html" class="sidebar-a">
-									<h3 class="text-h3-darkblue" style="margin-top: 2px;">Experiment</h3>
-								</a><a href="Observations.html" class="sidebar-a">
-									<h3 class="text-h3-darkblue" style="margin-top: 2px;color:#ff6600 !important;">Observations</h3>
-								</a><a href="Assignment.html" class="sidebar-a">
-									<h3 class="text-h3-darkblue" style="margin-top: 2px;">Assignment</h3>
-								</a><a href="References.html" class="sidebar-a">
-									<h3 class="text-h3-darkblue" style="margin-top: 2px;">References</h3>
-								</a><a href="Feedback.html" class="sidebar-a">
-									<h3 class="text-h3-darkblue" style="margin-top: 2px;">Feedback</h3>
-								</a> </div>
+<a href="Objective.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Objective</h3></a><a href="Tutorial.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Tutorial</h3></a><a href="Procedure.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Procedure</h3></a><a href="Experiment.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Experiment</h3></a><a href="Observations.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Observations</h3></a><a href="Assignment.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;color:#ff6600 !important;">Assignment</h3></a><a href="References.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">References</h3></a><a href="Feedback.html?domain=Computer Science&lab=Speech Signal Processing Virtual Lab" class="sidebar-a" > <h3 class="text-h3-darkblue" style="margin-top: 2px;">Feedback</h3></a>						</div>
+						
 						<div class="col-md-10 lab-list-col-10">
 							
 							<!--edit -->
-<h1 class="text-h1-lightblue">Expt-8: Linear Prediction Analysis of Speech</h1><div class="content" id="experiment-article-section-5-content">
+<h1 class="text-h1-lightblue">Expt-10: Analysis by synthesis</h1><div class="content" id="experiment-article-section-7-content">
 <!-- PUT CONTENT HERE -->
-<ul>
-<li><p>Short time spectrum gives both source and system information. The
-envelope of the spectrum gives system information (i.e., resonances in
-terms of formant frequencies) and spectral ripples (fine variations)
-give source information (i.e., pitch harmonics). It is a real and even
-function of Ď.</p> </li>
-<li><p>The linear prediction (LP) analysis models the vocal tract
-system. LP spectrum is observed to be an envelope of short time spectrum
-(smoothed version of short time spectrum) and the peaks in LP spectrum
-indicate the formant frequencies (resonances) of the vocal tract
-system. With observation it is evident that the LP spectrum is derived
-from an all-pole filter.</p> </li>
-<li><p>The inverse spectrum is observed to be reciprocal of the LP
-spectrum. Therefore, we can observe the valleys corresponding to the peaks
-in LP spectrum. It is represented by an all-zero filter.</p></li>
-<li><p>For voiced speech segment its LP residual is observed to be
-periodic. In LP residual signal, peak amplitudes refers to closure of
-vocal folds (glottal closure), where the prediction is poor therefore
-its results as maximum error. </p><br>
-</br></li>
-<li><p>The periodicity in LP residual also indicate the pitch
-information.</p></li>
-<li><p>LP residual is a result of passing the speech signal through
-inverse filter (i.e., removing the vocal tract information). This is
-also considered to be the excitation signal (source information).</p></li>
-<li><p>LP residual for unvoiced speech segment looks like random noise.
-This is because the unvoiced speech signal has no periodicity and looks like random
-noise (no relations among the samples). </p></li>
-<li><p>The basic property of the autocorrelation function (even
-symmetry) is evident in all (voiced/unvoiced speech and LP residual
-signals) the plots. </p><br>
-</br></li>
-<li><p>The samples in a voiced speech segment are highly correlated,
-therefore we will observe the peaks other than center are also
-prominent. As voiced speech is periodic, it is inherited in its
-autocorrelation function also.</p> <br>
-</br></li>
-<li><p>In LP residual, the correlation among the samples is less,
-therefore its autocorrelation function contains the peaks at pitch
-rate. Hence autocorrelation function of a LP residual is useful for
-pitch computation. </p><br>
-</br></li>
-<li><p>The autocorrelation function of an unvoiced speech segment shows
-a major peak at the center and other peaks are not significant, since
-unvoiced speech signal appears like random signal.</p></li>
-<li><p>The autocorrelation function for the LP residual of an unvoiced
-speech segment shows a dominant peak at the center and no other peaks
-in rest of the portion. This is because, unvoiced speech itself looks
-like random (no correlation among the samples) and its residual
-reflects still random.</p><br>
-</br></li>
-<li><p>Glottal pulse shape shows the change in volume of air. It is also
-referred to as glottal volume velocity. </p><br>
-</br></li>
-<li><p>From the glottal pulse waveform, it is observed that volume of
-air and its pressure will be maximum at the instant of closure.
-Following this is the opening of the vocal folds, as a result of which
-the air pressure decreases.</p></li>
-<li><p>LP order determines to some extent the accuracy with which speech
-production mechanism is modeled. </p><br>
-</br></li>
-<li><p>LP analysis uses an all-pole model to characterize the vocal tract system
-by capturing the resonances with spectrum and source information with LP
-residual (inverse filter i.e., all-zero filter).</p> <br>
-</br></li>
-<li><p>LP order determines the number of resonances that can be captured
-by
-the model. The maximum number of resonances captured by the model with
-LP order <span class="MATH">P</span> is P/2.</p> <br>
-</br></li>
-<li><p>The length of the vocal tract from glottis to lips is
-approximately 17
-cm. This can generate four to five prominent resonances in 0-4 KHz
-range. These resonances can be captured with the LP model of order 10.
-We also should take care of radiation and windowing effects. Therefore
-with LP order 10-14 we can model the system by capturing required
-resonances. </p> </li>
-<li><p>System with LP order more than 14 will introduce the spurious
-resonances, which leads improper representation of the vocal tract
-system.</p></li>
-<!--
-<li>Normalized error for voiced speech signal reduces as the LP order
-is varied from 0 to 15, since the vocal tract system (speech production
-mechanism) is modeled more accurately as LP order varying from 0 to
-15.&nbsp;</li>
-<ul>
-<li>P=0, no approximation, therefore maximum error&nbsp;</li>
-<li>P=1, only one coefficient used for prediction, therefore error
-is slightly less compared to that of P=0&nbsp;</li>
-<li>P=10, model correctly approximates the resonances of the vocal
-tract system, which leads to minimum error&nbsp;</li>
-<li>P âĽ 10
-also results the correct modeling of the vocal tract system, which
-leads to similar error as that of model with P=10&nbsp;</li>
-<li>For unvoiced speech signal, as the signal and residual energies
-remains reasonable same, change in error as function of LP order is
-relatively insensitive. Unvoiced speech signal itself appears like
-random noise, therefore the prediction will remains poor even though if
-we increase the LP order. Therefore both unvoiced speech signal and its
-LP residual appears like noise, hence the normalized error for unvoiced
-speech signal won't depend on the LP order.</li>
--->
-</ul>
-
+<ol>
+<li><p>Write a program (C/Matlab/Octave/Scilab) to separate the source and system of a given speech signal of 1 to 2 seconds using short-time LP analysis. Use a window size of 20 ms, a window shift of 10 ms, an LP order of 10. Plot the original signal and the LP residual signal.</p></li><br>
+<li><p>Write a program (C/Matlab/Octave/Scilab) to resynthesize the speech signal given the sequence of LPCs and the following excitation signals:
+	<ul>
+<li>LP residual derived by using a specified LP order</li>
+<li>Train of unit impulses with a constant pitch of 10 ms.</li>
+<li>Train of impulses with the gain varying proportional to the LP residual signal</li>
+<li>White Gaussian random noise sequence with and without the gain of the LP residual signal imposed.</li>
+</ul></p>
+</li><br>
+</br></br></ol>
 </div>						</div>
 					</div>
 			</div>
@@ -228,7 +120,7 @@ speech signal won't depend on the LP order.</li>
 
 			
 	</div> <!-- content div -->
-        <footer id="footer">
+		<footer id="footer">
             <div class="footer-top" id="contact">
                 <div class="container">
                     <div class="row">
@@ -270,7 +162,6 @@ speech signal won't depend on the LP order.</li>
                 </div>
             </div>
         </footer>
-	
 
 </div> <!-- top div -->
 
@@ -287,7 +178,7 @@ speech signal won't depend on the LP order.</li>
    <!-- <script src="js/custom.js"></script>
     
     <!-- Include js plugin -->
-	<!--<script src="vendors/owl-carousel/owl.carousel.js"></script>
+<!--	<script src="vendors/owl-carousel/owl.carousel.js"></script>
 	
 	<script type="text/javascript">
 	$(document).ready(function() {
@@ -296,8 +187,8 @@ speech signal won't depend on the LP order.</li>
 		  owl.owlCarousel({
 		      navigation: true,
 		      navigationText: [
-		                       "<img src='static/images/left-arrow.png'>",
-		                       "<img src='static/images/right-arrow.png'>"
+		                       "<img src='images/left-arrow.png'>",
+		                       "<img src='images/right-arrow.png'>"
 		                       ],
 		      /* autoPlay : 3000,
 		      stopOnHover : true */
@@ -308,8 +199,8 @@ speech signal won't depend on the LP order.</li>
 		  owl.owlCarousel({
 		      navigation: true,
 		      navigationText: [
-		                       "<img src='static/images/left-arrow.png'>",
-		                       "<img src='static/images/right-arrow.png'>"
+		                       "<img src='images/left-arrow.png'>",
+		                       "<img src='images/right-arrow.png'>"
 		                       ],
 		      autoPlay : 3000,
 		      stopOnHover : true,
