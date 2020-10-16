@@ -1,29 +1,28 @@
 <!-- This file needs to be edited by the lab developer to suit
-the requirements of their lab in particular.-->
-
-<!-- Add class="default" to include any element as it is
+the requirements of their lab in particular.--><!-- Add class="default" to include any element as it is
 specified in default.html. 
 Do not include class="default" to the elements that you want to
-edit -->
-
-<!DOCTYPE html>
-<html>
-<head>
+edit --><!DOCTYPE html>
+<html><head><!--Google Tag Manager--><script class="gtm">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W59SWTR');</script><!--End Google Tag Manager-->
 </head>
-<body>
+<body><!--Google Tag Manager (noscript)--><noscript class="gtm"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W59SWTR" style="display:none;visibility:hidden" width="0"></iframe></noscript><!--End Google Tag Manager (noscript)-->
 
 <div id="experiment"> <!-- The Experiment Document Container-->
 
   <!-- The lab Header contains the logo and the name of the lab,
   usually displayed on the top of the page-->
 
-  <header id="experiment-header" class="default">
+  <header class="default" id="experiment-header">
   
-    <div id="experiment-header-logo" class="logo">
-      <img src="../images/logo.jpg" />
+    <div class="logo" id="experiment-header-logo">
+      <img src="../images/logo.jpg"/>
     </div>
 
-    <div id="experiment-header-heading" class="heading">
+    <div class="heading" id="experiment-header-heading">
       <!-- Write the name of your lab and link it to the home 
       page of your lab (h1 tag is preferred while writing your 
       lab name)-->
@@ -45,7 +44,7 @@ edit -->
     menu, number of sections, an optional sidebar and a closing 
     footer-->
     
-      <header id="experiment-article-heading" class="heading">
+      <header class="heading" id="experiment-article-heading">
         <!-- You can add a welcome message or title of the 
         experiment here -->
         Expt-8: Linear Prediction Analysis of Speech
@@ -55,7 +54,7 @@ edit -->
 
       <!-- Navigation menu is useful to organize the view of 
       multiple sections inside the article-->
-      <nav id="experiment-article-navigation" class="default">
+      <nav class="default" id="experiment-article-navigation">
         <ul id="experiment-article-navigation-menu">
           <!-- The menu can be dynamically generated to contain 
           the headings of your sections or instead write the 
@@ -71,23 +70,20 @@ edit -->
         <!-- First section of the article-->
         <section id="experiment-article-section-1">
           
-          <div id="experiment-article-section-1-icon" 
-          class="icon">
+          <div class="icon" id="experiment-article-section-1-icon">
 	    <!-- Enclose the icon image of your lab -->
-	    <img src="../images/introduction.jpg" />
+	    <img src="../images/introduction.jpg"/>
 	  </div>	
           
           <!-- The heading for the section can be enclosed in a 
           div tag. -->
-          <div id="experiment-article-section-1-heading" 
-          class="heading">
+          <div class="heading" id="experiment-article-section-1-heading">
             Objective
           </div>
 
           <!-- Write the section content inside a paragraph 
           element, You can also include images with <img> tag -->
-          <div id="experiment-article-section-1-content" 
-          class="content">	
+          <div class="content" id="experiment-article-section-1-content">	
             <p>
 	      <!-- PUT CONTENT HERE -->
 	      The primary objective of this experiment is the study
@@ -97,7 +93,7 @@ edit -->
 	 	studying the effect of order of LP analysis (normalized error),
 		autocorrelation of signal and LP residual for voiced and unvoiced
 		segments, and study of glottal pulse shapes.
-        </div>
+        </p></div>
 
 
       </section>
@@ -105,22 +101,19 @@ edit -->
       <!-- Second section of the article-->
       <section id="experiment-article-section-2">
         
-        <div id="experiment-article-section-2-icon" 
-        class="icon">
+        <div class="icon" id="experiment-article-section-2-icon">
 	  <!-- Enclose the icon image of your lab. -->
-	  <img src="../images/theory.jpg" />
+	  <img src="../images/theory.jpg"/>
 	</div>
-	<div id="experiment-article-section-2-heading" 
-        class="heading">
+	<div class="heading" id="experiment-article-section-2-heading">
           Tutorial
         </div>
 
-        <div id="experiment-article-section-2-content" 
-        class="content">
+        <div class="content" id="experiment-article-section-2-content">
 	    <!-- PUT CONTENT HERE -->
 <p>
-<h3>Source-system modeling of speech signals using LP analysis</h3>
-</p>
+</p><h3>Source-system modeling of speech signals using LP analysis</h3>
+<p></p>
 <p>
 The vocal tract system can be modeled as a time-varying all-pole filter using segmental analysis.
 The segmental analysis corresponds to the processing of speech as short (10-30 ms) overlapped (5-15 ms) windows.
@@ -151,15 +144,15 @@ A segment of voiced speech (windowed), frequency response of the inverse filter 
 </p>
 
 <p>
-<table border=0>
-<tr><td width=800><img src=media/lpinvfilter.png /></td></tr>
+</p><table border="0">
+<tbody><tr><td width="800"><img src="media/lpinvfilter.png"/></td></tr>
 <tr><td><b>Figure 1:</b> Inverse filtering the speech signal for estimating the excitation source (LP residual) signal.</td></tr>
 
-</table><br>
-</p>
-<p><h1>Collection of voiced (/a/)and unvoiced (/s/) speech segments</h1></p>
+</tbody></table><br/>
+<p></p>
+<p></p><h1>Collection of voiced (/a/)and unvoiced (/s/) speech segments</h1><p></p>
 <p>
-<ul>
+</p><ul>
 <li>Record a vowel /a/ for one second at 10 KHz sampling frequency
 with 16 bit quantization. From this recorded speech file collect 200 ms
 in steady portion of the waveform. </li>
@@ -167,106 +160,86 @@ in steady portion of the waveform. </li>
 sampling frequency with 16 bit quantization. From this recorded speech
 file collect 200 ms in steady portion of the waveform. </li>
 <li>The short voiced and unvoiced speech segments are shown in
-Figure&nbsp;1. </li>
+FigureÃ‚Â 1. </li>
 </ul>
-</p>
+<p></p>
 <p>
-<a name="fig:voiced-unvoiced-waveform"></a><a name="183"></a> <img
-src="media/img2.png"
-alt="\resizebox*{15cm}{8cm}{\includegraphics{figures/figure1.eps}}"
-style="border: 0px solid ; width: 681px; height: 363px;"><br>
+<a name="fig:voiced-unvoiced-waveform"></a><a name="183"></a> <img alt="\resizebox*{15cm}{8cm}{\includegraphics{figures/figure1.eps}}" src="media/img2.png" style="border: 0px solid ; width: 681px; height: 363px;"/><br/>
 <strong>Figure 1:</strong> <i class="sans">(a) Segment of voiced
-speech /a/ and (b) segment of unvoiced speech /s/<br>
+speech /a/ and (b) segment of unvoiced speech /s/<br/>
 </i>
 </p>
 <p>
-<h1>Short time spectrum, LP spectrum and Inverse spectrum for voiced
+</p><h1>Short time spectrum, LP spectrum and Inverse spectrum for voiced
 segment /a/</h1>
-</p>
+<p></p>
 <p>
-<br>
-<h2>Short time spectrum</h2>
+<br/>
+</p><h2>Short time spectrum</h2>
 The short time spectrum consists of range of frequencies (magnitude and
 phase components) that are present in a small segment (10-30 ms) of a
 signal. Short time spectrum is computed with the following procedure:
-</p>
-<br>
+<p></p>
+<br/>
 <p>
-<ul>
-<li>Take 20 ms of voiced speech segment /a/ after preemphasis <br>
-<span style="font-style: italic;">a=wavread('vowel.wav'); </span><br
-style="font-style: italic;">
-<span style="font-style: italic;">a=diff(a); </span><br
-style="font-style: italic;">
+</p><ul>
+<li>Take 20 ms of voiced speech segment /a/ after preemphasis <br/>
+<span style="font-style: italic;">a=wavread('vowel.wav'); </span><br style="font-style: italic;"/>
+<span style="font-style: italic;">a=diff(a); </span><br style="font-style: italic;"/>
 <span style="font-style: italic;">a200=a(501:700);</span> </li>
 <li>Apply a hamming window over a voiced segment (a200), then compute
 the fast Fourier transform for the voiced segment (a200) and plot the
-magnetite of the spectrum. <br>
-<span style="font-style: italic;">ham=hamming(200); </span><br
-style="font-style: italic;">
-<span style="font-style: italic;">a200ham=a200.*ham; </span><br
-style="font-style: italic;">
-<span style="font-style: italic;">a200hamspec=fft(a200ham,1024); </span><br
-style="font-style: italic;">
-<span style="font-style: italic;">y=abs(a200hamspec.*a200hamspec); </span><br
-style="font-style: italic;">
-<span style="font-style: italic;">logy=10*log10(y); </span><br
-style="font-style: italic;">
+magnetite of the spectrum. <br/>
+<span style="font-style: italic;">ham=hamming(200); </span><br style="font-style: italic;"/>
+<span style="font-style: italic;">a200ham=a200.*ham; </span><br style="font-style: italic;"/>
+<span style="font-style: italic;">a200hamspec=fft(a200ham,1024); </span><br style="font-style: italic;"/>
+<span style="font-style: italic;">y=abs(a200hamspec.*a200hamspec); </span><br style="font-style: italic;"/>
+<span style="font-style: italic;">logy=10*log10(y); </span><br style="font-style: italic;"/>
 <span style="font-style: italic;">figure;plot([1:512]*5000/512,logy(1:512));grid;</span>
 </li>
 </ul>
-</p>
+<p></p>
 <p>
-<br>
-<h2><LP spectrum=""></LP></h2>
+<br/>
+</p><h2><lp spectrum=""></lp></h2>
 <ul>
 <li>LP spectrum provides smoothed envelope of the short time
 spectrum, where only the formant frequencies (resonances) are observed.
 For realizing this linear prediction coefficients (LPCs) or filter
-parameters need to be computed from speech signal. <br>
-<span style="font-style: italic;">ak=lpc(a200,14); </span><br
-style="font-style: italic;">
-<span style="font-style: italic;">lpspec=freqz(1,ak); </span><br
-style="font-style: italic;">
-<span style="font-style: italic;">y=abs(lpspec.*lpspec); </span><br
-style="font-style: italic;">
-<span style="font-style: italic;">logy=10*log10(y); </span><br
-style="font-style: italic;">
+parameters need to be computed from speech signal. <br/>
+<span style="font-style: italic;">ak=lpc(a200,14); </span><br style="font-style: italic;"/>
+<span style="font-style: italic;">lpspec=freqz(1,ak); </span><br style="font-style: italic;"/>
+<span style="font-style: italic;">y=abs(lpspec.*lpspec); </span><br style="font-style: italic;"/>
+<span style="font-style: italic;">logy=10*log10(y); </span><br style="font-style: italic;"/>
 <span style="font-style: italic;">figure;plot([1:512]*5000/512,logy);grid;
-</span><br>
+</span><br/>
 </li>
 </ul>
-</p>
+<p></p>
 <p>
-<h2> Inverse spectrum </h2>
+</p><h2> Inverse spectrum </h2>
 <ul>
 <li>Inverse filter is realized by the inverse of LP filter. Therefore
-the spectrum of the inverse filter is computed as follows: <br>
-<span style="font-style: italic;">invspec=freqz(ak,1); </span><br
-style="font-style: italic;">
-<span style="font-style: italic;">y=abs(invspec.*invspec); </span><br
-style="font-style: italic;">
-<span style="font-style: italic;">logy=10*log10(y); </span><br
-style="font-style: italic;">
+the spectrum of the inverse filter is computed as follows: <br/>
+<span style="font-style: italic;">invspec=freqz(ak,1); </span><br style="font-style: italic;"/>
+<span style="font-style: italic;">y=abs(invspec.*invspec); </span><br style="font-style: italic;"/>
+<span style="font-style: italic;">logy=10*log10(y); </span><br style="font-style: italic;"/>
 <span style="font-style: italic;">figure;plot([1:512]*5000/512,logy);grid;
-</span><br>
+</span><br/>
 </li>
 </ul>
-</p>
+<p></p>
 <p>
 The short time spectrum, LP spectrum and inverse spectrum for a segment
-of voiced speech are shown in Figure&nbsp;2.
+of voiced speech are shown in FigureÃ‚Â 2.
 <a name="fig:voiced-spec"></a><a name="185"></a>
-<br>
-<img
-src="media/img3.png"
-alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/fig2.eps}}"
-style="border: 0px solid ; width: 680px; height: 454px;"><br>
+<br/>
+<img alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/fig2.eps}}" src="media/img3.png" style="border: 0px solid ; width: 680px; height: 454px;"/><br/>
 <strong>Figure 2:</strong> <i class="sans">(a)
 Segment of voiced speech /a/ and its (b) short
-time spectrum, (c) LP spectrum and (d) inverse spectrum<br>
-</i><br>
-<br>
+time spectrum, (c) LP spectrum and (d) inverse spectrum<br/>
+</i><br/>
+<br/>
 </p>
 <h1>Short time spectrum, LP spectrum and Inverse spectrum for unvoiced segment /s/
 </h1>
@@ -275,28 +248,22 @@ time spectrum, (c) LP spectrum and (d) inverse spectrum<br>
 spectrum for an unvoiced segment /s/ the same procedure is followed as
 that of for voiced speech segment /a/. </li>
 <li>The short time spectrum, LP spectrum and inverse spectrum for a
-segment of unvoiced speech (/s/) are shown in Figure&nbsp;3. </li>
+segment of unvoiced speech (/s/) are shown in FigureÃ‚Â 3. </li>
 </ul>
-<img
-src="media/img5.png"
-alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/fig3.eps}}"
-style="border: 0px solid ; width: 680px; height: 454px;">
-<br>
+<img alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/fig3.eps}}" src="media/img5.png" style="border: 0px solid ; width: 680px; height: 454px;"/>
+<br/>
 <a name="fig:unvoiced-spec"></a><a name="187"></a>
 <strong>Figure 3:</strong>
 <i class="sans">(a) Segment of unvoiced speech /s/ and its (b) short
-time spectrum, (c) LP spectrum and (d) inverse spectrum.<br>
-<br>
+time spectrum, (c) LP spectrum and (d) inverse spectrum.<br/>
+<br/>
 </i>
 <h1>LP residual for voiced and unvoiced segments </h1>
 <ul>
 <li>LP residual signal is obtained by passing the speech signal
 through inverse filter designed with LP coefficients (LPCs). The block
-diagram of the inverse filter is shown in Figure&nbsp;4.<br>
-<img
-src="media/img6.png"
-alt="\resizebox*{12cm}{3cm}{\includegraphics{figures/inversefilter.eps}}"
-style="border: 0px solid ; width: 543px; height: 135px;"><br>
+diagram of the inverse filter is shown in FigureÃ‚Â 4.<br/>
+<img alt="\resizebox*{12cm}{3cm}{\includegraphics{figures/inversefilter.eps}}" src="media/img6.png" style="border: 0px solid ; width: 543px; height: 135px;"/><br/>
 </li>
 </ul>
 <strong>Figure 4:</strong> <i class="sans">Inverse filter to obtain LP
@@ -304,68 +271,56 @@ residual signal from </i><strong></strong><i class="sans">
 speech signal</i>
 <ul>
 <li>LP residual is computed for voiced and unvoiced speech segments
-using the following matlab commands:&nbsp;</li>
+using the following matlab commands:Ã‚Â </li>
 <ul style="font-style: italic;">
-<li>res=filter(ak,1,a200);&nbsp;</li>
-<li>figure;plot(real(res));grid; <br>
+<li>res=filter(ak,1,a200);Ã‚Â </li>
+<li>figure;plot(real(res));grid; <br/>
 </li>
 </ul>
 <li>Voiced and unvoiced speech segments and their LP residual signals
-are shown in Figure&nbsp;5. </li>
+are shown in FigureÃ‚Â 5. </li>
 </ul>
-&nbsp;
-<img
-src="media/img7.png"
-alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/figure8.eps}}"
-style="border: 0px solid ; width: 680px; height: 454px;"><br>
+Ã‚Â 
+<img alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/figure8.eps}}" src="media/img7.png" style="border: 0px solid ; width: 680px; height: 454px;"/><br/>
 <a name="fig:residuals"></a><a name="191"></a><strong>Figure 5:</strong>
 <i class="sans">(a) Segment of voiced speech /a/ and its (b) LP
 residual signal, (c) segment of unvoiced speech /s/ and its (d) LP
-residual signal.</i><br>
-<br>
-<br>
+residual signal.</i><br/>
+<br/>
+<br/>
 <h1>Autocorrelation function for
 voiced/unvoiced speech segments and their LP residuals
 </h1>
-<br>
+<br/>
 <ul>
 <li>Autocorrelation function of the signal x(t) is computed using the
-following formulation: <br>
-<span class="MATH"><img
-src="media/img8.png"
-alt="$ R(\tau) = \sum_{t=0}^\infty{x(t)x(t+\tau)}$" align="middle"
-style="border: 0px solid ; width: 209px; height: 39px;"><br>
+following formulation: <br/>
+<span class="MATH"><img align="middle" alt="$ R(\tau) = \sum_{t=0}^\infty{x(t)x(t+\tau)}$" src="media/img8.png" style="border: 0px solid ; width: 209px; height: 39px;"/><br/>
 </span> </li>
 <li>The above formulation is implemented in matlab using the command
 xcorr(x(t)). Autocorrelation function for voiced and unvoiced segments
-and their LP residuals is computed. <br>
+and their LP residuals is computed. <br/>
 a200corr=xcorr(a200); </li>
 <li>The autocorrelation function for the voiced speech segment and
-its LP residual signal is shown in Figure&nbsp;6.</li>
-<br>
-<img
-src="media/img9.png"
-alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/figure6.eps}}"
-style="border: 0px solid ; width: 680px; height: 454px;"><br>
-Figure 6:</strong><i class="sans">(a) Segment of voiced speech /a/ and
+its LP residual signal is shown in FigureÃ‚Â 6.</li>
+<br/>
+<img alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/figure6.eps}}" src="media/img9.png" style="border: 0px solid ; width: 680px; height: 454px;"/><br/>
+Figure 6:<i class="sans">(a) Segment of voiced speech /a/ and
 its (b)
 autocorrelation function, (c) LP residual for the voiced speech segment
-and its (d) autocorrelation function. </i><br>
-<br>
+and its (d) autocorrelation function. </i><br/>
+<br/>
 <li>The autocorrelation function for the unvoiced speech segment and
-its LP residual signal is shown in Figure&nbsp;7.<br>
-<img
-src="media/img10.png"
-alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/figure7.eps}}"
-style="border: 0px solid ; width: 680px; height: 454px;"><br>
+its LP residual signal is shown in FigureÃ‚Â 7.<br/>
+<img alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/figure7.eps}}" src="media/img10.png" style="border: 0px solid ; width: 680px; height: 454px;"/><br/>
  </li>
-<br>
+<br/>
 <strong>Figure 7:</strong><i class="sans">(a) Segment of unvoiced
 speech /s/ and its (b)
 autocorrelation function, (c) LP residual for the unvoiced speech
-segment and its (d) autocorrelation function.<br>
-<br>
-<br>
+segment and its (d) autocorrelation function.<br/>
+<br/>
+<br/>
 </i>
 </ul>
 <h1>Glottal pulse shape in voiced portion of a speech signal
@@ -374,23 +329,20 @@ segment and its (d) autocorrelation function.<br>
 <li>By integrating the LP residual we can obtain the glottal pulse
 shape, it is also known as glottal volume velocity. </li>
 <li>The integration function is implemented in matlab with a function
-<i>cumsum</i>.&nbsp;<span style="font-style: italic;"></span></li>
+<i>cumsum</i>.Ã‚Â <span style="font-style: italic;"></span></li>
 <ul>
 <li><span style="font-style: italic;">gp=cumsum(res);</span> </li>
 </ul>
 <li>A segment of voiced speech its LP residual and glottal pulse
-(glottal volume velocity) waveforms are shown in Figure&nbsp;8. </li>
-<img
-src="media/img11.png"
-alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/figure5.eps}}"
-style="border: 0px solid ; width: 670px; height: 457px;"><br>
+(glottal volume velocity) waveforms are shown in FigureÃ‚Â 8. </li>
+<img alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/figure5.eps}}" src="media/img11.png" style="border: 0px solid ; width: 670px; height: 457px;"/><br/>
 <strong>Figure 8:</strong> <i class="sans">(a) Segment of voiced
 speech /a/, its (b) LP residual and (c) glottal pulse waveform. </i>
 </ul>
 <ul>
-<br>
-<br>
-<br>
+<br/>
+<br/>
+<br/>
 </ul>
 <h1>LP spectrum for different LP
 orders
@@ -399,17 +351,14 @@ orders
 <li>Compute LPCs for different LP orders (14, 10, 6, 3 and 1), and
 compute LP spectrum for each set of LPCs. </li>
 <li>A segment of voiced speech and its LP spectrum for different LP
-orders (14, 10, 6, 3 and 1) are shown in Figure&nbsp;9. </li>
-<img
-src="media/img14.png"
-alt="\resizebox*{15cm}{20cm}{\includegraphics{figures/fig4.eps}}"
-style="border: 0px solid ; width: 681px; height: 907px;"><br>
+orders (14, 10, 6, 3 and 1) are shown in FigureÃ‚Â 9. </li>
+<img alt="\resizebox*{15cm}{20cm}{\includegraphics{figures/fig4.eps}}" src="media/img14.png" style="border: 0px solid ; width: 681px; height: 907px;"/><br/>
 <strong>Figure 9:</strong> <i class="sans">(a) Segment of voiced
 speech /a/, its LP spectrum for the LP order (b) 14, (c) 10, (d) 6, (e)
 3 and (f) 1 </i> 
 </ul>
 <ul>
-<br>
+<br/>
 <h1>Normalized error for different LP orders for voiced/unvoiced speech
 segments
 </h1>
@@ -417,39 +366,28 @@ segments
 <li>Normalized error is obtained by normalizing the LP residual
 energy with respect to speech signal energy. </li>
 <li>Normalized error is computed for both voiced and unvoiced
-segments of speech with different LP orders. <br>
+segments of speech with different LP orders. <br/>
 <!-- MATH
 $\eta = \frac{residual energy}{signal energy}$
---><span
-class="MATH"><img
-src="media/img15.png"
-alt="$\eta = \frac{residual energy}{signal energy}$" style="border: 0px solid ; width: 135px; height: 43px;"></span> <br>
-for i=1:15 <br>
-ak=lpc(a200,i); <br>
-res=filter(ak,1,a200); <br>
+--><span class="MATH"><img alt="$\eta = \frac{residual energy}{signal energy}$" src="media/img15.png" style="border: 0px solid ; width: 135px; height: 43px;"/></span> <br/>
+for i=1:15 <br/>
+ak=lpc(a200,i); <br/>
+res=filter(ak,1,a200); <br/>
 <!-- MATH
 $\eta(i)=\frac{sum(res.*res)}{sum(a200.*a200)}$
---><span
-class="MATH"><img
-src="media/img16.png"
-alt="$\eta(i)=\frac{sum(res.*res)}{sum(a200.*a200)}$" style="border: 0px solid ; width: 167px; height: 47px;"></span>; <br>
-end <br>
-figure;plot(<span class="MATH"><img
-src="media/img17.png"
-alt="$\eta$" style="border: 0px solid ; width: 15px; height: 35px;"> </span>);grid;
+--><span class="MATH"><img alt="$\eta(i)=\frac{sum(res.*res)}{sum(a200.*a200)}$" src="media/img16.png" style="border: 0px solid ; width: 167px; height: 47px;"/></span>; <br/>
+end <br/>
+figure;plot(<span class="MATH"><img alt="$\eta$" src="media/img17.png" style="border: 0px solid ; width: 15px; height: 35px;"/> </span>);grid;
 </li>
 <li>Normalized error for voiced and unvoiced segments of speech for
-different LP orders is shown in Figure&nbsp;10</li>
+different LP orders is shown in FigureÃ‚Â 10</li>
 </ul>
-<img
-src="media/img19.png"
-alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/figure4.eps}}"
-&gt;="" style="border: 0px solid ; width: 681px; height: 454px;"><br>
+<img &gt;="" alt="\resizebox*{15cm}{10cm}{\includegraphics{figures/figure4.eps}}" src="media/img19.png" style="border: 0px solid ; width: 681px; height: 454px;"/><br/>
 <strong>Figure 10:</strong> <i class="sans">Normalized error for
 voiced and unvoiced speech
 segments for different LP orders. </i>
-<br>
-<br>
+<br/>
+<br/>
 </ul>
 
         </div>				
@@ -460,22 +398,19 @@ segments for different LP orders. </i>
 
       <section id="experiment-article-section-3">
         
-        <div id="experiment-article-section-3-icon" 
-        class="icon">
+        <div class="icon" id="experiment-article-section-3-icon">
 	  <!-- Enclose the icon image of your lab. -->
-	  <img src="../images/procedure.jpg" />
+	  <img src="../images/procedure.jpg"/>
 	</div>
       <!-- The heading for the section can be enclosed in a 
         div tag. -->
-        <div id="experiment-article-section-3-heading" 
-        class="heading">
+        <div class="heading" id="experiment-article-section-3-heading">
           Procedure
         </div>
 
         <!-- Write the section content inside a paragraph 
         element, we can also include images with <img> tag -->
-        <div id="experiment-article-section-3-content" 
-        class="content">
+        <div class="content" id="experiment-article-section-3-content">
 
 	    <!-- PUT CONTENT HERE -->
 	    <ol style="list-style-type: lower-alpha;">
@@ -504,25 +439,22 @@ segments for different LP orders. </i>
 
       <section id="experiment-article-section-4">
 
-        <div id="experiment-article-section-4-icon" 
-        class="icon">
+        <div class="icon" id="experiment-article-section-4-icon">
 	  <!-- Enclose the icon image of your lab.-->
-	  <img src="../images/simulation.jpg" />
+	  <img src="../images/simulation.jpg"/>
 	</div>
 
-        <div id="experiment-article-section-4-heading" 
-        class="heading">
+        <div class="heading" id="experiment-article-section-4-heading">
           Experiment
         </div>
 
-        <div id="experiment-article-section-4-content" 
-        class="content">
+        <div class="content" id="experiment-article-section-4-content">
 <p>
 	    <!-- PUT CONTENT HERE -->
 
-<applet code="audioTransport/SVLAudioTool.class" archive="media/lpSpectrumAnalysisS.jar" width="950" height="700" title="Java">
-               <param name="foo" value="bar">
-        Please install the latest version of the Java plugin for your browser. <br>
+<applet archive="media/lpSpectrumAnalysisS.jar" code="audioTransport/SVLAudioTool.class" height="700" title="Java" width="950">
+               <param name="foo" value="bar"></param>
+        Please install the latest version of the Java plugin for your browser. <br/>
         </applet>
 </p>
 </div>
@@ -531,26 +463,23 @@ segments for different LP orders. </i>
 
       <section id="experiment-article-section-5">
    
-        <div id="experiment-article-section-5-icon" 
-        class="icon">
+        <div class="icon" id="experiment-article-section-5-icon">
 	  <!-- Enclose the icon image of your lab.-->
-	  <img src="../images/manual.jpg" />
+	  <img src="../images/manual.jpg"/>
 	</div>
 
-        <div id="experiment-article-section-5-heading" 
-        class="heading">
+        <div class="heading" id="experiment-article-section-5-heading">
           Observations
         </div>
 
-        <div id="experiment-article-section-5-content" 
-        class="content">
+        <div class="content" id="experiment-article-section-5-content">
 	    <!-- PUT CONTENT HERE -->
 <ul>
 <li>Short time spectrum gives both source and system information. The
 envelope of the spectrum gives system information (i.e., resonances in
 terms of formant frequencies) and spectral ripples (fine variations)
 give source information (i.e., pitch harmonics). It is a real and even
-function of ω. </li>
+function of Ãƒï¿½Ã¢â‚¬Â°. </li>
 <li>The linear prediction (LP) analysis models the vocal tract
 system. LP spectrum observed to be an envelope of short time spectrum
 (smoothed version of short time spectrum) and the peaks in LP spectrum
@@ -563,7 +492,7 @@ in LP spectrum. It is represented by an all-zero filter.</li>
 <li>For voiced speech segment its LP residual is observed to be
 periodic. In LP residual signal, peak amplitudes refers to closure of
 vocal folds (glottal closure), where the prediction is poor therefore
-its results as maximum error. <br>
+its results as maximum error. <br/>
 </li>
 <li>The periodicity in LP residual also indicate the pitch
 information.</li>
@@ -576,48 +505,48 @@ noise (no relations among the samples), obviously its input also looks
 like noise.</li>
 <li>The basic property of the autocorrelation function (even
 symmetry) is evident in all (voiced/unvoiced speech and LP residual
-signals) the plots. <br>
+signals) the plots. <br/>
 </li>
 <li>The samples in a voiced speech segment are highly correlated,
 therefore we will observe the peaks other than center are also
 prominent. As voiced speech is periodic, it is inherited in its
-autocorrelation function also. <br>
+autocorrelation function also. <br/>
 </li>
 <li>In LP residual, the correlation among the samples is less,
 therefore its autocorrelation function contains the peaks at pitch
 rate. Hence autocorrelation function of a LP residual is useful for
-pitch computation. <br>
+pitch computation. <br/>
 </li>
 <li>The autocorrelation function of an unvoiced speech segment shows
 a major peak at the center and other peaks are not significant, since
-unvoiced speech signal appears like random signal.&nbsp;</li>
+unvoiced speech signal appears like random signal.Ã‚Â </li>
 <li>The autocorrelation function for the LP residual of an unvoiced
 speech segment shows a dominant peak at the center and no other peaks
 in rest of the portion. This is because, unvoiced speech itself looks
 like random (no correlation among the samples) and its residual
 reflects still random.This gives the information about the air pressure
 build up near vocal folds from lungs, which cause the vibration of
-vocal folds resulting in its open/closure. <br>
+vocal folds resulting in its open/closure. <br/>
 </li>
 <li>Glottal pulse shape shows the change in volume of air. It is also
-referred to as glottal volume velocity. <br>
+referred to as glottal volume velocity. <br/>
 </li>
 <li>From the glottal pulse waveform, it is observed that volume of
 air and its pressure will be maximum at the instant of closure.
 Following this is the opening of the vocal folds, as a result of which
 the air pressure decreases.</li>
 <li>LP order determines to some extent the accuracy with which speech
-production mechanism is modeled. <br>
+production mechanism is modeled. <br/>
 </li>
 <li>It uses an all-pole model to characterize the vocal tract system
 by
 capturing the resonances with spectrum and source information with LP
-residual (inverse filter i.e., all zero filter). <br>
+residual (inverse filter i.e., all zero filter). <br/>
 </li>
 <li>LP order determines the number of resonances that can be captured
 by
 the model. The maximum number of resonances captured by the model with
-LP order <span class="MATH">P</span> is P/2. <br>
+LP order <span class="MATH">P</span> is P/2. <br/>
 </li>
 <li>The length of the vocal tract from glottis to lips is
 approximately 17
@@ -625,23 +554,23 @@ cm. This can generate four to five prominent resonances in 0-4 KHz
 range. These resonances can be captured with the LP model of order 10.
 We also should take care of radiation and windowing effects. Therefore
 with LP order 10-14 we can model the system by capturing required
-resonances.&nbsp; </li>
+resonances.Ã‚Â  </li>
 <li>System with LP order more than 14 will introduce the spurious
 resonances, which leads improper representation of the vocal tract
 system.</li>
 <li>Normalized error for voiced speech signal reduces as the LP order
 is varied from 0 to 15, since the vocal tract system (speech production
 mechanism) is modeled more accurately as LP order varying from 0 to
-15.&nbsp;</li>
+15.Ã‚Â </li>
 <ul>
-<li>P=0, no approximation, therefore maximum error&nbsp;</li>
+<li>P=0, no approximation, therefore maximum errorÃ‚Â </li>
 <li>P=1, only one coefficient used for prediction, therefore error
-is slightly less compared to that of P=0&nbsp;</li>
+is slightly less compared to that of P=0Ã‚Â </li>
 <li>P=10, model correctly approximates the resonances of the vocal
-tract system, which leads to minimum error&nbsp;</li>
-<li>P ≥ 10
+tract system, which leads to minimum errorÃ‚Â </li>
+<li>P ÃƒÂ¢Ã¢â‚¬Â°Ã‚Â¥ 10
 also results the correct modeling of the vocal tract system, which
-leads to similar error as that of model with P=10&nbsp;</li>
+leads to similar error as that of model with P=10Ã‚Â </li>
 <li>For unvoiced speech signal, as the signal and residual energies
 remains reasonable same, change in error as function of LP order is
 relatively insensitive. Unvoiced speech signal itself appears like
@@ -657,26 +586,23 @@ speech signal won't depend on the LP order.</li>
 
         <section id="experiment-article-section-6">
       
-          <div id="experiment-article-section-6-icon" 
-          class="icon">
-	    <img src="../images/quizzes.jpg" />
+          <div class="icon" id="experiment-article-section-6-icon">
+	    <img src="../images/quizzes.jpg"/>
 	  </div>
 
-          <div id="experiment-article-section-6-heading" 
-          class="heading">
+          <div class="heading" id="experiment-article-section-6-heading">
             Assessment 
           </div>
 
-          <div id="experiment-article-section-6-content" 
-          class="content">
+          <div class="content" id="experiment-article-section-6-content">
 <ol>
            			<li> What is the minimum no. of speech samples required to compute the LP coefficients of order p?
-			<li> Explain the differences between autocorrelation and autcovariance formulations of LP analysis? Which is better and why?</li>
+			</li><li> Explain the differences between autocorrelation and autcovariance formulations of LP analysis? Which is better and why?</li>
 			<li> Suggest an algorithm for voiced/non-voiced region separation using:
 				<ol>
 					<li>a) LP residual energy</li>
-					<li>b) peridicty information in the LP residual<li>
-				</ol>
+					<li>b) peridicty information in the LP residual</li><li>
+				</li></ol>
 			</li>
 			<li> Write an Octave/Scilab program that implements 3a and 3b</li>
 			</ol>
@@ -694,19 +620,16 @@ speech signal won't depend on the LP order.</li>
 		
         <section id="experiment-article-section-9">
    
-          <div id="experiment-article-section-9-icon" 
-          class="icon">
+          <div class="icon" id="experiment-article-section-9-icon">
 	    <!-- Enclose the icon image of your lab.-->
-	    <img src="../images/readings.jpg" />
+	    <img src="../images/readings.jpg"/>
 	  </div>
 
-          <div id="experiment-article-section-9-heading" 
-          class="heading">
+          <div class="heading" id="experiment-article-section-9-heading">
             References
           </div>
 
-          <div id="experiment-article-section-9-content" 
-          class="content">
+          <div class="content" id="experiment-article-section-9-content">
 <ul>
 			<li> <i>Digital Processing of Speech Signals</i>, L.R. Rabiner and L.R. Schafer, Chapter 8</li>
 			<li> <i>Discrete-Time Speech Signal Processing</i>, Thomas F. Quatieri , Chapter 5</li>
@@ -722,7 +645,7 @@ speech signal won't depend on the LP order.</li>
     <!-- An article can have a sidebar that contain related 
     links and additional material (however it is kept optional 
     at this moment) -->
-    <aside id="lab-article-sidebar" class="default">
+    <aside class="default" id="lab-article-sidebar">
       <!-- put the content that you want to appear in the 
       sidebar -->	
     </aside>
@@ -730,7 +653,7 @@ speech signal won't depend on the LP order.</li>
 
     <!-- Article footer can display related content and 
     additional links -->						
-    <footer id="lab-article-footer" class="default">
+    <footer class="default" id="lab-article-footer">
       <!-- Put the content that you want to appear here -->
     </footer>
 
@@ -739,21 +662,21 @@ speech signal won't depend on the LP order.</li>
 
   <!-- Links to other labs, about us page can be kept the lab 
   footer-->
-  <footer id="lab-footer" class="default">
+  <footer class="default" id="lab-footer">
     <!-- Put the content here-->
   </footer>
 
 
 
-<footer id="lab-header" class="heading">
+<footer class="heading" id="lab-header">
     <!-- Put the content here-->
-    <div id="lab-header-heading" class="heading">
+    <div class="heading" id="lab-header-heading">
     <!-- Write the name of your lab and link it to the home page
     of your lab. -->
         <center>
-        <table><tr>
-                <td><a href="http://speech.iiit.ac.in/" target=_blank><font size=-3>Developed at the Speech and Vision Lab, IIIT Hyderabad</font></a></td>
-        </tr></table>
+        <table><tbody><tr>
+                <td><a href="http://speech.iiit.ac.in/" target="_blank"><font size="-3">Developed at the Speech and Vision Lab, IIIT Hyderabad</font></a></td>
+        </tr></tbody></table>
         </center>
     </div>
 
@@ -762,8 +685,9 @@ speech signal won't depend on the LP order.</li>
 
 
 </div>		
-  <script type="text/javascript" src="../js/MathJax/MathJax.js?config=default">
+  <script src="../js/MathJax/MathJax.js?config=default" type="text/javascript">
   </script>
 
-</body>
-</html>
+
+
+</body></html>
